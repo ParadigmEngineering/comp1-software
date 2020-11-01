@@ -1,0 +1,7 @@
+.navigation-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
