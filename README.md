@@ -2,6 +2,8 @@
 Software for Competition 1 of the "Not-A-Boring" Competition
 
 ## Front-end (Angular) setup Guide
+Prerequisite: [Node.js(LTS version will be fine) and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm#using-a-node-version-manager-to-install-node-js-and-npm)
+
 1. First, open your terminal. Navigate to `/comp1-software` directory.
 2. Run `npm install -g @angular/cli`
 3. Navigate to `/OnLand/ControlLaptop/angular-UI`. 
