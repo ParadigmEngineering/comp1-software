@@ -40,8 +40,7 @@ set(STM32CUBEMX_GENERATED_FILES
         Core/Src/stm32f3xx_hal_msp.c
         Core/Src/stm32f3xx_it.c
         Core/Src/system_stm32f3xx.c
-
-        startup_stm32f303xe.s)
+        )
 
 set(SOURCES
         # Add user-created source files to this variable
