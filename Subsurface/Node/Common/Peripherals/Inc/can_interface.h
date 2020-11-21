@@ -3,11 +3,11 @@
 
 #include "stm32f3xx_hal.h"
 
-enum class CanTxMailbox 
+enum class CanTxMailbox : uint32_t
 {
-    MAILBOX0,
-    MAILBOX1,
-    MAILBOX2,
+    MAILBOX0 = CAN_TX_MAILBOX0,
+    MAILBOX1 = CAN_TX_MAILBOX1,
+    MAILBOX2 = CAN_TX_MAILBOX2,
 };
 
 enum class CanRxFifo

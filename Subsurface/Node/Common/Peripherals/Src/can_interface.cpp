@@ -1,13 +1,14 @@
 #include "Peripherals/Inc/can_interface.h"
 #include "Peripherals/Inc/convert_hal_status.h"
 
-CANInterface::CANInterface(CAN_HandleTypeDef *can_handle) : m_can_handle(can_handle)
+CANInterface::CANInterface(CAN_HandleTypeDef *can_handle)
+    : m_can_handle(can_handle)
 {
     m_tx_header.StdId = 0x7FF;      // Lowest priority
     m_tx_header.ExtId = 0x000;      // Always 0 
     m_tx_header.IDE = CAN_ID_STD;   // Always standard
     m_tx_header.RTR = CAN_RTR_DATA; // Always data
-    m_tx_header.DLC = 0;            // 0 by default
+    m_tx_header.DLC = 8;            // 8 by default
 
     m_rx_header.StdId = 0x7FF;        // Lowest priority
     m_rx_header.ExtId = 0x000;        // Always 0 
@@ -35,33 +36,12 @@ uint8_t CANInterface::getNumEmptyTxMailboxes(void)
 
 void CANInterface::setTxMailbox(CanTxMailbox mailbox) 
 {
-    switch (mailbox)
-    {
-        case CanTxMailbox::MAILBOX0: 
-            m_tx_mailbox = CAN_TX_MAILBOX0;
-            break;
-        case CanTxMailbox::MAILBOX1:
-            m_tx_mailbox = CAN_TX_MAILBOX1;
-            break;
-        case CanTxMailbox::MAILBOX2:
-            m_tx_mailbox = CAN_TX_MAILBOX2;
-            break;
-    }
+    m_tx_mailbox = static_cast<uint32_t>(mailbox);
 }
 
 bool CANInterface::isTxMessagePendingMailbox(CanTxMailbox mailbox) 
 {
-    switch (mailbox)
-    {
-        case CanTxMailbox::MAILBOX0: 
-            return HAL_CAN_IsTxMessagePending(m_can_handle, CAN_TX_MAILBOX0);
-        case CanTxMailbox::MAILBOX1:
-            return HAL_CAN_IsTxMessagePending(m_can_handle, CAN_TX_MAILBOX0);
-        case CanTxMailbox::MAILBOX2:
-            return HAL_CAN_IsTxMessagePending(m_can_handle, CAN_TX_MAILBOX0);
-        default:
-            return true;
-    }
+    return HAL_CAN_IsTxMessagePending(m_can_handle, static_cast<uint32_t>(mailbox));
 }
 
 bool CANInterface::transmit(uint8_t *txData)
