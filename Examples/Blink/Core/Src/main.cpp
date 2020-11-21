@@ -24,7 +24,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "Peripherals/Inc/can_manager.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -65,7 +65,12 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
+    CANInterface interface(&hcan);
+    CANManager manager(&interface);
 
+    manager.setTxId(0x16);
+    uint32_t data = 62378;
+    manager.txMsgSet(data);
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -87,6 +92,7 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_USART2_UART_Init();
+  MX_CAN_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
