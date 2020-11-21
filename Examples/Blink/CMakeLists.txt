@@ -44,6 +44,9 @@ set(STM32CUBEMX_GENERATED_FILES
 
 set(SOURCES
         # Add user-created source files to this variable
+        ../../Subsurface/Node/Common/Peripherals/Src/can_interface.cpp
+        ../../Subsurface/Node/Common/Peripherals/Src/can_manager.cpp
+        ../../Subsurface/Node/Common/Peripherals/Src/convert_hal_status.cpp
 )
 
 set(EXECUTABLE ${PROJECT_NAME}.out)
