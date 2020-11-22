@@ -1,3 +1,4 @@
+.vscode/*
 .venv
 .idea
 .DS_Store
@@ -7,3 +8,4 @@ Makefile
 .mxproject
 startup_stm32f303xe.s
 STM32F303RETx_FLASH.ld
+
