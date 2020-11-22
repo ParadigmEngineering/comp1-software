@@ -9,11 +9,14 @@ class CANManager
 private:
     CANInterface* m_can_interface;
     uint8_t m_tx_buffer[8] = {0};
+    uint8_t m_rx_buffer[8] = {0};
 
 public:
     CANManager (CANInterface* can_interface);
 
     bool transmit();
+
+    bool receive();
 
     void setTxId(uint16_t can_id);
 
@@ -30,6 +33,15 @@ public:
         }
 
         return true;
+    }
+
+    template<typename T>
+    T getRxMsg(uint8_t position)
+    {
+        // If we would overflow, just start from 0
+        if (sizeof(T) + position > 8) { return (T)m_rx_buffer[0]; }
+
+        return (T)m_rx_buffer[position];
     }
 };
 

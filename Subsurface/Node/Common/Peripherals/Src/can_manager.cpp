@@ -29,6 +29,11 @@ bool CANManager::transmit()
     return m_can_interface->transmit(m_tx_buffer);
 }
 
+bool CANManager::receive()
+{
+    return m_can_interface->receive(m_rx_buffer);
+}
+
 void CANManager::setTxId(uint16_t can_id)
 {
     m_can_interface->setTxCanId(can_id);
