@@ -1,7 +1,45 @@
 import socketio
+import random
+import logging as log
+
+# Standard python client
+sio = socketio.Client()
+SOCKET_SERVER = 'http://127.0.0.1:5000'
+
+# Default events
+@sio.event
+def connect():
+    connection_status = True
+    print("Connected to server")
+
+@sio.event
+def connect_error():
+    connection_status = False
+    print("Connection to server failed!")
+
+@sio.event
+def disconnect():
+    connection_status = False
+    print("Disconnected from server")
+    
+@sio.on("telemetry_log")
+def telemetry_log(telem):
+    print(f"TELEM RECEIVED - {telem}")
 
 def main():
-    pass
+    log.info("Logging Thread Started")
+    connected = False
+    while not connected:
+        try:
+            sio.connect(SOCKET_SERVER)
+        except:
+            time.sleep(2)
+        else:
+            connected = True
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("Killed by user")
+        exit(0)
