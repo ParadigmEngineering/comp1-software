@@ -9,17 +9,14 @@ SOCKET_SERVER = 'http://127.0.0.1:5000'
 # Default events
 @sio.event
 def connect():
-    connection_status = True
     print("Connected to server")
 
 @sio.event
 def connect_error():
-    connection_status = False
     print("Connection to server failed!")
 
 @sio.event
 def disconnect():
-    connection_status = False
     print("Disconnected from server")
     
 @sio.on("telemetry_log")
