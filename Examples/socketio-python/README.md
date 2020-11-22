@@ -74,7 +74,8 @@ def begin_chat(sid):
      sio.leave_room(sid, 'chat_users')
 ```
 
-Client
+### Client
+
 The client defines event handlers for receiving events from the server. Also, the call sio.emit() inside the application loop. 
 
 
