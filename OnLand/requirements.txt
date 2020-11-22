@@ -1,2 +1,7 @@
+# Required for System
 python-socketio==4.6.0
 influxdb==5.3.1
+
+# Required for examples
+eventlet==0.29.1
+
