@@ -7,8 +7,7 @@ sio = socketio.Server()
 # Wrap with a WSGI application - can also use 
 app = socketio.WSGIApp(sio)
 
-# Define eve
-# nt callbacks - special events
+# Define event callbacks - special events
 # sid - unique client id
 # environ - dictionary containing request info like HTTP header
 @sio.event
