@@ -28,7 +28,7 @@ Prerequisites:
  - Windows Users will need [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
  - The following packages (should be able to install from package manager):
    - build-essential (`sudo apt install build-essential`)
-   - gcc-arm-none-eabi (`sudo apt install gcc-arm-none-eabi`)
+   - gcc-arm-none-eabi Version 9.2.1 (`sudo apt install gcc-arm-none-eabi`)
    - CMake (see below instructions)
 
 CMake
