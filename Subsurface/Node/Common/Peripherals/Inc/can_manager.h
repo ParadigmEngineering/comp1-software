@@ -36,7 +36,7 @@ public:
     }
 
     template<typename T>
-    T getRxMsg(uint8_t position)
+    T getRxMsg(uint8_t position = 0)
     {
         // If we would overflow, just start from 0
         if (sizeof(T) + position > 8) { return (T)m_rx_buffer[0]; }
