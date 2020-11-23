@@ -8,7 +8,7 @@ class SPIInterface
 private:
 
     SPI_HandleTypeDef *m_hspi;
-    uint8_t m_dataReceived[2];
+    uint8_t m_dataReceived[20];   // Added an arbitrary amount of buffer space
 
 public:
 
@@ -23,10 +23,10 @@ public:
     uint32_t getError() { return HAL_SPI_GetError(m_hspi); }
 
     // Master transmit and receive functions
-    HAL_StatusTypeDef Transmit(uint8_t* data, uint8_t size, uint32_t timeout);
-    HAL_StatusTypeDef Receive(uint32_t timeout, uint8_t size);
-    HAL_StatusTypeDef TransmitReceive(uint8_t* dataIn, uint8_t size,
-                                        uint32_t timeout,);
+    HAL_StatusTypeDef Transmit(uint8_t* data, uint16_t size, uint32_t timeout);
+    HAL_StatusTypeDef Receive(uint16_t size, uint32_t timeout);
+    HAL_StatusTypeDef TransmitReceive(uint8_t* dataOut, uint16_t size,
+                                        uint32_t timeout);
 
 };
 #endif
