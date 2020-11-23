@@ -44,6 +44,7 @@ set(STM32CUBEMX_GENERATED_FILES
 
 set(SOURCES
         # Add user-created source files to this variable
+        ../../Subsurface/Node/Common/Peripherals/src/SPIInterface.cpp
 )
 
 set(EXECUTABLE ${PROJECT_NAME}.out)

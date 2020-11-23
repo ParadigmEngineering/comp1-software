@@ -25,6 +25,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "Peripherals/inc/SPIInterface.h"
 
 /* USER CODE END Includes */
 
