@@ -26,6 +26,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "Peripherals/inc/SPIInterface.h"
+#include <cstdint>
 
 /* USER CODE END Includes */
 
@@ -91,6 +92,16 @@ int main(void)
   MX_USART2_UART_Init();
   MX_SPI2_Init();
   /* USER CODE BEGIN 2 */
+
+  // SPIInterface test for normal transmit and recieve functions
+  SPIInterface spi2(&hspi2);
+
+  uint8_t message[13] = "Hello World!";
+  spi2.Transmit(message, 13, 100);
+
+  // This is just placeholder as I don't know what it'll be tested with
+  spi2.Receive(20, 100);
+  spi2.Transmit(spi2.getReceivedData(), 20, 100);
 
   /* USER CODE END 2 */
 
