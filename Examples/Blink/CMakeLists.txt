@@ -35,11 +35,17 @@ set(STM32CUBEMX_GENERATED_FILES
         Core/Inc/main.h
         Core/Inc/stm32f3xx_hal_conf.h
         Core/Inc/stm32f3xx_it.h
+        Core/Inc/gpio.h
+        Core/Inc/usart.h
 
         Core/Src/main.cpp
         Core/Src/stm32f3xx_hal_msp.c
         Core/Src/stm32f3xx_it.c
         Core/Src/system_stm32f3xx.c
+        Core/Src/gpio.c
+        Core/Src/usart.c
+
+        startup_stm32f303xe.s
         )
 
 set(SOURCES
