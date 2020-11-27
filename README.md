@@ -29,6 +29,12 @@ Prerequisites:
  - The following packages (should be able to install from package manager):
    - build-essential (`sudo apt install build-essential`)
    - gcc-arm-none-eabi Version 9.2.1 (`sudo apt install gcc-arm-none-eabi`)
+     - For macOS users, do the following:
+     ```shell
+     brew tap PX4/homebrew-px4
+     brew update
+     brew install gcc-arm-none-eabi
+     ```
    - CMake (see below instructions)
 
 CMake
