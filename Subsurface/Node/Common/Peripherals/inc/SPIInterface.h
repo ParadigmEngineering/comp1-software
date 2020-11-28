@@ -8,7 +8,7 @@ class SPIInterface
 private:
 
     SPI_HandleTypeDef *m_hspi;
-    uint8_t m_dataReceived[20];   // Added an arbitrary amount of buffer space
+    uint8_t m_dataReceived[32]; // Set to max size of I2C packet (32 bytes)
 
 public:
 
