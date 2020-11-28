@@ -25,8 +25,7 @@ public:
     // Master transmit and receive functions
     HAL_StatusTypeDef Transmit(uint8_t* data, uint16_t size, uint32_t timeout);
     HAL_StatusTypeDef Receive(uint16_t size, uint32_t timeout);
-    HAL_StatusTypeDef TransmitReceive(uint8_t* dataOut, uint16_t size,
-                                        uint32_t timeout);
+    HAL_StatusTypeDef TransmitReceive(uint8_t* dataOut, uint16_t size, uint32_t timeout);
 
     // Master transmit and receive functions using interrupts
     HAL_StatusTypeDef Transmit_IT(uint8_t* data, uint16_t size);

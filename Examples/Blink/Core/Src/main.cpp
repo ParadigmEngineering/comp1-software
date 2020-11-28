@@ -26,7 +26,6 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "Peripherals/inc/SPIInterface.h"
-#include <cstdint>
 
 /* USER CODE END Includes */
 
