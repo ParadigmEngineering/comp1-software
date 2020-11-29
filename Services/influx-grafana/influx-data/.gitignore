@@ -1,0 +1,5 @@
+# Purpose of this file: allows tracking of directory without files
+# gitignore this whole directory 
+*
+# Except this file
+!.gitignore
