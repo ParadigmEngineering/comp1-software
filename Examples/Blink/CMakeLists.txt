@@ -37,6 +37,7 @@ set(STM32CUBEMX_GENERATED_FILES
         Core/Inc/stm32f3xx_it.h
         Core/Inc/gpio.h
         Core/Inc/usart.h
+        Core/Inc/i2c.h
 
         Core/Src/main.cpp
         Core/Src/stm32f3xx_hal_msp.c
@@ -44,12 +45,15 @@ set(STM32CUBEMX_GENERATED_FILES
         Core/Src/system_stm32f3xx.c
         Core/Src/gpio.c
         Core/Src/usart.c
+        Core/Src/i2c.c
 
         startup_stm32f303xe.s
         )
 
 set(SOURCES
         # Add user-created source files to this variable
+        ../../Subsurface/Node/Common/peripherals/src
+
 )
 
 set(EXECUTABLE ${PROJECT_NAME}.out)
