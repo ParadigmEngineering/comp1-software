@@ -5,7 +5,7 @@ import logging as log
 
 # Standard python client
 sio = socketio.Client()
-SOCKET_SERVER = 'http://127.0.0.1:5000'
+SOCKET_SERVER = 'http://127.0.0.1:8080'
 
 @sio.event
 def connect():
@@ -18,6 +18,10 @@ def connect_error():
 @sio.event
 def disconnect():
     print("Disconnected from server")
+    
+@sio.event
+def telemetry_callback(message):
+    print(f"Got confirmation telemetry was received...data: {message['data']}")
 
 def main():
     print("Telemetry Thread Started")
@@ -37,7 +41,7 @@ def main():
     while 1:
         packet = random.randrange(0,100)
         print(f"PACKET SENT - {packet}")
-        sio.emit("telemetry_log", packet)
+        sio.emit("telemetry", packet)
         time.sleep(1)
     
     print("Connection with server lost")
