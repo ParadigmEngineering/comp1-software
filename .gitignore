@@ -7,3 +7,9 @@ Makefile
 .mxproject
 startup_stm32f303xe.s
 STM32F303RETx_FLASH.ld
+
+# Added ignores for L476 - Dec 3rd
+startup_stm32l476xx.s
+arm-none-eabi-gcc.cmake
+STM32L476RGTx_FLASH.ld 
+cmake-build-debug/

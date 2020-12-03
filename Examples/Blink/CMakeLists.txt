@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.15.3)
 
-project(nucleo-f303re)
+project(nucleo-l476)
 
 enable_language(CXX C ASM)
 set(CMAKE_C_STANDARD 99)
@@ -37,6 +37,7 @@ set(STM32CUBEMX_GENERATED_FILES
         Core/Inc/stm32f3xx_it.h
         Core/Inc/gpio.h
         Core/Inc/usart.h
+        Core/Inc/i2c.h
 
         Core/Src/main.cpp
         Core/Src/stm32f3xx_hal_msp.c
@@ -44,6 +45,7 @@ set(STM32CUBEMX_GENERATED_FILES
         Core/Src/system_stm32f3xx.c
         Core/Src/gpio.c
         Core/Src/usart.c
+        Core/Src/i2c.c
 
         startup_stm32f303xe.s
         )
