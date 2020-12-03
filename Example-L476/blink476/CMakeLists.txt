@@ -72,7 +72,7 @@ set(STM32CUBEMX_GENERATED_FILES
         Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_ltdc.c
         Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_mmc_ex.c
         Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_mmc.c
-        #Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_msp_template.c
+        # Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_msp_template.c
         Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_nand.c
         Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_nor.c
         Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_opamp_ex.c
@@ -104,7 +104,7 @@ set(STM32CUBEMX_GENERATED_FILES
         Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_swpmi.c
         Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim_ex.c
         Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim.c
-        #Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_timebase_tim_template.c
+        # Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_timebase_tim_template.c
         Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tsc.c
         Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c
         Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.c
