@@ -1,32 +1,31 @@
-import eventlet
-import socketio
-
-# Create a socketio server
-sio = socketio.Server()
-
-# Wrap with a WSGI application - can also use 
-app = socketio.WSGIApp(sio)
-
-# Define event callbacks - special events
-# sid - unique client id
-# environ - dictionary containing request info like HTTP header
-@sio.event
-def connect(sid, environ):
-    print('connect', sid)
- 
- 
-@sio.event
-def disconenct(sid, environ):
-    print('disconnect', sid)
-
-
-# User defined event handlers
-@sio.on("telemetry_log")
-def telemetry_log(sid, data):
-    print("TELEMETRY FORWARDED TO LOGGER")
-    sio.emit("telemetry_log", data)
-  
+from flask import Flask, render_template
+from flask_socketio import SocketIO
     
-if __name__=="__main__":
-    # I dont understant this, our angular app will act as the server in production
-    eventlet.wsgi.server(eventlet.listen(('localhost', 5000)), app) 
+app = Flask(__name__)
+app.config['SECRET_KEY'] = 'secret!'
+sio = SocketIO(app)
+
+# Standard Flask route
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+# Sio event handlers
+@sio.on('connect')
+def connect():
+    print("Client connected!")
+    sio.emit('Connected to socketio server!')
+    
+@sio.on('disconnect')
+def disconnect():
+    print("Client disconnected!")
+    sio.emit('Disconnected from socketio server!')
+
+@sio.on('telemetry')
+def telemetry(msg):
+    print(f"Message received: {msg}")
+    sio.emit('telemetry_callback', {'data': 'got it!'})
+
+if __name__ == '__main__':
+    sio.run(app,'127.0.0.1', 8080, debug=True)
+    
