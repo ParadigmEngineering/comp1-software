@@ -1,4 +1,5 @@
 # Required for System
+flask-socketio
 python-socketio==4.6.0
 influxdb==5.3.1
 
