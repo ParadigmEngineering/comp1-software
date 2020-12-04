@@ -19,6 +19,15 @@ public:
     void setParameters(uint64_t clockspeed, uint32_t preScaler, uint32_t period,
     uint32_t pulse, TIM_HandleTypeDef timer, uint32_t channel);
 
+    // Set Prescaler
+    void SET_PRESCALER();
+
+    // Set Autoload
+    void SET_AUTORELOAD();
+
+    // Set Compare
+    void SET_COMPARE();
+
     // Set Period and Pulse
     void setPeriod(uint32_t period);
     void setPulse(uint32_t pulse);

@@ -1,4 +1,4 @@
-#include "PWMInterface.h"
+#include "Peripherals/inc/PWMInterface.h"
 
 PWMInterface::PWMInterface(uint64_t clockSpeed, uint32_t preScaler, 
                             uint32_t period, uint32_t pulse, 
@@ -6,13 +6,27 @@ PWMInterface::PWMInterface(uint64_t clockSpeed, uint32_t preScaler,
     : m_clockSpeed(clockSpeed), m_preScaler(preScaler), m_period(period),
     m_pulse(pulse), m_timer(timer), m_channel(channel){}   
 
+void PWMInterface::SET_PRESCALER()
+{
+    __HAL_TIM_SET_PRESCALER(&m_timer, m_preScaler);
+}
+
+void PWMInterface::SET_AUTORELOAD()
+{
+    __HAL_TIM_SET_AUTORELOAD(&m_timer, m_period);
+}
+
+void PWMInterface::SET_COMPARE()
+{
+    __HAL_TIM_SET_COMPARE(&m_timer, m_channel, m_pulse);
+}
 
 void PWMInterface::PWMStart()
 {
     HAL_TIM_PWM_Start(&m_timer, m_channel);
-    __HAL_TIM_SET_PRESCALER(&m_timer, m_preScaler);
-    __HAL_TIM_SET_AUTORELOAD(&m_timer, m_period);
-    __HAL_TIM_SET_COMPARE(&m_timer, m_channel, m_pulse);
+    SET_PRESCALER();
+    SET_AUTORELOAD();
+    SET_COMPARE();
 }
 
 void PWMInterface::PWMStop()
@@ -34,11 +48,11 @@ void PWMInterface::setParameters(uint64_t clockspeed, uint32_t preScaler, uint32
 void PWMInterface::setPeriod(uint32_t period)
 {
     m_period = period;
-    __HAL_TIM_SET_AUTORELOAD(&m_timer, m_period);
+    SET_AUTORELOAD();
 }
 
 void PWMInterface::setPulse(uint32_t pulse)
 {
     m_pulse = pulse;
-    __HAL_TIM_SET_COMPARE(&m_timer, m_channel, m_pulse);    
+    SET_COMPARE();    
 }

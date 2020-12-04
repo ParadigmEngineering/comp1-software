@@ -1,4 +1,4 @@
-#include "PWMManager.h"
+#include "Peripherals/inc/PWMManager.h"
 
 PWMManager::PWMManager(uint64_t clockSpeed, uint32_t preScaler,
  uint32_t period, uint32_t pulse, PWMInterface interface, TIM_HandleTypeDef timer, uint32_t channel)
@@ -10,10 +10,6 @@ void PWMManager::PWMStart()
 {
     m_interface.setParameters(m_clockSpeed, m_preScaler, 
     m_period, m_pulse, m_timer, m_channel);
-    
-    //m_mockInterface.setParameters(m_clockSpeed, m_preScaler, 
-    //m_period, m_pulse, m_timer, m_channel);
-    
     m_interface.PWMStart();
 }
 
