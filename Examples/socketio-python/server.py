@@ -25,7 +25,8 @@ def disconnect():
 def telemetry(msg):
     print(f"Message received: {msg}")
     sio.emit('telemetry_callback', {'data': 'got it!'})
+    sio.emit('telemetry', msg)
 
 if __name__ == '__main__':
-    sio.run(app,'127.0.0.1', 8080, debug=True)
+    sio.run(app, '127.0.0.1', 8080)
     
