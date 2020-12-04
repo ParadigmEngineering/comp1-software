@@ -1,10 +1,11 @@
-import socketio
 import random
+import socketio
+import time
 import logging as log
 
 # Standard python client
 sio = socketio.Client()
-SOCKET_SERVER = 'http://127.0.0.1:5000'
+SOCKET_SERVER = 'http://127.0.0.1:8080'
 
 # Default events
 @sio.event
@@ -22,9 +23,9 @@ def disconnect():
     print("Disconnected from server")
     
     
-@sio.on("telemetry_log")
-def telemetry_log(telem):
-    print(f"TELEM RECEIVED - {telem}")
+@sio.on("telemetry")
+def telemetry(data):
+    print(f"TELEM RECEIVED - {data}")
 
 
 def main():
