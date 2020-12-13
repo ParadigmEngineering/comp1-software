@@ -31,6 +31,7 @@ Prerequisites:
    - Arm64 Linux (Pi 4)- gcc 9.3 - Manually install from [here](https://github.com/abhiTronix/raspberry-pi-cross-compilers/wiki/64-Bit-Cross-Compiler:-Installation-Instructions)
    - Arm32 Linux (Pi 3B+) - gcc 9.3 - Manually install from [here](https://github.com/abhiTronix/raspberry-pi-cross-compilers/wiki/Cross-Compiler:-Installation-Instructions)
    - Windows - Visual Studio 2019 cl.exe should work fine
+     - Note: Ensure that C++ Cmake tools for Windows is installed along with Desktop development with C++
 
 Setup:
 1. In a command prompt (Windows)/terminal (MacOS/Linux), navigate to `comp1-software/Subsurface/FlightComputer`
