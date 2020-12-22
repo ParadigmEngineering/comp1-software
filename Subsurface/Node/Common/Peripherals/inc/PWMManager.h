@@ -1,6 +1,5 @@
 #include "PWMInterface.h"
 #include <cstdint>
-//#include "mock_PWMInterface.h"
 
 #ifndef PWMMANAGER_H
 #define PWMMANAGER_H
@@ -10,8 +9,13 @@ class PWMManager
 public:
     
     // Constructor
-    PWMManager(uint64_t clockSpeed, uint32_t preScaler, uint32_t period, 
-    uint32_t pulse, PWMInterface interface, TIM_HandleTypeDef timer, uint32_t channel);
+    PWMManager(uint64_t clockSpeed, 
+               uint32_t preScaler, 
+               uint32_t period, 
+               uint32_t pulse, 
+               PWMInterface* interface, 
+               TIM_HandleTypeDef* timer, 
+               uint32_t channel);
 
     // Start and Stop
     void PWMStart();
@@ -26,7 +30,6 @@ public:
     uint32_t getPulseCycles();
     uint32_t getPulseMs();
     uint32_t getPulseUs();
-
 
     // Setters
     void setPeriodCycles(uint32_t newPeriod);
@@ -48,10 +51,9 @@ private:
     uint32_t m_preScaler;
     uint32_t m_period;
     uint32_t m_pulse;                   
-    PWMInterface m_interface;
-    TIM_HandleTypeDef m_timer;
+    PWMInterface* m_interface;
+    TIM_HandleTypeDef* m_timer;
     uint32_t m_channel;
-    //mock_PWMInterface m_mockInterface;
 
 };
 #endif

@@ -8,25 +8,33 @@ class PWMInterface
 {
 public:
     // Constructor
-    PWMInterface(uint64_t clockSpeed, uint32_t preScaler, uint32_t period,
-    uint32_t pulse, TIM_HandleTypeDef timer, uint32_t channel);
+    PWMInterface(uint64_t clockSpeed, 
+                 uint32_t preScaler, 
+                 uint32_t period, 
+                 uint32_t pulse, 
+                 TIM_HandleTypeDef* timer, 
+                 uint32_t channel);
 
     // Start and stop
     void PWMStart();
     void PWMStop();
 
     // Set parameters
-    void setParameters(uint64_t clockspeed, uint32_t preScaler, uint32_t period,
-    uint32_t pulse, TIM_HandleTypeDef timer, uint32_t channel);
+    void setParameters(uint64_t clockspeed, 
+                       uint32_t preScaler, 
+                       uint32_t period,
+                       uint32_t pulse, 
+                       TIM_HandleTypeDef* timer, 
+                       uint32_t channel);
 
     // Set Prescaler
-    void SET_PRESCALER();
+    void setPrescaler();
 
     // Set Autoload
-    void SET_AUTORELOAD();
+    void setAutoreload();
 
     // Set Compare
-    void SET_COMPARE();
+    void setCompare();
 
     // Set Period and Pulse
     void setPeriod(uint32_t period);
@@ -39,7 +47,7 @@ private:
     uint32_t m_period;
     uint32_t m_pulse;
     uint32_t m_channel;
-    TIM_HandleTypeDef m_timer;
+    TIM_HandleTypeDef* m_timer;
 
 };
 #endif

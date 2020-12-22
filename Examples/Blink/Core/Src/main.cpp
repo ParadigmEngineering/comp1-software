@@ -15,12 +15,12 @@ void SystemClock_Config(void);
   */
 int main(void)
 {
-
-    HAL_Init();
-
-  	SystemClock_Config();
-}
-
+<<<<<<< HEAD
+=======
+  /* USER CODE BEGIN 1 */
+  
+/*
+  int terminate = 0;
 /**
   * @brief System Clock Configuration
   * @retval None

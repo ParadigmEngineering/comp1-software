@@ -1,21 +1,35 @@
 #include "Peripherals/inc/PWMManager.h"
 
-PWMManager::PWMManager(uint64_t clockSpeed, uint32_t preScaler,
- uint32_t period, uint32_t pulse, PWMInterface interface, TIM_HandleTypeDef timer, uint32_t channel)
-: m_clockSpeed(clockSpeed), m_preScaler(preScaler), m_period(period),
-m_pulse(pulse), m_interface(interface), m_timer(timer), m_channel(channel)
-{}
+PWMManager::PWMManager(uint64_t clockSpeed, 
+                       uint32_t preScaler,
+                       uint32_t period, 
+                       uint32_t pulse, 
+                       PWMInterface* interface, 
+                       TIM_HandleTypeDef* timer, 
+                       uint32_t channel)
+:   m_clockSpeed(clockSpeed),
+    m_preScaler(preScaler), 
+    m_period(period),
+    m_pulse(pulse), 
+    m_interface(interface), 
+    m_timer(timer), 
+    m_channel(channel)
+    {}
 
 void PWMManager::PWMStart()
 {
-    m_interface.setParameters(m_clockSpeed, m_preScaler, 
-    m_period, m_pulse, m_timer, m_channel);
-    m_interface.PWMStart();
+    m_interface->setParameters(m_clockSpeed, 
+                               m_preScaler, 
+                               m_period, 
+                               m_pulse, 
+                               m_timer, 
+                               m_channel);
+    m_interface->PWMStart();
 }
 
 void PWMManager::PWMStop()
 {
-    m_interface.PWMStop();
+    m_interface->PWMStop();
 }
 
 void PWMManager::setPulseCycles(uint32_t newPulse)
@@ -100,6 +114,6 @@ uint32_t PWMManager::getFrequencyHz()
 
 void PWMManager::updateInterface()
 {
-    m_interface.setPeriod(m_period);
-    m_interface.setPulse(m_pulse);
+    m_interface->setPeriod(m_period);
+    m_interface->setPulse(m_pulse);
 }
