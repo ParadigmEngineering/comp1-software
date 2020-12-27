@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SchematicIconComponent implements OnInit {
 
-  private DCV_Neutral = "../../../assets//schematic_icons/DCV_Neutral.png"
+  DCV_Neutral = "../../../assets//schematic_icons/DCV_Neutral.png"
   constructor() { }
 
   ngOnInit(): void {

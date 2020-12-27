@@ -8,6 +8,8 @@ import { NavigationBarComponent } from './components/navigation-bar/navigation-b
 import { NavigationButtonComponent } from './components/navigation-bar/navigation-button/navigation-button.component';
 import { SchematicsPageComponent } from './pages/schematics-page/schematics-page.component';
 import { SchematicIconComponent } from './components/schematic-icon/schematic-icon.component';
+import { SchematicsComponent } from './components/schematics/schematics.component';
+import { GojsAngularModule } from 'gojs-angular';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { SchematicIconComponent } from './components/schematic-icon/schematic-ic
     NavigationBarComponent,
     NavigationButtonComponent,
     SchematicsPageComponent,
-    SchematicIconComponent
+    SchematicIconComponent,
+    SchematicsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    GojsAngularModule
   ],
   providers: [],
   bootstrap: [AppComponent]
