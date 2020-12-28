@@ -31,18 +31,22 @@ export class SchematicsComponent implements OnInit {
     dia.nodeTemplate =
       $(go.Node, 'Auto',
         {
-          toLinkable: true, fromLinkable: true
+          toLinkable: false, fromLinkable: false
         },
         $(go.Shape, 'RoundedRectangle', { stroke: null },
           new go.Binding('fill', 'color')
         ),
         $(go.TextBlock, { margin: 8 },
-          new go.Binding('text', 'key'))
+          new go.Binding('text', 'key')),
       );
+      dia.linkTemplate = $(go.Link, $(go.Shape,
+        new go.Binding("stroke", "color"),  // shape.stroke = data.color
+        new go.Binding("strokeWidth", "thick")))
   
     return dia;
   }
-  
+   
+
   public diagramNodeData = [
     { key: 'Alpha', color: 'lightblue' },
     { key: 'Beta', color: 'orange' },
@@ -50,7 +54,7 @@ export class SchematicsComponent implements OnInit {
     { key: 'Delta', color: 'pink' }
   ];
   public diagramLinkData= [
-    { key: -1, from: 'Alpha', to: 'Beta' },
+    { key: -1, from: 'Alpha', to: 'Beta', color: 'red'},
     { key: -2, from: 'Alpha', to: 'Gamma' },
     { key: -3, from: 'Beta', to: 'Beta' },
     { key: -4, from: 'Gamma', to: 'Delta' },
