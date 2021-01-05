@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -13,5 +15,13 @@ export class AppComponent {
     { name: 'CONTROL', route: '' },
     { name: 'CONFIGURATION', route: '' }
   ]
-  title = 'angular-UI';
+  activatedPage: string;
+
+  constructor(private route: Router) {
+    this.route.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe((route: NavigationEnd) => {
+      this.activatedPage = route.urlAfterRedirects;
+      console.log(`current route:: ${this.activatedPage}`)
+    })
+  }
+
 }

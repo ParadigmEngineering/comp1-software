@@ -9,11 +9,9 @@ import { filter } from 'rxjs/operators';
 })
 export class NavigationBarComponent implements OnInit {
   @Input() pages: { name: string, route: string }[];
-  activatedPage:string;
-  constructor(private route: Router) {
-    this.route.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe((route: NavigationEnd) => {
-      this.activatedPage = route.url;
-    })
+  @Input() activatedPage: string;
+  constructor() {
+    
   }
   ngOnInit(): void {
   }
