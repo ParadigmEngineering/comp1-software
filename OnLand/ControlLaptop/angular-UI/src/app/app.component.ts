@@ -7,10 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   pages: { name: string, routes: string }[] = [
-    { name: 'HOME', routes: '/home-page' },
-    { name: 'SCHEMATICS', routes: '/schematics' },
-    { name: 'CONFIGURATION', routes: '' },
-    { name: 'CONFIGURATION', routes: '' },
+    { name: 'DASHBOARD', routes: '/home-page' },
+    { name: 'NAVIGATION', routes: '/schematics' },
+    { name: 'POWER METRICS', routes: '' },
+    { name: 'CONTROL', routes: '' },
     { name: 'CONFIGURATION', routes: '' }
   ]
   title = 'angular-UI';
