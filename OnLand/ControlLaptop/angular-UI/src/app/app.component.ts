@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   pages: { name: string, route: string }[] = [
-    { name: 'DASHBOARD', route: '/home-page' },
-    { name: 'NAVIGATION', route: '/schematics' },
+    { name: 'DASHBOARD', route: '/dashboard-page' },
+    { name: 'NAVIGATION', route: '/navigation-page' },
     { name: 'POWER METRICS', route: '' },
     { name: 'CONTROL', route: '' },
     { name: 'CONFIGURATION', route: '' }
