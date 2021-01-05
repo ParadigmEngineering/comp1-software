@@ -6,12 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  pages: { name: string, routes: string }[] = [
-    { name: 'DASHBOARD', routes: '/home-page' },
-    { name: 'NAVIGATION', routes: '/schematics' },
-    { name: 'POWER METRICS', routes: '' },
-    { name: 'CONTROL', routes: '' },
-    { name: 'CONFIGURATION', routes: '' }
+  pages: { name: string, route: string }[] = [
+    { name: 'DASHBOARD', route: '/home-page' },
+    { name: 'NAVIGATION', route: '/schematics' },
+    { name: 'POWER METRICS', route: '' },
+    { name: 'CONTROL', route: '' },
+    { name: 'CONFIGURATION', route: '' }
   ]
   title = 'angular-UI';
 }
