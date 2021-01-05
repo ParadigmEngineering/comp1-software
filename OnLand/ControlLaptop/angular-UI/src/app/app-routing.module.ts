@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomePageComponent } from './pages/home-page/home-page.component';
-import { SchematicsPageComponent } from './pages/schematics-page/schematics-page.component';
+import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
+import { NavigationPageComponent } from './pages/navigation-page/navigation-page.component';
 
 const routes: Routes = [
-  { path: 'home-page', component: HomePageComponent },
-  { path: 'schematics', component: SchematicsPageComponent }
+  { path: '', redirectTo: 'dashboard-page', pathMatch: 'full' }, // set dashboard as the home page
+  { path: 'dashboard-page', component: DashboardPageComponent },
+  { path: 'navigation-page', component: NavigationPageComponent }
 ];
 
 @NgModule({

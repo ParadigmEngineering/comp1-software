@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SchematicsPageComponent } from './schematics-page.component';
+import { LogoBarComponent } from './logo-bar.component';
 
-describe('SchematicsPageComponent', () => {
-  let component: SchematicsPageComponent;
-  let fixture: ComponentFixture<SchematicsPageComponent>;
+describe('LogoBarComponent', () => {
+  let component: LogoBarComponent;
+  let fixture: ComponentFixture<LogoBarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SchematicsPageComponent ]
+      declarations: [ LogoBarComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SchematicsPageComponent);
+    fixture = TestBed.createComponent(LogoBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
