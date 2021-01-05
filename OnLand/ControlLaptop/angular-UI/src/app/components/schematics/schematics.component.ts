@@ -11,14 +11,14 @@ import { DataSyncService, DiagramComponent, PaletteComponent } from 'gojs-angula
 export class SchematicsComponent implements OnInit {
 
 	constructor() { }
-
+	dia: go.Diagram;
 	ngOnInit(): void {
 	}
 
 	public initDiagram(): go.Diagram {
 
 		const $ = go.GraphObject.make;
-		const dia = $(go.Diagram, {
+		this.dia = $(go.Diagram, {
 			'undoManager.isEnabled': false, // must be set to allow for model change listening
 			// 'undoManager.maxHistoryLength': 0,  // uncomment disable undo/redo functionality
 			model: $(go.GraphLinksModel,
@@ -29,25 +29,26 @@ export class SchematicsComponent implements OnInit {
 		});
 
 		// define the Node template
-		dia.nodeTemplate =
+		this.dia.nodeTemplate =
 			$(go.Node, 'Auto',
 				{
 					toLinkable: false, fromLinkable: false
 				},
 				new go.Binding("location", "loc", go.Point.parse),
-				$(go.Picture, new go.Binding("source", "img"))
+          new go.Binding('fill', 'color'),
+				$(go.Picture, new go.Binding("source", "img"), new go.Binding("desiredSize", "size")),
 			);
-		dia.linkTemplate = $(go.Link, $(go.Shape,
+		this.dia.linkTemplate = $(go.Link, $(go.Shape,
 			new go.Binding("stroke", "color"),  // shape.stroke = data.color
 			new go.Binding("strokeWidth", "thick")));
 
-		dia.isReadOnly = true;
-		return dia;
+		this.dia.isReadOnly = true;
+		return this.dia;
 	}
 
 	public diagramNodeData = [
-		{ key: 'DCV_1', img: '../../../assets/schematic_icons/DCV_Neutral.png', loc: "500 500" },
-		{ key: 'temperature_1', img: '../../../assets/schematic_icons/Temparature_Indicator.png', loc: "0 0" },
+		{ key: 'DCV_1', img: '../../../assets/machine.svg', color: "red",size: new go.Size(159, 83), loc: "500 500" },
+		{ key: 'temperature_1', img: '../../../assets/HPU.svg', size: new go.Size(79, 64), loc: "0 0" },
 		{ key: 'Gamma' },
 		{ key: 'Delta' }
 	];
@@ -68,6 +69,9 @@ export class SchematicsComponent implements OnInit {
 		this.diagramNodeData = DataSyncService.syncNodeData(changes, this.diagramNodeData);
 		this.diagramLinkData = DataSyncService.syncLinkData(changes, this.diagramLinkData);
 		this.diagramModelData = DataSyncService.syncModelData(changes, this.diagramModelData);
-	};
-
+	};/* dia.commit(m => {
+		let link1=m.findLinkForKey('x')
+		link1.setProperties({color:"blue"})
+	}) */
+	
 }
