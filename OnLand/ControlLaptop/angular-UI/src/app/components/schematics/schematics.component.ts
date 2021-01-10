@@ -21,6 +21,7 @@ export class SchematicsComponent implements OnInit {
 		this.dia = $(go.Diagram, {
 			'undoManager.isEnabled': false, // must be set to allow for model change listening
 			// 'undoManager.maxHistoryLength': 0,  // uncomment disable undo/redo functionality
+			initialContentAlignment: go.Spot.None,
 			model: $(go.GraphLinksModel,
 				{
 					linkKeyProperty: 'key' // IMPORTANT! must be defined for merges and data sync when using GraphLinksModel
@@ -32,28 +33,71 @@ export class SchematicsComponent implements OnInit {
 		this.dia.nodeTemplate =
 			$(go.Node, 'Auto',
 				{
-					toLinkable: false, fromLinkable: false
+					toLinkable: false, fromLinkable: false,
+					click: (e, obj) => {
+						let loc = obj.part.location;
+						var docloc = this.dia.transformDocToView(loc);
+						console.log("Selected node location,\ndocument coordinates: " + loc.x.toFixed(2) + " " + loc.y.toFixed(2) + "\nview coordinates: " + docloc.x.toFixed(2) + " " + docloc.y.toFixed(2));
+					}
 				},
 				new go.Binding("location", "loc", go.Point.parse),
-          new go.Binding('fill', 'color'),
-				$(go.Picture, new go.Binding("source", "img"), new go.Binding("desiredSize", "size")),
-			);
-		this.dia.linkTemplate = $(go.Link, $(go.Shape,
-			new go.Binding("stroke", "color"),  // shape.stroke = data.color
-			new go.Binding("strokeWidth", "thick")));
+				new go.Binding('fill', 'color'),
+				new go.Binding('scale', 'scale'),
+				$(go.Panel, "Spot",
+					$(go.Picture, new go.Binding("source", "img"), new go.Binding("desiredSize", "size"),
+					), $(go.Shape,
+						{
+							width: 0.1, height: 0.1, portId: "Top",
+							fromLinkable: false, stroke: null, fill: "pink", alignment: go.Spot.Top,
+						}),
+					$(go.Shape,
+						{
+							width: 0, height: 0, portId: "Bottom",
+							fromLinkable: false, stroke: null, fill: "transparent", alignment: go.Spot.Bottom,
+						}),
+					$(go.Shape,
+						{
+							width: 0, height: 0, portId: "Left",
+							fromLinkable: false, stroke: null, fill: "transparent", alignment: go.Spot.Left,
+						}),
+					$(go.Shape,
+						{
+							width: 0, height: 0, portId: "Right",
+							fromLinkable: false, stroke: null, fill: "transparent", alignment: go.Spot.Right,
+						})
 
-		this.dia.isReadOnly = true;
+				)
+			);
+		this.dia.linkTemplate = $(go.Link,
+			{ routing: go.Link.Orthogonal },
+			$(go.Shape,
+				new go.Binding("stroke", "color"),  // shape.stroke = data.color
+				new go.Binding("strokeWidth", "thick")));
+
+		this.dia.model = $(go.GraphLinksModel,
+			{
+				linkFromPortIdProperty: "fromPort",  // required information:
+				linkToPortIdProperty: "toPort"
+			});
+
 		return this.dia;
 	}
 
 	public diagramNodeData = [
-		{ key: 'DCV_1', img: '../../../assets/machine.svg', color: "red",size: new go.Size(159, 83), loc: "500 500" },
-		{ key: 'temperature_1', img: '../../../assets/HPU.svg', size: new go.Size(79, 64), loc: "0 0" },
-		{ key: 'Gamma' },
+		{ key: 'auger', group: "auger_group", scale: 2.5, img: '../../../assets/Auger.svg', color: "red", loc: "643.50 -54.17" },
+		{ key: 'P1_1', group: "auger_group", scale: 2.5, img: '../../../assets/P1.svg', loc: "696.50 -11.77" },
+		{ key: 'P1_2', group: "auger_group", scale: 2.5, img: '../../../assets/P1.svg', loc: "696.50 41.83" },
+		{ key: 'Relief_Valve_1', group: "auger_group", scale: 2.5, img: '../../../assets/Relief_Valve_Straight.svg', loc: "756.54 41.83" },
+		{ key: 'Motor_small_1', group: "auger_group", scale: 2.5, img: '../../../assets/Motor_small.svg', loc: "822.50 -19.17" },
+		{ key: 'auger_group', isGroup: true },
 		{ key: 'Delta' }
 	];
 	public diagramLinkData = [
-		{ key: -1, from: 'DCV_1', to: 'temperature_1', color: 'red' }
+		{ key: -1, from: 'Motor_small_1', fromPort: "Bottom", to: 'P1_1', color: 'red', toPort: "Left" },
+		{ key: -1, from: 'Relief_Valve_1', to: 'Motor_small_1', color: 'green', toPort: "Right" },
+		{ key: -1, from: 'P1_2', to: 'Motor_small_1', color: 'green', toPort: "Right" },
+		{ key: -1, from: 'P1_1', to: 'Relief_Valve_1', color: 'red', toPort: "Top" },
+
 	];
 	public diagramDivClassName: string = 'myDiagramDiv';
 	public diagramModelData = { prop: 'value' };
@@ -73,5 +117,5 @@ export class SchematicsComponent implements OnInit {
 		let link1=m.findLinkForKey('x')
 		link1.setProperties({color:"blue"})
 	}) */
-	
+
 }

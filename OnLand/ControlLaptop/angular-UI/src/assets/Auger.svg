@@ -1,10 +1,10 @@
-<svg width="27.9" height="10" xmlns="http://www.w3.org/2000/svg">
+<svg width="137" height="62.5" xmlns="http://www.w3.org/2000/svg">
  <title>Produce by Acme CAD Converter</title>
 
  <desc>Produce by Acme CAD Converter</desc>
  <g>
   <title>background</title>
-  <rect fill="none" id="canvas_background" height="12" width="29.9" y="-1" x="-1"/>
+  <rect fill="none" id="canvas_background" height="64.5" width="139" y="-1" x="-1"/>
  </g>
  <g>
   <title>Layer 1</title>
@@ -194,7 +194,7 @@
   <polyline id="svg_184" fill="none" stroke="black" stroke-width="0.5" points="561.85,410.9 563,410.9"/>
   <polyline id="svg_185" fill="none" stroke="black" stroke-width="0.5" points="561.85,411.78 562.56,411.78"/>
   <polyline id="svg_186" fill="none" stroke="black" stroke-width="0.5" points="561.85,412.76 563,412.76"/>
-  <polyline id="svg_187" fill="none" stroke="black" stroke-width="0.5" points="710.6400146484375,324.82000732421875 881.3900146484375,324.82000732421875 881.3900146484375,422.5400085449219 710.6400146484375,422.5400085449219 710.6400146484375,324.82000732421875 "/>
+  <polyline id="svg_187" fill="none" stroke="black" stroke-width="0.5" points="418.64,327.82 589.39,327.82 589.39,425.54 418.64,425.54 418.64,327.82"/>
   <polyline id="svg_188" fill="none" stroke="black" stroke-width="0.5" points="454.97,369.79 454.97,371.65"/>
   <polyline id="svg_189" fill="none" stroke="black" stroke-width="0.5" points="454.97,369.79 455.77,369.79 456.03,369.88 456.12,369.97 456.21,370.15 456.21,370.33 456.12,370.5 456.03,370.59 455.77,370.68 454.97,370.68"/>
   <polyline id="svg_190" fill="none" stroke="black" stroke-width="0.5" points="455.59,370.68 456.21,371.65"/>
@@ -240,23 +240,6 @@
   <polyline id="svg_230" fill="none" stroke="black" stroke-width="0.5" points="127.12,341.09 127.12,349.95"/>
   <polyline id="svg_231" fill="none" stroke="black" stroke-width="0.5" points="127.12,341.09 130.92,341.09 132.18,341.51 132.6,341.93 133.03,342.77 133.03,344.04 132.6,344.88 132.18,345.31 130.92,345.73 127.12,345.73"/>
   <polyline id="svg_232" fill="none" stroke="black" stroke-width="0.5" points="135.98,341.09 135.98,347.41 136.4,348.68 137.25,349.52 138.51,349.95 139.35,349.95 140.62,349.52 141.46,348.68 141.89,347.41 141.89,341.09"/>
-  <polyline id="svg_233" fill="none" stroke="black" stroke-width="0.5" points="448.57,204.72 448.57,209.39"/>
-  <polyline id="svg_234" fill="none" stroke="black" stroke-width="0.5" points="448.57,209.39 459.46,209.39"/>
-  <polyline id="svg_235" fill="none" stroke="black" stroke-width="0.5" points="448.57,204.72 459.46,204.72"/>
-  <polyline id="svg_236" fill="none" stroke="black" stroke-width="0.5" points="459.46,204.72 459.46,209.39"/>
-  <polyline id="svg_237" fill="none" stroke="black" stroke-width="0.5" points="452.4,204.72 451.08,204.72 451.08,209.39 452.4,209.39 452.4,204.72"/>
-  <polyline id="svg_238" fill="none" stroke="black" stroke-width="0.5" points="452.4,207.05 463.29,207.05"/>
-  <polyline id="svg_239" fill="none" stroke="black" stroke-width="0.5" points="459.46,204.72 457.91,204.72"/>
-  <polyline id="svg_240" fill="none" stroke="black" stroke-width="0.5" points="457.91,204.72 457.91,204.1"/>
-  <polyline id="svg_241" fill="none" stroke="black" stroke-width="0.5" points="448.57,204.72 450.13,204.72"/>
-  <polyline id="svg_242" fill="none" stroke="black" stroke-width="0.5" points="450.13,204.72 450.13,204.1"/>
-  <polyline id="svg_243" fill="none" stroke="black" stroke-width="0.5" points="466.14,235.94 466.33,234.63 466.88,233.42 467.75,232.41 468.87,231.7 470.15,231.32 471.47,231.32 472.75,231.7 473.87,232.41 474.74,233.42 475.29,234.63 475.48,235.94 475.29,237.26 474.74,238.46 473.87,239.47 472.75,240.19 471.47,240.56 470.15,240.56 468.87,240.19 467.75,239.47 466.88,238.46 466.33,237.26 466.14,235.94"/>
-  <polyline id="svg_244" fill="none" stroke="black" stroke-width="0.5" points="469.77,234.58 469.77,237.07"/>
-  <polyline id="svg_245" fill="none" stroke="black" stroke-width="0.5" points="469.77,234.58 470.72,237.07"/>
-  <polyline id="svg_246" fill="none" stroke="black" stroke-width="0.5" points="471.67,234.58 470.72,237.07"/>
-  <polyline id="svg_247" fill="none" stroke="black" stroke-width="0.5" points="471.67,234.58 471.67,237.07"/>
-  <polyline id="svg_248" fill="none" stroke="black" stroke-width="0.5" points="466.14,235.94 465.36,235.94"/>
-  <polyline id="svg_249" fill="none" stroke="black" stroke-width="0.5" points="475.48,235.94 476.25,235.94"/>
   <polyline id="svg_250" fill="none" stroke="RGB(255,63,0)" stroke-width="0.5" points="305.29,336.16 305.29,322.55"/>
   <polyline id="svg_251" fill="none" stroke="RGB(255,63,0)" stroke-width="0.5" points="362.06,336.16 362.06,322.55"/>
   <polyline id="svg_252" fill="none" stroke="black" stroke-width="0.5" points="299.45,318.66 299.45,322.55"/>
@@ -401,31 +384,6 @@
   <polyline id="svg_391" fill="none" stroke="RGB(0,165,82)" stroke-width="0.5" points="395.12,318.66 395.12,333.25"/>
   <polyline id="svg_392" fill="none" stroke="RGB(0,165,82)" stroke-width="0.5" points="395.12,339.08 395.12,353.77"/>
   <polyline id="svg_393" fill="none" stroke="RGB(0,165,82)" stroke-width="0.5" points="395.12,339.08 396.12,338.9 397,338.4 397.65,337.62 397.99,336.67 397.99,335.66 397.65,334.7 397,333.93 396.12,333.42 395.12,333.25"/>
-  <polyline id="svg_394" fill="none" stroke="black" stroke-width="0.5" points="530.1,205.98 519.21,205.98"/>
-  <polyline id="svg_395" fill="none" stroke="black" stroke-width="0.5" points="519.21,205.98 519.21,268.21"/>
-  <polyline id="svg_396" fill="none" stroke="black" stroke-width="0.5" points="519.21,268.21 530.1,268.21"/>
-  <polyline id="svg_397" fill="none" stroke="black" stroke-width="0.5" points="530.1,268.21 530.1,205.98"/>
-  <polyline id="svg_398" fill="none" stroke="black" stroke-width="0.5" points="460.1,237.1 460.1,216.87"/>
-  <polyline id="svg_399" fill="none" stroke="black" stroke-width="0.5" points="460.1,216.87 519.21,205.98"/>
-  <polyline id="svg_400" fill="none" stroke="black" stroke-width="0.5" points="460.1,237.1 460.1,257.32"/>
-  <polyline id="svg_401" fill="none" stroke="black" stroke-width="0.5" points="460.1,257.32 519.21,268.21"/>
-  <polyline id="svg_402" fill="none" stroke="black" stroke-width="0.5" points="460.1,216.87 450.77,216.87"/>
-  <polyline id="svg_403" fill="none" stroke="black" stroke-width="0.5" points="450.77,216.87 450.77,257.32"/>
-  <polyline id="svg_404" fill="none" stroke="black" stroke-width="0.5" points="460.1,257.32 450.77,257.32"/>
-  <polyline id="svg_405" fill="none" stroke="black" stroke-width="0.5" points="393.21,205.98 404.1,205.98"/>
-  <polyline id="svg_406" fill="none" stroke="black" stroke-width="0.5" points="404.1,205.98 404.1,268.21"/>
-  <polyline id="svg_407" fill="none" stroke="black" stroke-width="0.5" points="404.1,268.21 393.21,268.21"/>
-  <polyline id="svg_408" fill="none" stroke="black" stroke-width="0.5" points="393.21,268.21 393.21,205.98"/>
-  <polyline id="svg_409" fill="none" stroke="black" stroke-width="0.5" points="450.77,216.87 404.1,205.98"/>
-  <polyline id="svg_410" fill="none" stroke="black" stroke-width="0.5" points="450.77,257.32 404.1,268.21"/>
-  <polyline id="svg_411" fill="none" stroke="black" stroke-width="0.5" points="514.98,228.77 481.38,228.77"/>
-  <polyline id="svg_412" fill="none" stroke="black" stroke-width="0.5" points="481.38,244.32 514.98,244.32"/>
-  <polyline id="svg_413" fill="none" stroke="black" stroke-width="0.5" points="514.98,244.32 514.98,228.77"/>
-  <polyline id="svg_414" fill="none" stroke="black" stroke-width="0.5" points="514.98,228.77 506.58,244.32"/>
-  <polyline id="svg_415" fill="none" stroke="black" stroke-width="0.5" points="506.58,228.77 498.18,244.32"/>
-  <polyline id="svg_416" fill="none" stroke="black" stroke-width="0.5" points="498.18,228.77 489.78,244.32"/>
-  <polyline id="svg_417" fill="none" stroke="black" stroke-width="0.5" points="489.78,228.77 481.38,244.32"/>
-  <polyline id="svg_418" fill="none" stroke="black" stroke-width="0.5" points="481.38,244.32 481.38,228.77"/>
   <polyline id="svg_419" fill="none" stroke="black" stroke-width="0.5" points="543.29,253.74 543.48,251.86 544.05,250.06 544.96,248.41 546.19,246.97 547.69,245.82 549.38,244.98 551.21,244.51 553.1,244.42 554.96,244.7 556.73,245.36 558.34,246.36 559.7,247.66 560.78,249.21 561.53,250.94 561.91,252.79 561.91,254.68 561.53,256.53 560.78,258.27 559.7,259.82 558.34,261.12 556.73,262.12 554.96,262.77 553.1,263.06 551.21,262.96 549.38,262.49 547.69,261.66 546.19,260.5 544.96,259.07 544.05,257.42 543.48,255.62 543.29,253.74"/>
   <polyline id="svg_420" fill="none" stroke="black" stroke-width="0.5" points="550.54,251.02 550.54,256"/>
   <polyline id="svg_421" fill="none" stroke="black" stroke-width="0.5" points="550.54,251.02 552.44,256"/>
@@ -454,42 +412,6 @@
   <polyline id="svg_444" fill="none" stroke="black" stroke-width="0.5" points="554.34,230.02 554.34,235"/>
   <polyline id="svg_445" fill="none" stroke="black" stroke-width="0.5" points="543.29,232.74 541.73,232.74"/>
   <polyline id="svg_446" fill="none" stroke="black" stroke-width="0.5" points="561.96,232.74 563.51,232.74"/>
-  <polyline id="svg_447" fill="none" stroke="black" stroke-width="0.5" points="459.46,184.81 459.46,180.14"/>
-  <polyline id="svg_448" fill="none" stroke="black" stroke-width="0.5" points="459.46,180.14 448.57,180.14"/>
-  <polyline id="svg_449" fill="none" stroke="black" stroke-width="0.5" points="459.46,184.81 448.57,184.81"/>
-  <polyline id="svg_450" fill="none" stroke="black" stroke-width="0.5" points="448.57,184.81 448.57,180.14"/>
-  <polyline id="svg_451" fill="none" stroke="black" stroke-width="0.5" points="455.64,184.81 456.95,184.81 456.95,180.14 455.64,180.14 455.64,184.81"/>
-  <polyline id="svg_452" fill="none" stroke="black" stroke-width="0.5" points="455.64,182.48 444.75,182.48"/>
-  <polyline id="svg_453" fill="none" stroke="black" stroke-width="0.5" points="448.57,184.81 450.13,184.81"/>
-  <polyline id="svg_454" fill="none" stroke="black" stroke-width="0.5" points="450.13,184.81 450.13,185.43"/>
-  <polyline id="svg_455" fill="none" stroke="black" stroke-width="0.5" points="459.46,184.81 457.91,184.81"/>
-  <polyline id="svg_456" fill="none" stroke="black" stroke-width="0.5" points="457.91,184.81 457.91,185.43"/>
-  <polyline id="svg_457" fill="none" stroke="black" stroke-width="0.5" points="448.57,286.84 448.57,291.51"/>
-  <polyline id="svg_458" fill="none" stroke="black" stroke-width="0.5" points="448.57,291.51 459.46,291.51"/>
-  <polyline id="svg_459" fill="none" stroke="black" stroke-width="0.5" points="448.57,286.84 459.46,286.84"/>
-  <polyline id="svg_460" fill="none" stroke="black" stroke-width="0.5" points="459.46,286.84 459.46,291.51"/>
-  <polyline id="svg_461" fill="none" stroke="black" stroke-width="0.5" points="452.4,286.84 451.08,286.84 451.08,291.51 452.4,291.51 452.4,286.84"/>
-  <polyline id="svg_462" fill="none" stroke="black" stroke-width="0.5" points="452.4,289.17 463.29,289.17"/>
-  <polyline id="svg_463" fill="none" stroke="black" stroke-width="0.5" points="459.46,286.84 457.91,286.84"/>
-  <polyline id="svg_464" fill="none" stroke="black" stroke-width="0.5" points="457.91,286.84 457.91,286.22"/>
-  <polyline id="svg_465" fill="none" stroke="black" stroke-width="0.5" points="448.57,286.84 450.13,286.84"/>
-  <polyline id="svg_466" fill="none" stroke="black" stroke-width="0.5" points="450.13,286.84 450.13,286.22"/>
-  <polyline id="svg_467" fill="none" stroke="black" stroke-width="0.5" points="459.46,266.93 459.46,262.26"/>
-  <polyline id="svg_468" fill="none" stroke="black" stroke-width="0.5" points="459.46,262.26 448.57,262.26"/>
-  <polyline id="svg_469" fill="none" stroke="black" stroke-width="0.5" points="459.46,266.93 448.57,266.93"/>
-  <polyline id="svg_470" fill="none" stroke="black" stroke-width="0.5" points="448.57,266.93 448.57,262.26"/>
-  <polyline id="svg_471" fill="none" stroke="black" stroke-width="0.5" points="455.64,266.93 456.95,266.93 456.95,262.26 455.64,262.26 455.64,266.93"/>
-  <polyline id="svg_472" fill="none" stroke="black" stroke-width="0.5" points="455.64,264.59 444.75,264.59"/>
-  <polyline id="svg_473" fill="none" stroke="black" stroke-width="0.5" points="448.57,266.93 450.13,266.93"/>
-  <polyline id="svg_474" fill="none" stroke="black" stroke-width="0.5" points="450.13,266.93 450.13,267.55"/>
-  <polyline id="svg_475" fill="none" stroke="black" stroke-width="0.5" points="459.46,266.93 457.91,266.93"/>
-  <polyline id="svg_476" fill="none" stroke="black" stroke-width="0.5" points="457.91,266.93 457.91,267.55"/>
-  <polyline id="svg_477" fill="none" stroke="red" stroke-width="0.5" points="457.91,286.22 457.91,267.55"/>
-  <polyline id="svg_478" fill="none" stroke="red" stroke-width="0.5" points="450.13,185.43 450.13,204.1"/>
-  <polyline id="svg_479" fill="none" stroke="RGB(124,0,165)" stroke-width="0.5" points="450.13,286.22 450.13,267.55"/>
-  <polyline id="svg_480" fill="none" stroke="red" stroke-width="0.5" points="450.13,194.77 450.13,200.99"/>
-  <polyline id="svg_481" fill="none" stroke="RGB(0,165,82)" stroke-width="0.5" points="450.13,276.88 450.13,283.11"/>
-  <polyline id="svg_482" fill="none" stroke="red" stroke-width="0.5" points="457.91,286.22 457.91,270.66"/>
   <polyline id="svg_483" fill="none" stroke="black" stroke-width="0.5" points="218.98,230.94 218.98,221.6"/>
   <polyline id="svg_484" fill="none" stroke="black" stroke-width="0.5" points="218.98,221.6 240.76,221.6"/>
   <polyline id="svg_485" fill="none" stroke="black" stroke-width="0.5" points="218.98,230.94 240.76,230.94"/>
@@ -500,84 +422,6 @@
   <polyline id="svg_490" fill="none" stroke="black" stroke-width="0.5" points="237.65,230.94 237.65,232.18"/>
   <polyline id="svg_491" fill="none" stroke="black" stroke-width="0.5" points="218.98,230.94 222.09,230.94"/>
   <polyline id="svg_492" fill="none" stroke="black" stroke-width="0.5" points="222.09,230.94 222.09,232.18"/>
-  <polyline id="svg_493" fill="none" stroke="black" stroke-width="0.5" points="435.75,175.31 435.63,175.08 435.4,174.84 435.16,174.72 434.69,174.72 434.45,174.84 434.21,175.08 434.09,175.31 433.97,175.67 433.97,176.26 434.09,176.62 434.21,176.85 434.45,177.09 434.69,177.21 435.16,177.21 435.4,177.09 435.63,176.85 435.75,176.62"/>
-  <polyline id="svg_494" fill="none" stroke="black" stroke-width="0.5" points="436.58,174.72 436.58,176.5 436.7,176.85 436.94,177.09 437.29,177.21 437.53,177.21 437.89,177.09 438.12,176.85 438.24,176.5 438.24,174.72"/>
-  <polyline id="svg_495" fill="none" stroke="black" stroke-width="0.5" points="439.66,174.72 439.66,177.21"/>
-  <polyline id="svg_496" fill="none" stroke="black" stroke-width="0.5" points="438.83,174.72 440.49,174.72"/>
-  <polyline id="svg_497" fill="none" stroke="black" stroke-width="0.5" points="441.56,174.72 441.56,177.21"/>
-  <polyline id="svg_498" fill="none" stroke="black" stroke-width="0.5" points="440.73,174.72 442.39,174.72"/>
-  <polyline id="svg_499" fill="none" stroke="black" stroke-width="0.5" points="442.98,174.72 442.98,177.21"/>
-  <polyline id="svg_500" fill="none" stroke="black" stroke-width="0.5" points="442.98,174.72 444.52,174.72"/>
-  <polyline id="svg_501" fill="none" stroke="black" stroke-width="0.5" points="442.98,175.91 443.93,175.91"/>
-  <polyline id="svg_502" fill="none" stroke="black" stroke-width="0.5" points="442.98,177.21 444.52,177.21"/>
-  <polyline id="svg_503" fill="none" stroke="black" stroke-width="0.5" points="445.23,174.72 445.23,177.21"/>
-  <polyline id="svg_504" fill="none" stroke="black" stroke-width="0.5" points="445.23,174.72 446.3,174.72 446.66,174.84 446.77,174.96 446.89,175.2 446.89,175.43 446.77,175.67 446.66,175.79 446.3,175.91 445.23,175.91"/>
-  <polyline id="svg_505" fill="none" stroke="black" stroke-width="0.5" points="446.06,175.91 446.89,177.21"/>
-  <polyline id="svg_506" fill="none" stroke="black" stroke-width="0.5" points="449.86,174.72 450.8,175.91 450.8,177.21"/>
-  <polyline id="svg_507" fill="none" stroke="black" stroke-width="0.5" points="451.75,174.72 450.8,175.91"/>
-  <polyline id="svg_508" fill="none" stroke="black" stroke-width="0.5" points="452.94,174.72 451.99,177.21"/>
-  <polyline id="svg_509" fill="none" stroke="black" stroke-width="0.5" points="452.94,174.72 453.89,177.21"/>
-  <polyline id="svg_510" fill="none" stroke="black" stroke-width="0.5" points="452.34,176.38 453.53,176.38"/>
-  <polyline id="svg_511" fill="none" stroke="black" stroke-width="0.5" points="454.24,174.72 454.83,177.21"/>
-  <polyline id="svg_512" fill="none" stroke="black" stroke-width="0.5" points="455.43,174.72 454.83,177.21"/>
-  <polyline id="svg_513" fill="none" stroke="black" stroke-width="0.5" points="455.43,174.72 456.02,177.21"/>
-  <polyline id="svg_514" fill="none" stroke="black" stroke-width="0.5" points="456.61,174.72 456.02,177.21"/>
-  <polyline id="svg_515" fill="none" stroke="black" stroke-width="0.5" points="461.47,175.31 461.35,175.08 461.12,174.84 460.88,174.72 460.4,174.72 460.17,174.84 459.93,175.08 459.81,175.31 459.69,175.67 459.69,176.26 459.81,176.62 459.93,176.85 460.17,177.09 460.4,177.21 460.88,177.21 461.12,177.09 461.35,176.85 461.47,176.62"/>
-  <polyline id="svg_516" fill="none" stroke="black" stroke-width="0.5" points="461.95,174.72 462.89,175.91 462.89,177.21"/>
-  <polyline id="svg_517" fill="none" stroke="black" stroke-width="0.5" points="463.84,174.72 462.89,175.91"/>
-  <polyline id="svg_518" fill="none" stroke="black" stroke-width="0.5" points="464.43,174.72 464.43,177.21 465.86,177.21"/>
-  <polyline id="svg_519" fill="none" stroke="black" stroke-width="0.5" points="466.45,174.72 466.45,177.21"/>
-  <polyline id="svg_520" fill="none" stroke="black" stroke-width="0.5" points="467.4,174.72 467.4,177.21"/>
-  <polyline id="svg_521" fill="none" stroke="black" stroke-width="0.5" points="467.4,174.72 469.06,177.21"/>
-  <polyline id="svg_522" fill="none" stroke="black" stroke-width="0.5" points="469.06,174.72 469.06,177.21"/>
-  <polyline id="svg_523" fill="none" stroke="black" stroke-width="0.5" points="470,174.72 470,177.21"/>
-  <polyline id="svg_524" fill="none" stroke="black" stroke-width="0.5" points="470,174.72 470.83,174.72 471.19,174.84 471.43,175.08 471.55,175.31 471.66,175.67 471.66,176.26 471.55,176.62 471.43,176.85 471.19,177.09 470.83,177.21 470,177.21"/>
-  <polyline id="svg_525" fill="none" stroke="black" stroke-width="0.5" points="472.49,174.72 472.49,177.21"/>
-  <polyline id="svg_526" fill="none" stroke="black" stroke-width="0.5" points="472.49,174.72 474.03,174.72"/>
-  <polyline id="svg_527" fill="none" stroke="black" stroke-width="0.5" points="472.49,175.91 473.44,175.91"/>
-  <polyline id="svg_528" fill="none" stroke="black" stroke-width="0.5" points="472.49,177.21 474.03,177.21"/>
-  <polyline id="svg_529" fill="none" stroke="black" stroke-width="0.5" points="474.75,174.72 474.75,177.21"/>
-  <polyline id="svg_530" fill="none" stroke="black" stroke-width="0.5" points="474.75,174.72 475.81,174.72 476.17,174.84 476.29,174.96 476.4,175.2 476.4,175.43 476.29,175.67 476.17,175.79 475.81,175.91 474.75,175.91"/>
-  <polyline id="svg_531" fill="none" stroke="black" stroke-width="0.5" points="475.57,175.91 476.4,177.21"/>
-  <polyline id="svg_532" fill="none" stroke="black" stroke-width="0.5" points="428.55,293.45 428.55,295.94"/>
-  <polyline id="svg_533" fill="none" stroke="black" stroke-width="0.5" points="428.55,293.45 429.62,293.45 429.98,293.57 430.09,293.68 430.21,293.92 430.21,294.28 430.09,294.51 429.98,294.63 429.62,294.75 428.55,294.75"/>
-  <polyline id="svg_534" fill="none" stroke="black" stroke-width="0.5" points="431.04,293.45 431.04,295.94"/>
-  <polyline id="svg_535" fill="none" stroke="black" stroke-width="0.5" points="432.46,293.45 432.46,295.94"/>
-  <polyline id="svg_536" fill="none" stroke="black" stroke-width="0.5" points="431.64,293.45 433.29,293.45"/>
-  <polyline id="svg_537" fill="none" stroke="black" stroke-width="0.5" points="435.55,294.04 435.43,293.8 435.19,293.57 434.95,293.45 434.48,293.45 434.24,293.57 434.01,293.8 433.89,294.04 433.77,294.4 433.77,294.99 433.89,295.34 434.01,295.58 434.24,295.82 434.48,295.94 434.95,295.94 435.19,295.82 435.43,295.58 435.55,295.34"/>
-  <polyline id="svg_538" fill="none" stroke="black" stroke-width="0.5" points="436.38,293.45 436.38,295.94"/>
-  <polyline id="svg_539" fill="none" stroke="black" stroke-width="0.5" points="438.04,293.45 438.04,295.94"/>
-  <polyline id="svg_540" fill="none" stroke="black" stroke-width="0.5" points="436.38,294.63 438.04,294.63"/>
-  <polyline id="svg_541" fill="none" stroke="black" stroke-width="0.5" points="443.13,294.04 443.01,293.8 442.78,293.57 442.54,293.45 442.06,293.45 441.83,293.57 441.59,293.8 441.47,294.04 441.35,294.4 441.35,294.99 441.47,295.34 441.59,295.58 441.83,295.82 442.06,295.94 442.54,295.94 442.78,295.82 443.01,295.58 443.13,295.34"/>
-  <polyline id="svg_542" fill="none" stroke="black" stroke-width="0.5" points="444.55,293.45 444.32,293.57 444.08,293.8 443.96,294.04 443.84,294.4 443.84,294.99 443.96,295.34 444.08,295.58 444.32,295.82 444.55,295.94 445.03,295.94 445.26,295.82 445.5,295.58 445.62,295.34 445.74,294.99 445.74,294.4 445.62,294.04 445.5,293.8 445.26,293.57 445.03,293.45 444.55,293.45"/>
-  <polyline id="svg_543" fill="none" stroke="black" stroke-width="0.5" points="446.57,293.45 446.57,295.94"/>
-  <polyline id="svg_544" fill="none" stroke="black" stroke-width="0.5" points="446.57,293.45 448.23,295.94"/>
-  <polyline id="svg_545" fill="none" stroke="black" stroke-width="0.5" points="448.23,293.45 448.23,295.94"/>
-  <polyline id="svg_546" fill="none" stroke="black" stroke-width="0.5" points="449.65,293.45 449.65,295.94"/>
-  <polyline id="svg_547" fill="none" stroke="black" stroke-width="0.5" points="448.82,293.45 450.48,293.45"/>
-  <polyline id="svg_548" fill="none" stroke="black" stroke-width="0.5" points="451.07,293.45 451.07,295.94"/>
-  <polyline id="svg_549" fill="none" stroke="black" stroke-width="0.5" points="451.07,293.45 452.14,293.45 452.49,293.57 452.61,293.68 452.73,293.92 452.73,294.16 452.61,294.4 452.49,294.51 452.14,294.63 451.07,294.63"/>
-  <polyline id="svg_550" fill="none" stroke="black" stroke-width="0.5" points="451.9,294.63 452.73,295.94"/>
-  <polyline id="svg_551" fill="none" stroke="black" stroke-width="0.5" points="454.15,293.45 453.92,293.57 453.68,293.8 453.56,294.04 453.44,294.4 453.44,294.99 453.56,295.34 453.68,295.58 453.92,295.82 454.15,295.94 454.63,295.94 454.87,295.82 455.1,295.58 455.22,295.34 455.34,294.99 455.34,294.4 455.22,294.04 455.1,293.8 454.87,293.57 454.63,293.45 454.15,293.45"/>
-  <polyline id="svg_552" fill="none" stroke="black" stroke-width="0.5" points="456.17,293.45 456.17,295.94 457.59,295.94"/>
-  <polyline id="svg_553" fill="none" stroke="black" stroke-width="0.5" points="462.33,294.04 462.21,293.8 461.98,293.57 461.74,293.45 461.27,293.45 461.03,293.57 460.79,293.8 460.67,294.04 460.55,294.4 460.55,294.99 460.67,295.34 460.79,295.58 461.03,295.82 461.27,295.94 461.74,295.94 461.98,295.82 462.21,295.58 462.33,295.34"/>
-  <polyline id="svg_554" fill="none" stroke="black" stroke-width="0.5" points="462.81,293.45 463.75,294.63 463.75,295.94"/>
-  <polyline id="svg_555" fill="none" stroke="black" stroke-width="0.5" points="464.7,293.45 463.75,294.63"/>
-  <polyline id="svg_556" fill="none" stroke="black" stroke-width="0.5" points="465.29,293.45 465.29,295.94 466.72,295.94"/>
-  <polyline id="svg_557" fill="none" stroke="black" stroke-width="0.5" points="467.31,293.45 467.31,295.94"/>
-  <polyline id="svg_558" fill="none" stroke="black" stroke-width="0.5" points="468.26,293.45 468.26,295.94"/>
-  <polyline id="svg_559" fill="none" stroke="black" stroke-width="0.5" points="468.26,293.45 469.92,295.94"/>
-  <polyline id="svg_560" fill="none" stroke="black" stroke-width="0.5" points="469.92,293.45 469.92,295.94"/>
-  <polyline id="svg_561" fill="none" stroke="black" stroke-width="0.5" points="470.87,293.45 470.87,295.94"/>
-  <polyline id="svg_562" fill="none" stroke="black" stroke-width="0.5" points="470.87,293.45 471.69,293.45 472.05,293.57 472.29,293.8 472.41,294.04 472.52,294.4 472.52,294.99 472.41,295.34 472.29,295.58 472.05,295.82 471.69,295.94 470.87,295.94"/>
-  <polyline id="svg_563" fill="none" stroke="black" stroke-width="0.5" points="473.35,293.45 473.35,295.94"/>
-  <polyline id="svg_564" fill="none" stroke="black" stroke-width="0.5" points="473.35,293.45 474.9,293.45"/>
-  <polyline id="svg_565" fill="none" stroke="black" stroke-width="0.5" points="473.35,294.63 474.3,294.63"/>
-  <polyline id="svg_566" fill="none" stroke="black" stroke-width="0.5" points="473.35,295.94 474.9,295.94"/>
-  <polyline id="svg_567" fill="none" stroke="black" stroke-width="0.5" points="475.61,293.45 475.61,295.94"/>
-  <polyline id="svg_568" fill="none" stroke="black" stroke-width="0.5" points="475.61,293.45 476.67,293.45 477.03,293.57 477.15,293.68 477.27,293.92 477.27,294.16 477.15,294.4 477.03,294.51 476.67,294.63 475.61,294.63"/>
-  <polyline id="svg_569" fill="none" stroke="black" stroke-width="0.5" points="476.44,294.63 477.27,295.94"/>
-  <polyline id="svg_570" fill="none" stroke="black" stroke-width="0.5" points="479.64,293.8 479.4,293.57 479.04,293.45 478.57,293.45 478.21,293.57 477.98,293.8 477.98,294.04 478.1,294.28 478.21,294.4 478.45,294.51 479.16,294.75 479.4,294.87 479.52,294.99 479.64,295.22 479.64,295.58 479.4,295.82 479.04,295.94 478.57,295.94 478.21,295.82 477.98,295.58"/>
   <polyline id="svg_571" fill="none" stroke="black" stroke-width="0.5" points="536.61,191.45 536.49,191.22 536.25,190.98 536.02,190.86 535.54,190.86 535.31,190.98 535.07,191.22 534.95,191.45 534.83,191.81 534.83,192.4 534.95,192.76 535.07,192.99 535.31,193.23 535.54,193.35 536.02,193.35 536.25,193.23 536.49,192.99 536.61,192.76"/>
   <polyline id="svg_572" fill="none" stroke="black" stroke-width="0.5" points="537.44,190.86 537.44,192.64 537.56,192.99 537.79,193.23 538.15,193.35 538.39,193.35 538.74,193.23 538.98,192.99 539.1,192.64 539.1,190.86"/>
   <polyline id="svg_573" fill="none" stroke="black" stroke-width="0.5" points="540.52,190.86 540.52,193.35"/>
@@ -614,36 +458,6 @@
   <polyline id="svg_604" fill="none" stroke="black" stroke-width="0.5" points="574.3,190.86 575.37,190.86 575.72,190.98 575.84,191.1 575.96,191.33 575.96,191.57 575.84,191.81 575.72,191.93 575.37,192.05 574.3,192.05"/>
   <polyline id="svg_605" fill="none" stroke="black" stroke-width="0.5" points="575.13,192.05 575.96,193.35"/>
   <polyline id="svg_606" fill="none" stroke="black" stroke-width="0.5" points="578.33,191.22 578.09,190.98 577.74,190.86 577.26,190.86 576.91,190.98 576.67,191.22 576.67,191.45 576.79,191.69 576.91,191.81 577.14,191.93 577.85,192.16 578.09,192.28 578.21,192.4 578.33,192.64 578.33,192.99 578.09,193.23 577.74,193.35 577.26,193.35 576.91,193.23 576.67,192.99"/>
-  <polyline id="svg_607" fill="none" stroke="black" stroke-width="0.5" points="483.4,223.43 483.16,223.19 482.8,223.07 482.33,223.07 481.97,223.19 481.74,223.43 481.74,223.66 481.85,223.9 481.97,224.02 482.21,224.14 482.92,224.37 483.16,224.49 483.28,224.61 483.4,224.85 483.4,225.2 483.16,225.44 482.8,225.56 482.33,225.56 481.97,225.44 481.74,225.2"/>
-  <polyline id="svg_608" fill="none" stroke="black" stroke-width="0.5" points="485.88,223.66 485.77,223.43 485.53,223.19 485.29,223.07 484.82,223.07 484.58,223.19 484.34,223.43 484.22,223.66 484.11,224.02 484.11,224.61 484.22,224.97 484.34,225.2 484.58,225.44 484.82,225.56 485.29,225.56 485.53,225.44 485.77,225.2 485.88,224.97"/>
-  <polyline id="svg_609" fill="none" stroke="black" stroke-width="0.5" points="486.71,223.07 486.71,225.56"/>
-  <polyline id="svg_610" fill="none" stroke="black" stroke-width="0.5" points="486.71,223.07 487.78,223.07 488.14,223.19 488.25,223.31 488.37,223.55 488.37,223.78 488.25,224.02 488.14,224.14 487.78,224.26 486.71,224.26"/>
-  <polyline id="svg_611" fill="none" stroke="black" stroke-width="0.5" points="487.54,224.26 488.37,225.56"/>
-  <polyline id="svg_612" fill="none" stroke="black" stroke-width="0.5" points="489.2,223.07 489.2,225.56"/>
-  <polyline id="svg_613" fill="none" stroke="black" stroke-width="0.5" points="489.2,223.07 490.74,223.07"/>
-  <polyline id="svg_614" fill="none" stroke="black" stroke-width="0.5" points="489.2,224.26 490.15,224.26"/>
-  <polyline id="svg_615" fill="none" stroke="black" stroke-width="0.5" points="489.2,225.56 490.74,225.56"/>
-  <polyline id="svg_616" fill="none" stroke="black" stroke-width="0.5" points="491.22,223.07 491.81,225.56"/>
-  <polyline id="svg_617" fill="none" stroke="black" stroke-width="0.5" points="492.4,223.07 491.81,225.56"/>
-  <polyline id="svg_618" fill="none" stroke="black" stroke-width="0.5" points="492.4,223.07 493,225.56"/>
-  <polyline id="svg_619" fill="none" stroke="black" stroke-width="0.5" points="493.59,223.07 493,225.56"/>
-  <polyline id="svg_620" fill="none" stroke="black" stroke-width="0.5" points="498.45,223.66 498.33,223.43 498.09,223.19 497.85,223.07 497.38,223.07 497.14,223.19 496.91,223.43 496.79,223.66 496.67,224.02 496.67,224.61 496.79,224.97 496.91,225.2 497.14,225.44 497.38,225.56 497.85,225.56 498.09,225.44 498.33,225.2 498.45,224.97"/>
-  <polyline id="svg_621" fill="none" stroke="black" stroke-width="0.5" points="499.87,223.07 499.63,223.19 499.4,223.43 499.28,223.66 499.16,224.02 499.16,224.61 499.28,224.97 499.4,225.2 499.63,225.44 499.87,225.56 500.34,225.56 500.58,225.44 500.82,225.2 500.94,224.97 501.05,224.61 501.05,224.02 500.94,223.66 500.82,223.43 500.58,223.19 500.34,223.07 499.87,223.07"/>
-  <polyline id="svg_622" fill="none" stroke="black" stroke-width="0.5" points="501.88,223.07 501.88,225.56"/>
-  <polyline id="svg_623" fill="none" stroke="black" stroke-width="0.5" points="501.88,223.07 503.54,225.56"/>
-  <polyline id="svg_624" fill="none" stroke="black" stroke-width="0.5" points="503.54,223.07 503.54,225.56"/>
-  <polyline id="svg_625" fill="none" stroke="black" stroke-width="0.5" points="504.14,223.07 505.08,225.56"/>
-  <polyline id="svg_626" fill="none" stroke="black" stroke-width="0.5" points="506.03,223.07 505.08,225.56"/>
-  <polyline id="svg_627" fill="none" stroke="black" stroke-width="0.5" points="506.63,223.07 506.63,225.56"/>
-  <polyline id="svg_628" fill="none" stroke="black" stroke-width="0.5" points="506.63,223.07 508.17,223.07"/>
-  <polyline id="svg_629" fill="none" stroke="black" stroke-width="0.5" points="506.63,224.26 507.57,224.26"/>
-  <polyline id="svg_630" fill="none" stroke="black" stroke-width="0.5" points="506.63,225.56 508.17,225.56"/>
-  <polyline id="svg_631" fill="none" stroke="black" stroke-width="0.5" points="508.52,223.07 509.47,224.26 509.47,225.56"/>
-  <polyline id="svg_632" fill="none" stroke="black" stroke-width="0.5" points="510.42,223.07 509.47,224.26"/>
-  <polyline id="svg_633" fill="none" stroke="black" stroke-width="0.5" points="511.6,223.07 511.37,223.19 511.13,223.43 511.01,223.66 510.89,224.02 510.89,224.61 511.01,224.97 511.13,225.2 511.37,225.44 511.6,225.56 512.08,225.56 512.31,225.44 512.55,225.2 512.67,224.97 512.79,224.61 512.79,224.02 512.67,223.66 512.55,223.43 512.31,223.19 512.08,223.07 511.6,223.07"/>
-  <polyline id="svg_634" fill="none" stroke="black" stroke-width="0.5" points="513.62,223.07 513.62,225.56"/>
-  <polyline id="svg_635" fill="none" stroke="black" stroke-width="0.5" points="513.62,223.07 514.68,223.07 515.04,223.19 515.16,223.31 515.28,223.55 515.28,223.78 515.16,224.02 515.04,224.14 514.68,224.26 513.62,224.26"/>
-  <polyline id="svg_636" fill="none" stroke="black" stroke-width="0.5" points="514.45,224.26 515.28,225.56"/>
   <polyline id="svg_637" fill="none" stroke="RGB(255,63,0)" stroke-width="0.5" points="535.51,211.74 535.51,232.74"/>
   <polyline id="svg_638" fill="none" stroke="RGB(255,63,0)" stroke-width="0.5" points="535.51,232.74 535.51,253.74"/>
   <polyline id="svg_639" fill="none" stroke="RGB(255,63,0)" stroke-width="0.5" points="535.51,253.74 535.51,274.74"/>
@@ -657,22 +471,11 @@
   <polyline id="svg_647" fill="none" stroke="RGB(0,165,82)" stroke-width="0.5" points="563.51,253.74 569.73,253.74"/>
   <polyline id="svg_648" fill="none" stroke="RGB(0,165,82)" stroke-width="0.5" points="563.51,232.74 569.73,232.74"/>
   <polyline id="svg_649" fill="none" stroke="RGB(255,63,0)" stroke-width="0.5" points="535.51,300.67 535.51,274.74"/>
-  <polyline id="svg_650" fill="none" stroke="RGB(124,0,165)" stroke-width="0.5" points="450.13,270.66 440.32,270.66"/>
-  <polyline id="svg_651" fill="none" stroke="RGB(124,0,165)" stroke-width="0.5" points="432.13,270.66 362.06,270.66"/>
-  <polyline id="svg_652" fill="none" stroke="red" stroke-width="0.5" points="452.46,283.11 452.28,282.21 451.78,281.46 451.02,280.95 450.13,280.77 449.24,280.95 448.48,281.46 447.97,282.21 447.8,283.11"/>
   <polyline id="svg_653" fill="none" stroke="RGB(255,63,0)" stroke-width="0.5" points="210.02,302.03 209.9,336.16"/>
-  <polyline id="svg_654" fill="none" stroke="red" stroke-width="0.5" points="447.8,283.11 442.07,283.11"/>
-  <polyline id="svg_655" fill="none" stroke="red" stroke-width="0.5" points="433.87,283.11 365.95,283.11"/>
   <polyline id="svg_656" fill="none" stroke="red" stroke-width="0.5" points="225.73,262.06 225.73,284.13"/>
   <polyline id="svg_657" fill="none" stroke="RGB(0,165,82)" stroke-width="0.5" points="213.81,302.04 213.79,333.25"/>
-  <polyline id="svg_658" fill="none" stroke="red" stroke-width="0.5" points="450.13,200.99 441.4,200.99"/>
-  <polyline id="svg_659" fill="none" stroke="red" stroke-width="0.5" points="433.21,200.99 309.17,200.99"/>
   <polyline id="svg_660" fill="none" stroke="red" stroke-width="0.5" points="309.17,200.99 309.17,318.66"/>
-  <polyline id="svg_661" fill="none" stroke="RGB(124,0,165)" stroke-width="0.5" points="457.91,188.54 452.46,188.54"/>
-  <polyline id="svg_662" fill="none" stroke="RGB(124,0,165)" stroke-width="0.5" points="447.8,188.54 441.64,188.54"/>
-  <polyline id="svg_663" fill="none" stroke="RGB(124,0,165)" stroke-width="0.5" points="433.44,188.54 305.29,188.54"/>
   <polyline id="svg_664" fill="none" stroke="RGB(124,0,165)" stroke-width="0.5" points="305.29,318.66 305.29,188.54"/>
-  <polyline id="svg_665" fill="none" stroke="RGB(124,0,165)" stroke-width="0.5" points="452.46,188.54 452.28,187.65 451.78,186.89 451.02,186.39 450.13,186.21 449.24,186.39 448.48,186.89 447.97,187.65 447.8,188.54"/>
   <polyline id="svg_666" fill="none" stroke="black" stroke-width="0.5" points="218.82,217.24 218.82,219.73 220.24,219.73"/>
   <polyline id="svg_667" fill="none" stroke="black" stroke-width="0.5" points="221.43,217.24 220.48,219.73"/>
   <polyline id="svg_668" fill="none" stroke="black" stroke-width="0.5" points="221.43,217.24 222.37,219.73"/>
@@ -710,19 +513,11 @@
   <polyline id="svg_700" fill="none" stroke="black" stroke-width="0.5" points="255.44,217.24 256.51,217.24 256.86,217.36 256.98,217.48 257.1,217.71 257.1,217.95 256.98,218.19 256.86,218.31 256.51,218.43 255.44,218.43"/>
   <polyline id="svg_701" fill="none" stroke="black" stroke-width="0.5" points="256.27,218.43 257.1,219.73"/>
   <polyline id="svg_702" fill="none" stroke="black" stroke-width="0.5" points="259.47,217.6 259.23,217.36 258.88,217.24 258.4,217.24 258.05,217.36 257.81,217.6 257.81,217.83 257.93,218.07 258.05,218.19 258.29,218.31 259,218.54 259.23,218.66 259.35,218.78 259.47,219.02 259.47,219.37 259.23,219.61 258.88,219.73 258.4,219.73 258.05,219.61 257.81,219.37"/>
-  <polyline id="svg_703" fill="none" stroke="RGB(255,63,0)" stroke-width="0.5" points="465.36,235.94 442.03,235.94"/>
   <polyline id="svg_704" fill="none" stroke="RGB(255,63,0)" stroke-width="0.5" points="334.45,336.16 334.45,322.55"/>
   <polyline id="svg_705" fill="none" stroke="RGB(0,165,82)" stroke-width="0.5" points="338.34,318.66 338.34,333.25"/>
   <polyline id="svg_706" fill="none" stroke="RGB(0,165,82)" stroke-width="0.5" points="338.34,339.08 338.34,353.77"/>
   <polyline id="svg_707" fill="none" stroke="RGB(0,165,82)" stroke-width="0.5" points="338.34,339.08 339.34,338.9 340.22,338.4 340.87,337.62 341.21,336.67 341.21,335.66 340.87,334.7 340.22,333.93 339.34,333.42 338.34,333.25"/>
-  <polyline id="svg_708" fill="none" stroke="RGB(0,165,82)" stroke-width="0.5" points="476.25,235.94 477.81,235.94"/>
-  <polyline id="svg_709" fill="none" stroke="RGB(0,165,82)" stroke-width="0.5" points="477.81,235.94 477.81,251.5"/>
-  <polyline id="svg_710" fill="none" stroke="RGB(0,165,82)" stroke-width="0.5" points="477.81,251.5 426.66,251.5"/>
-  <polyline id="svg_711" fill="none" stroke="RGB(0,165,82)" stroke-width="0.5" points="418.47,251.5 338.34,251.5"/>
   <polyline id="svg_712" fill="none" stroke="RGB(0,165,82)" stroke-width="0.5" points="338.34,251.5 338.34,318.66"/>
-  <polyline id="svg_713" fill="none" stroke="RGB(255,63,0)" stroke-width="0.5" points="442.03,235.94 442.03,243.72"/>
-  <polyline id="svg_714" fill="none" stroke="RGB(255,63,0)" stroke-width="0.5" points="442.03,243.72 434.5,243.72"/>
-  <polyline id="svg_715" fill="none" stroke="RGB(255,63,0)" stroke-width="0.5" points="426.31,243.72 334.45,243.72"/>
   <polyline id="svg_716" fill="none" stroke="RGB(255,63,0)" stroke-width="0.5" points="334.45,243.72 334.45,313.25"/>
   <polyline id="svg_717" fill="none" stroke="RGB(255,63,0)" stroke-width="0.5" points="268.26,336.16 289.58,336.16"/>
   <polyline id="svg_718" fill="none" stroke="RGB(255,63,0)" stroke-width="0.5" points="297.78,336.16 391.23,336.16"/>
@@ -738,7 +533,6 @@
   <polyline id="svg_728" fill="none" stroke="RGB(255,63,0)" stroke-width="0.5" points="535.51,300.67 506.15,300.67"/>
   <polyline id="svg_729" fill="none" stroke="RGB(255,63,0)" stroke-width="0.5" points="487.34,300.67 391.23,300.67"/>
   <polyline id="svg_730" fill="none" stroke="RGB(255,63,0)" stroke-width="0.5" points="391.23,313.25 391.23,300.67"/>
-  <polyline id="svg_731" fill="none" stroke="red" stroke-width="0.5" points="452.46,283.11 457.91,283.11"/>
   <polyline id="svg_732" fill="none" stroke="RGB(124,0,165)" stroke-width="0.5" points="213.93,269.58 210.15,269.58"/>
   <polyline id="svg_733" fill="none" stroke="red" stroke-width="0.5" points="216.15,271.8 216.15,276.45"/>
   <polyline id="svg_734" fill="none" stroke="RGB(124,0,165)" stroke-width="0.5" points="221.96,270.62 221.96,267.7"/>
@@ -814,14 +608,6 @@
   <polyline id="svg_804" fill="none" stroke="black" stroke-width="0.5" points="292.92,335.15 292.92,336.78"/>
   <polyline id="svg_805" fill="none" stroke="black" stroke-width="0.5" points="292.92,335.15 293.62,335.15 293.85,335.23 293.93,335.31 294.01,335.46 294.01,335.69 293.93,335.85 293.85,335.93 293.62,336.01 292.92,336.01"/>
   <polyline id="svg_806" fill="none" stroke="black" stroke-width="0.5" points="294.55,335.15 294.55,336.78"/>
-  <polyline id="svg_807" fill="none" stroke="black" stroke-width="0.5" points="433.87,283.11 434.05,281.9 434.58,280.8 435.42,279.9 436.47,279.29 437.66,279.02 438.88,279.11 440.02,279.56 440.97,280.32 441.66,281.33 442.02,282.5 442.02,283.72 441.66,284.88 440.97,285.89 440.02,286.65 438.88,287.1 437.66,287.19 436.47,286.92 435.42,286.31 434.58,285.41 434.05,284.31 433.87,283.11"/>
-  <polyline id="svg_808" fill="none" stroke="black" stroke-width="0.5" points="437.21,282.09 437.21,283.72"/>
-  <polyline id="svg_809" fill="none" stroke="black" stroke-width="0.5" points="437.21,282.09 437.91,282.09 438.14,282.17 438.22,282.25 438.3,282.41 438.3,282.64 438.22,282.79 438.14,282.87 437.91,282.95 437.21,282.95"/>
-  <polyline id="svg_810" fill="none" stroke="black" stroke-width="0.5" points="438.84,282.09 438.84,283.72"/>
-  <polyline id="svg_811" fill="none" stroke="black" stroke-width="0.5" points="432.13,270.66 432.31,269.45 432.84,268.35 433.67,267.46 434.73,266.85 435.92,266.58 437.14,266.67 438.27,267.11 439.23,267.87 439.92,268.88 440.28,270.05 440.28,271.27 439.92,272.44 439.23,273.45 438.27,274.21 437.14,274.66 435.92,274.75 434.73,274.48 433.67,273.86 432.84,272.97 432.31,271.87 432.13,270.66"/>
-  <polyline id="svg_812" fill="none" stroke="black" stroke-width="0.5" points="435.47,269.65 435.47,271.28"/>
-  <polyline id="svg_813" fill="none" stroke="black" stroke-width="0.5" points="435.47,269.65 436.16,269.65 436.4,269.73 436.47,269.81 436.55,269.96 436.55,270.19 436.47,270.35 436.4,270.43 436.16,270.5 435.47,270.5"/>
-  <polyline id="svg_814" fill="none" stroke="black" stroke-width="0.5" points="437.09,269.65 437.09,271.28"/>
   <polyline id="svg_815" fill="none" stroke="black" stroke-width="0.5" points="544.65,298.45 542.43,298.45"/>
   <polyline id="svg_816" fill="none" stroke="black" stroke-width="0.5" points="541.33,299.56 541.33,301.77"/>
   <polyline id="svg_817" fill="none" stroke="black" stroke-width="0.5" points="543.54,300.67 545.02,300.67"/>
@@ -835,35 +621,6 @@
   <polyline id="svg_825" fill="none" stroke="RGB(255,63,0)" stroke-width="0.5" points="535.51,300.67 541.33,300.67"/>
   <polyline id="svg_826" fill="none" stroke="RGB(0,165,82)" stroke-width="0.5" points="543.54,298.45 543.54,296.12"/>
   <polyline id="svg_827" fill="none" stroke="RGB(0,165,82)" stroke-width="0.5" points="543.54,296.12 569.73,296.12"/>
-  <polyline id="svg_828" fill="none" stroke="black" stroke-width="0.5" points="418.47,251.5 418.65,250.29 419.18,249.19 420.01,248.29 421.07,247.68 422.26,247.41 423.48,247.5 424.62,247.95 425.57,248.71 426.26,249.72 426.62,250.89 426.62,252.11 426.26,253.27 425.57,254.28 424.62,255.04 423.48,255.49 422.26,255.58 421.07,255.31 420.01,254.7 419.18,253.8 418.65,252.7 418.47,251.5"/>
-  <polyline id="svg_829" fill="none" stroke="black" stroke-width="0.5" points="421.81,250.49 421.81,252.11"/>
-  <polyline id="svg_830" fill="none" stroke="black" stroke-width="0.5" points="421.81,250.49 422.51,250.49 422.74,250.56 422.82,250.64 422.89,250.8 422.89,251.03 422.82,251.18 422.74,251.26 422.51,251.34 421.81,251.34"/>
-  <polyline id="svg_831" fill="none" stroke="black" stroke-width="0.5" points="423.44,250.49 423.44,252.11"/>
-  <polyline id="svg_832" fill="none" stroke="black" stroke-width="0.5" points="426.31,243.72 426.49,242.51 427.02,241.41 427.85,240.52 428.91,239.9 430.1,239.63 431.32,239.72 432.45,240.17 433.41,240.93 434.1,241.94 434.46,243.11 434.46,244.33 434.1,245.5 433.41,246.51 432.45,247.27 431.32,247.71 430.1,247.8 428.91,247.53 427.85,246.92 427.02,246.03 426.49,244.93 426.31,243.72"/>
-  <polyline id="svg_833" fill="none" stroke="black" stroke-width="0.5" points="429.64,242.71 429.64,244.34"/>
-  <polyline id="svg_834" fill="none" stroke="black" stroke-width="0.5" points="429.64,242.71 430.34,242.71 430.58,242.78 430.65,242.86 430.73,243.02 430.73,243.25 430.65,243.41 430.58,243.48 430.34,243.56 429.64,243.56"/>
-  <polyline id="svg_835" fill="none" stroke="black" stroke-width="0.5" points="431.27,242.71 431.27,244.34"/>
-  <polyline id="svg_836" fill="none" stroke="black" stroke-width="0.5" points="444.25,248.59 444.25,246.37"/>
-  <polyline id="svg_837" fill="none" stroke="black" stroke-width="0.5" points="443.14,245.26 440.92,245.26"/>
-  <polyline id="svg_838" fill="none" stroke="black" stroke-width="0.5" points="442.03,247.48 442.03,248.95"/>
-  <polyline id="svg_839" fill="none" stroke="black" stroke-width="0.5" points="442.03,248.95 442.55,249.48"/>
-  <polyline id="svg_840" fill="none" stroke="black" stroke-width="0.5" points="442.55,249.48 442.03,250"/>
-  <polyline id="svg_841" fill="none" stroke="black" stroke-width="0.5" points="442.03,250 442.55,250.52"/>
-  <polyline id="svg_842" fill="none" stroke="black" stroke-width="0.5" points="444.25,246.37 442.03,247.48"/>
-  <polyline id="svg_843" fill="none" stroke="black" stroke-width="0.5" points="442.03,247.48 440.92,245.26"/>
-  <polyline id="svg_844" fill="none" stroke="black" stroke-width="0.5" points="442.03,247.48 443.14,245.26"/>
-  <polyline id="svg_845" fill="none" stroke="black" stroke-width="0.5" points="444.25,248.59 442.03,247.48"/>
-  <polyline id="svg_846" fill="none" stroke="RGB(255,63,0)" stroke-width="0.5" points="442.03,245.26 442.03,243.72"/>
-  <polyline id="svg_847" fill="none" stroke="RGB(0,165,82)" stroke-width="0.5" points="444.25,247.48 446.57,247.48"/>
-  <polyline id="svg_848" fill="none" stroke="RGB(0,165,82)" stroke-width="0.5" points="446.57,247.48 446.57,251.5"/>
-  <polyline id="svg_849" fill="none" stroke="black" stroke-width="0.5" points="433.44,188.54 433.62,187.34 434.15,186.24 434.98,185.34 436.04,184.73 437.23,184.46 438.45,184.55 439.59,184.99 440.54,185.76 441.23,186.77 441.59,187.93 441.59,189.15 441.23,190.32 440.54,191.33 439.59,192.09 438.45,192.54 437.23,192.63 436.04,192.36 434.98,191.75 434.15,190.85 433.62,189.75 433.44,188.54"/>
-  <polyline id="svg_850" fill="none" stroke="black" stroke-width="0.5" points="436.78,187.53 436.78,189.16"/>
-  <polyline id="svg_851" fill="none" stroke="black" stroke-width="0.5" points="436.78,187.53 437.48,187.53 437.71,187.61 437.79,187.69 437.86,187.84 437.86,188.07 437.79,188.23 437.71,188.31 437.48,188.39 436.78,188.39"/>
-  <polyline id="svg_852" fill="none" stroke="black" stroke-width="0.5" points="438.41,187.53 438.41,189.16"/>
-  <polyline id="svg_853" fill="none" stroke="black" stroke-width="0.5" points="433.21,200.99 433.39,199.78 433.92,198.68 434.75,197.78 435.81,197.17 437,196.9 438.22,196.99 439.35,197.44 440.31,198.2 441,199.21 441.36,200.38 441.36,201.6 441,202.77 440.31,203.77 439.35,204.54 438.22,204.98 437,205.07 435.81,204.8 434.75,204.19 433.92,203.3 433.39,202.2 433.21,200.99"/>
-  <polyline id="svg_854" fill="none" stroke="black" stroke-width="0.5" points="436.54,199.98 436.54,201.61"/>
-  <polyline id="svg_855" fill="none" stroke="black" stroke-width="0.5" points="436.54,199.98 437.24,199.98 437.48,200.05 437.55,200.13 437.63,200.29 437.63,200.52 437.55,200.67 437.48,200.75 437.24,200.83 436.54,200.83"/>
-  <polyline id="svg_856" fill="none" stroke="black" stroke-width="0.5" points="438.17,199.98 438.17,201.61"/>
   <polyline id="svg_857" fill="none" stroke="black" stroke-width="0.5" points="221.63,288.23 221.81,287.02 222.34,285.92 223.17,285.02 224.23,284.41 225.42,284.14 226.64,284.23 227.78,284.68 228.73,285.44 229.42,286.45 229.78,287.61 229.78,288.84 229.42,290 228.73,291.01 227.78,291.77 226.64,292.22 225.42,292.31 224.23,292.04 223.17,291.43 222.34,290.53 221.81,289.43 221.63,288.23"/>
   <polyline id="svg_858" fill="none" stroke="black" stroke-width="0.5" points="224.97,287.21 224.97,288.84"/>
   <polyline id="svg_859" fill="none" stroke="black" stroke-width="0.5" points="224.97,287.21 225.67,287.21 225.9,287.29 225.98,287.37 226.05,287.52 226.05,287.76 225.98,287.91 225.9,287.99 225.67,288.07 224.97,288.07"/>
@@ -898,33 +655,6 @@
   <polyline id="svg_888" fill="none" stroke="black" stroke-width="0.5" points="292.23,352.76 292.23,354.39"/>
   <polyline id="svg_889" fill="none" stroke="black" stroke-width="0.5" points="292.23,352.76 292.93,352.76 293.16,352.84 293.24,352.91 293.32,353.07 293.32,353.3 293.24,353.46 293.16,353.53 292.93,353.61 292.23,353.61"/>
   <polyline id="svg_890" fill="none" stroke="black" stroke-width="0.5" points="293.86,352.76 293.86,354.39"/>
-  <polyline id="svg_891" fill="none" stroke="RGB(124,0,165)" stroke-width="0.5" points="457.91,185.43 457.91,204.1"/>
-  <polyline id="svg_892" fill="none" stroke="black" stroke-width="0.5" points="414.21,194.19 414.21,191.98"/>
-  <polyline id="svg_893" fill="none" stroke="black" stroke-width="0.5" points="413.1,190.87 410.89,190.87"/>
-  <polyline id="svg_894" fill="none" stroke="black" stroke-width="0.5" points="411.99,193.08 411.99,194.56"/>
-  <polyline id="svg_895" fill="none" stroke="black" stroke-width="0.5" points="411.99,194.56 412.52,195.08"/>
-  <polyline id="svg_896" fill="none" stroke="black" stroke-width="0.5" points="412.52,195.08 411.99,195.61"/>
-  <polyline id="svg_897" fill="none" stroke="black" stroke-width="0.5" points="411.99,195.61 412.52,196.13"/>
-  <polyline id="svg_898" fill="none" stroke="black" stroke-width="0.5" points="414.21,191.98 411.99,193.08"/>
-  <polyline id="svg_899" fill="none" stroke="black" stroke-width="0.5" points="411.99,193.08 410.89,190.87"/>
-  <polyline id="svg_900" fill="none" stroke="black" stroke-width="0.5" points="411.99,193.08 413.1,190.87"/>
-  <polyline id="svg_901" fill="none" stroke="black" stroke-width="0.5" points="414.21,194.19 411.99,193.08"/>
-  <polyline id="svg_902" fill="none" stroke="black" stroke-width="0.5" points="421.12,195.34 421.12,197.55"/>
-  <polyline id="svg_903" fill="none" stroke="black" stroke-width="0.5" points="420.02,198.66 417.8,198.66"/>
-  <polyline id="svg_904" fill="none" stroke="black" stroke-width="0.5" points="418.91,196.45 418.91,194.97"/>
-  <polyline id="svg_905" fill="none" stroke="black" stroke-width="0.5" points="418.91,194.97 419.43,194.45"/>
-  <polyline id="svg_906" fill="none" stroke="black" stroke-width="0.5" points="419.43,194.45 418.91,193.92"/>
-  <polyline id="svg_907" fill="none" stroke="black" stroke-width="0.5" points="418.91,193.92 419.43,193.4"/>
-  <polyline id="svg_908" fill="none" stroke="black" stroke-width="0.5" points="421.12,197.55 418.91,196.45"/>
-  <polyline id="svg_909" fill="none" stroke="black" stroke-width="0.5" points="418.91,196.45 417.8,198.66"/>
-  <polyline id="svg_910" fill="none" stroke="black" stroke-width="0.5" points="418.91,196.45 420.02,198.66"/>
-  <polyline id="svg_911" fill="none" stroke="black" stroke-width="0.5" points="421.12,195.34 418.91,196.45"/>
-  <polyline id="svg_912" fill="none" stroke="RGB(124,0,165)" stroke-width="0.5" points="411.99,188.54 411.99,190.87"/>
-  <polyline id="svg_913" fill="none" stroke="red" stroke-width="0.5" points="418.91,200.99 418.91,198.66"/>
-  <polyline id="svg_914" fill="none" stroke="RGB(0,165,82)" stroke-width="0.5" points="414.21,193.08 415.37,193.08"/>
-  <polyline id="svg_915" fill="none" stroke="red" stroke-width="0.5" points="415.37,193.08 415.37,200.99"/>
-  <polyline id="svg_916" fill="none" stroke="RGB(124,0,165)" stroke-width="0.5" points="421.12,196.45 422.29,196.45"/>
-  <polyline id="svg_917" fill="none" stroke="RGB(124,0,165)" stroke-width="0.5" points="422.29,196.45 422.29,188.54"/>
   <polyline id="svg_918" fill="none" stroke="black" stroke-width="0.5" points="492.82,313.12 493.01,311.91 493.54,310.81 494.37,309.92 495.42,309.31 496.62,309.03 497.83,309.13 498.97,309.57 499.93,310.33 500.61,311.34 500.97,312.51 500.97,313.73 500.61,314.9 499.93,315.91 498.97,316.67 497.83,317.11 496.62,317.21 495.42,316.93 494.37,316.32 493.54,315.43 493.01,314.33 492.82,313.12"/>
   <polyline id="svg_919" fill="none" stroke="black" stroke-width="0.5" points="496.16,312.11 496.16,313.74"/>
   <polyline id="svg_920" fill="none" stroke="black" stroke-width="0.5" points="496.16,312.11 496.86,312.11 497.09,312.19 497.17,312.26 497.25,312.42 497.25,312.65 497.17,312.81 497.09,312.88 496.86,312.96 496.16,312.96"/>
@@ -7668,32 +7398,6 @@
   <polyline id="svg_7658" fill="none" stroke="black" stroke-width="0.5" points="578.81,354.19 579.96,354.19"/>
   <polyline id="svg_7659" fill="none" stroke="black" stroke-width="0.5" points="578.81,355.08 579.52,355.08"/>
   <polyline id="svg_7660" fill="none" stroke="black" stroke-width="0.5" points="578.81,356.05 579.96,356.05"/>
-  <polyline id="svg_7661" fill="none" stroke="black" stroke-width="0.5" points="414.21,277.46 414.21,279.67"/>
-  <polyline id="svg_7662" fill="none" stroke="black" stroke-width="0.5" points="413.1,280.78 410.89,280.78"/>
-  <polyline id="svg_7663" fill="none" stroke="black" stroke-width="0.5" points="411.99,278.56 411.99,277.09"/>
-  <polyline id="svg_7664" fill="none" stroke="black" stroke-width="0.5" points="411.99,277.09 412.52,276.57"/>
-  <polyline id="svg_7665" fill="none" stroke="black" stroke-width="0.5" points="412.52,276.57 411.99,276.04"/>
-  <polyline id="svg_7666" fill="none" stroke="black" stroke-width="0.5" points="411.99,276.04 412.52,275.52"/>
-  <polyline id="svg_7667" fill="none" stroke="black" stroke-width="0.5" points="414.21,279.67 411.99,278.56"/>
-  <polyline id="svg_7668" fill="none" stroke="black" stroke-width="0.5" points="411.99,278.56 410.89,280.78"/>
-  <polyline id="svg_7669" fill="none" stroke="black" stroke-width="0.5" points="411.99,278.56 413.1,280.78"/>
-  <polyline id="svg_7670" fill="none" stroke="black" stroke-width="0.5" points="414.21,277.46 411.99,278.56"/>
-  <polyline id="svg_7671" fill="none" stroke="black" stroke-width="0.5" points="421.12,276.31 421.12,274.1"/>
-  <polyline id="svg_7672" fill="none" stroke="black" stroke-width="0.5" points="420.02,272.99 417.8,272.99"/>
-  <polyline id="svg_7673" fill="none" stroke="black" stroke-width="0.5" points="418.91,275.2 418.91,276.68"/>
-  <polyline id="svg_7674" fill="none" stroke="black" stroke-width="0.5" points="418.91,276.68 419.43,277.2"/>
-  <polyline id="svg_7675" fill="none" stroke="black" stroke-width="0.5" points="419.43,277.2 418.91,277.72"/>
-  <polyline id="svg_7676" fill="none" stroke="black" stroke-width="0.5" points="418.91,277.72 419.43,278.25"/>
-  <polyline id="svg_7677" fill="none" stroke="black" stroke-width="0.5" points="421.12,274.1 418.91,275.2"/>
-  <polyline id="svg_7678" fill="none" stroke="black" stroke-width="0.5" points="418.91,275.2 417.8,272.99"/>
-  <polyline id="svg_7679" fill="none" stroke="black" stroke-width="0.5" points="418.91,275.2 420.02,272.99"/>
-  <polyline id="svg_7680" fill="none" stroke="black" stroke-width="0.5" points="421.12,276.31 418.91,275.2"/>
-  <polyline id="svg_7681" fill="none" stroke="red" stroke-width="0.5" points="411.99,283.11 411.99,280.78"/>
-  <polyline id="svg_7682" fill="none" stroke="RGB(124,0,165)" stroke-width="0.5" points="418.91,270.66 418.91,272.99"/>
-  <polyline id="svg_7683" fill="none" stroke="RGB(124,0,165)" stroke-width="0.5" points="414.21,278.56 415.37,278.56"/>
-  <polyline id="svg_7684" fill="none" stroke="RGB(124,0,165)" stroke-width="0.5" points="415.37,278.56 415.37,270.66"/>
-  <polyline id="svg_7685" fill="none" stroke="red" stroke-width="0.5" points="421.12,275.2 422.29,275.2"/>
-  <polyline id="svg_7686" fill="none" stroke="red" stroke-width="0.5" points="422.29,275.2 422.29,283.11"/>
   <polyline id="svg_7687" fill="none" stroke="black" stroke-width="0.5" points="204.19,298.14 204.19,302.03"/>
   <polyline id="svg_7688" fill="none" stroke="black" stroke-width="0.5" points="208.08,298.14 208.08,302.03"/>
   <polyline id="svg_7689" fill="none" stroke="black" stroke-width="0.5" points="204.19,302.03 219.75,302.03"/>
@@ -7881,6 +7585,70 @@
   <polyline id="svg_7871" fill="none" stroke="black" stroke-width="0.5" points="472.66,388.26 473.81,388.26"/>
   <polyline id="svg_7872" fill="none" stroke="black" stroke-width="0.5" points="472.66,389.15 473.37,389.15"/>
   <polyline id="svg_7873" fill="none" stroke="black" stroke-width="0.5" points="472.66,390.12 473.81,390.12"/>
+  <polyline id="svg_7874" fill="none" stroke="black" stroke-width="0.5" points="501.37,337.74 501.37,341.63"/>
+  <polyline id="svg_7875" fill="none" stroke="black" stroke-width="0.5" points="505.26,337.74 505.26,341.63"/>
+  <polyline id="svg_7876" fill="none" stroke="black" stroke-width="0.5" points="501.37,341.63 516.92,341.63"/>
+  <polyline id="svg_7877" fill="none" stroke="black" stroke-width="0.5" points="516.92,341.63 516.92,337.74"/>
+  <polyline id="svg_7878" fill="none" stroke="black" stroke-width="0.5" points="513.04,341.63 513.04,337.74"/>
+  <polyline id="svg_7879" fill="none" stroke="black" stroke-width="0.5" points="516.92,337.74 501.37,337.74"/>
+  <polyline id="svg_7880" fill="none" stroke="black" stroke-width="0.5" points="516.92,341.63 520.81,341.63"/>
+  <polyline id="svg_7881" fill="none" stroke="black" stroke-width="0.5" points="520.81,341.63 520.81,339.69"/>
+  <polyline id="svg_7882" fill="none" stroke="black" stroke-width="0.5" points="520.81,339.69 516.92,339.69"/>
+  <polyline id="svg_7883" fill="none" stroke="black" stroke-width="0.5" points="520.81,341.63 518.87,341.63"/>
+  <polyline id="svg_7884" fill="none" stroke="black" stroke-width="0.5" points="516.92,339.69 518.87,339.69"/>
+  <polyline id="svg_7885" fill="none" stroke="black" stroke-width="0.5" points="517.9,339.69 519.84,341.63"/>
+  <polyline id="svg_7886" fill="none" stroke="black" stroke-width="0.5" points="501.37,341.63 497.48,341.63"/>
+  <polyline id="svg_7887" fill="none" stroke="black" stroke-width="0.5" points="497.48,341.63 497.48,339.69"/>
+  <polyline id="svg_7888" fill="none" stroke="black" stroke-width="0.5" points="497.48,339.69 501.37,339.69"/>
+  <polyline id="svg_7889" fill="none" stroke="black" stroke-width="0.5" points="497.48,341.63 499.42,341.63"/>
+  <polyline id="svg_7890" fill="none" stroke="black" stroke-width="0.5" points="501.37,339.69 499.42,339.69"/>
+  <polyline id="svg_7891" fill="none" stroke="black" stroke-width="0.5" points="501.37,341.63 499.42,341.63"/>
+  <polyline id="svg_7892" fill="none" stroke="black" stroke-width="0.5" points="498.45,339.69 500.4,341.63"/>
+  <polyline id="svg_7893" fill="none" stroke="black" stroke-width="0.5" points="516.92,337.74 516.92,338.72"/>
+  <polyline id="svg_7894" fill="none" stroke="black" stroke-width="0.5" points="516.92,338.72 517.31,338.72"/>
+  <polyline id="svg_7895" fill="none" stroke="black" stroke-width="0.5" points="517.66,339.06 518.34,338.37"/>
+  <polyline id="svg_7896" fill="none" stroke="black" stroke-width="0.5" points="518.34,338.37 519.03,339.06"/>
+  <polyline id="svg_7897" fill="none" stroke="black" stroke-width="0.5" points="519.03,339.06 519.72,338.37"/>
+  <polyline id="svg_7898" fill="none" stroke="black" stroke-width="0.5" points="519.72,338.37 520.41,339.06"/>
+  <polyline id="svg_7899" fill="none" stroke="black" stroke-width="0.5" points="517.31,338.72 517.66,339.06"/>
+  <polyline id="svg_7900" fill="none" stroke="black" stroke-width="0.5" points="501.37,338.72 500.98,338.72"/>
+  <polyline id="svg_7901" fill="none" stroke="black" stroke-width="0.5" points="500.64,339.06 499.95,338.37"/>
+  <polyline id="svg_7902" fill="none" stroke="black" stroke-width="0.5" points="499.95,338.37 499.26,339.06"/>
+  <polyline id="svg_7903" fill="none" stroke="black" stroke-width="0.5" points="499.26,339.06 498.57,338.37"/>
+  <polyline id="svg_7904" fill="none" stroke="black" stroke-width="0.5" points="498.57,338.37 497.89,339.06"/>
+  <polyline id="svg_7905" fill="none" stroke="black" stroke-width="0.5" points="500.98,338.72 500.64,339.06"/>
+  <polyline id="svg_7906" fill="none" stroke="black" stroke-width="0.5" points="509.15,341.63 507.2,341.63"/>
+  <polyline id="svg_7907" fill="none" stroke="black" stroke-width="0.5" points="507.2,341.63 507.2,340.66"/>
+  <polyline id="svg_7908" fill="none" stroke="black" stroke-width="0.5" points="509.15,341.63 511.09,341.63"/>
+  <polyline id="svg_7909" fill="none" stroke="black" stroke-width="0.5" points="511.09,341.63 511.09,340.66"/>
+  <polyline id="svg_7910" fill="none" stroke="black" stroke-width="0.5" points="506.72,340.66 507.69,340.66"/>
+  <polyline id="svg_7911" fill="none" stroke="black" stroke-width="0.5" points="510.6,340.66 511.58,340.66"/>
+  <polyline id="svg_7912" fill="none" stroke="black" stroke-width="0.5" points="507.2,337.74 507.2,338.72"/>
+  <polyline id="svg_7913" fill="none" stroke="black" stroke-width="0.5" points="511.09,337.74 511.09,338.72"/>
+  <polyline id="svg_7914" fill="none" stroke="black" stroke-width="0.5" points="506.72,338.72 507.69,338.72"/>
+  <polyline id="svg_7915" fill="none" stroke="black" stroke-width="0.5" points="510.6,338.72 511.58,338.72"/>
+  <polyline id="svg_7916" fill="none" stroke="black" stroke-width="0.5" points="505.9,336.1 506.04,336.02 506.27,335.8 506.27,337.36"/>
+  <polyline id="svg_7917" fill="none" stroke="black" stroke-width="0.5" points="512.32,336.17 512.32,336.1 512.39,335.95 512.47,335.88 512.62,335.8 512.91,335.8 513.06,335.88 513.13,335.95 513.21,336.1 513.21,336.25 513.13,336.39 512.99,336.62 512.25,337.36 513.28,337.36"/>
+  <polyline id="svg_7918" fill="none" stroke="black" stroke-width="0.5" points="505.17,341.98 505.17,343.54"/>
+  <polyline id="svg_7919" fill="none" stroke="black" stroke-width="0.5" points="505.17,341.98 505.84,341.98 506.06,342.06 506.13,342.13 506.21,342.28 506.21,342.5 506.13,342.65 506.06,342.72 505.84,342.8 505.17,342.8"/>
+  <polyline id="svg_7920" fill="none" stroke="black" stroke-width="0.5" points="512.73,342.01 512.73,343.57"/>
+  <polyline id="svg_7921" fill="none" stroke="black" stroke-width="0.5" points="512.21,342.01 513.24,342.01"/>
+  <polyline id="svg_7922" fill="none" stroke="black" stroke-width="0.5" points="502.54,341.63 502.54,337.74"/>
+  <polyline id="svg_7923" fill="none" stroke="black" stroke-width="0.5" points="502.54,337.74 501.85,338.43"/>
+  <polyline id="svg_7924" fill="none" stroke="black" stroke-width="0.5" points="502.54,337.74 503.22,338.43"/>
+  <polyline id="svg_7925" fill="none" stroke="black" stroke-width="0.5" points="504.09,337.74 504.09,341.63"/>
+  <polyline id="svg_7926" fill="none" stroke="black" stroke-width="0.5" points="504.09,341.63 504.78,340.95"/>
+  <polyline id="svg_7927" fill="none" stroke="black" stroke-width="0.5" points="504.09,341.63 503.4,340.95"/>
+  <polyline id="svg_7928" fill="none" stroke="black" stroke-width="0.5" points="513.04,341.63 514.2,341.63"/>
+  <polyline id="svg_7929" fill="none" stroke="black" stroke-width="0.5" points="516.92,341.63 515.76,341.63"/>
+  <polyline id="svg_7930" fill="none" stroke="black" stroke-width="0.5" points="513.04,337.74 514.2,337.74"/>
+  <polyline id="svg_7931" fill="none" stroke="black" stroke-width="0.5" points="516.92,337.74 515.76,337.74"/>
+  <polyline id="svg_7932" fill="none" stroke="black" stroke-width="0.5" points="515.76,337.74 514.2,341.63"/>
+  <polyline id="svg_7933" fill="none" stroke="black" stroke-width="0.5" points="514.2,337.74 515.76,341.63"/>
+  <polyline id="svg_7934" fill="none" stroke="black" stroke-width="0.5" points="515.76,341.63 516.09,340.72"/>
+  <polyline id="svg_7935" fill="none" stroke="black" stroke-width="0.5" points="515.76,341.63 514.84,341.3"/>
+  <polyline id="svg_7936" fill="none" stroke="black" stroke-width="0.5" points="514.2,337.74 513.85,338.65"/>
+  <polyline id="svg_7937" fill="none" stroke="black" stroke-width="0.5" points="514.2,337.74 515.11,338.09"/>
   <polyline id="svg_7938" fill="none" stroke="RGB(124,0,165)" stroke-width="0.5" points="229.5,257.69 229.5,252.75"/>
   <polyline id="svg_7939" fill="none" stroke="RGB(124,0,165)" stroke-width="0.5" points="229.5,252.75 222.09,252.75"/>
   <polyline id="svg_7940" fill="none" stroke="red" stroke-width="0.5" points="429.06,420.36 444.63,420.36"/>
@@ -8011,71 +7779,62 @@
   <polyline id="svg_8065" fill="none" stroke="black" stroke-width="0.5" points="588.05,418.12 588.05,419.98"/>
   <polyline id="svg_8066" fill="none" stroke="black" stroke-width="0.5" points="590.62,418.57 590.62,418.48 590.7,418.3 590.79,418.21 590.97,418.12 591.32,418.12 591.5,418.21 591.59,418.3 591.68,418.48 591.68,418.65 591.59,418.83 591.41,419.1 590.53,419.98 591.77,419.98"/>
   <polyline id="svg_8067" fill="none" stroke="black" stroke-width="0.5" points="592.3,417.77 592.47,417.95 592.65,418.21 592.83,418.57 592.92,419.01 592.92,419.36 592.83,419.81 592.65,420.16 592.47,420.42 592.3,420.6"/>
-  <g stroke="null" id="svg_8068">
-   <polyline stroke="black" id="svg_7874" fill="none" stroke-width="0.5" points="4.813349723815918,2.724003091454506 4.813349723815918,7.569093003869057 "/>
-   <polyline stroke="black" id="svg_7875" fill="none" stroke-width="0.5" points="9.38058090209961,2.724003091454506 9.38058090209961,7.569093003869057 "/>
-   <polyline stroke="black" id="svg_7876" fill="none" stroke-width="0.5" points="4.813349723815918,7.569093003869057 23.07048797607422,7.569093003869057 "/>
-   <polyline stroke="black" id="svg_7877" fill="none" stroke-width="0.5" points="23.07048797607422,7.569093003869057 23.07048797607422,2.724003091454506 "/>
-   <polyline stroke="black" id="svg_7878" fill="none" stroke-width="0.5" points="18.514936447143555,7.569093003869057 18.514936447143555,2.724003091454506 "/>
-   <polyline stroke="black" id="svg_7879" fill="none" stroke-width="0.5" points="23.07048797607422,2.724003091454506 4.813349723815918,2.724003091454506 "/>
-   <polyline stroke="black" id="svg_7880" fill="none" stroke-width="0.5" points="23.07048797607422,7.569093003869057 27.63764762878418,7.569093003869057 "/>
-   <polyline stroke="black" id="svg_7881" fill="none" stroke-width="0.5" points="27.63764762878418,7.569093003869057 27.63764762878418,5.152781739830971 "/>
-   <polyline stroke="black" id="svg_7882" fill="none" stroke-width="0.5" points="27.63764762878418,5.152781739830971 23.07048797607422,5.152781739830971 "/>
-   <polyline stroke="black" id="svg_7883" fill="none" stroke-width="0.5" points="27.63764762878418,7.569093003869057 25.359981536865234,7.569093003869057 "/>
-   <polyline stroke="black" id="svg_7884" fill="none" stroke-width="0.5" points="23.07048797607422,5.152781739830971 25.359981536865234,5.152781739830971 "/>
-   <polyline stroke="black" id="svg_7885" fill="none" stroke-width="0.5" points="24.221147537231445,5.152781739830971 26.49888801574707,7.569093003869057 "/>
-   <polyline stroke="black" id="svg_7886" fill="none" stroke-width="0.5" points="4.813349723815918,7.569093003869057 0.2461538463830948,7.569093003869057 "/>
-   <polyline stroke="black" id="svg_7887" fill="none" stroke-width="0.5" points="0.2461538463830948,7.569093003869057 0.2461538463830948,5.152781739830971 "/>
-   <polyline stroke="black" id="svg_7888" fill="none" stroke-width="0.5" points="0.2461538463830948,5.152781739830971 4.813349723815918,5.152781739830971 "/>
-   <polyline stroke="black" id="svg_7889" fill="none" stroke-width="0.5" points="0.2461538463830948,7.569093003869057 2.5238935947418213,7.569093003869057 "/>
-   <polyline stroke="black" id="svg_7890" fill="none" stroke-width="0.5" points="4.813349723815918,5.152781739830971 2.5238935947418213,5.152781739830971 "/>
-   <polyline stroke="black" id="svg_7891" fill="none" stroke-width="0.5" points="4.813349723815918,7.569093003869057 2.5238935947418213,7.569093003869057 "/>
-   <polyline stroke="black" id="svg_7892" fill="none" stroke-width="0.5" points="1.3850237131118774,5.152781739830971 3.6744797229766846,7.569093003869057 "/>
-   <polyline stroke="black" id="svg_7893" fill="none" stroke-width="0.5" points="23.07048797607422,2.724003091454506 23.07048797607422,3.944626107811928 "/>
-   <polyline stroke="black" id="svg_7894" fill="none" stroke-width="0.5" points="23.07048797607422,3.944626107811928 23.528329849243164,3.944626107811928 "/>
-   <polyline stroke="black" id="svg_7895" fill="none" stroke-width="0.5" points="23.93930435180664,4.368098512291908 24.73767852783203,3.5086865574121475 "/>
-   <polyline stroke="black" id="svg_7896" fill="none" stroke-width="0.5" points="24.73767852783203,3.5086865574121475 25.547874450683594,4.368098512291908 "/>
-   <polyline stroke="black" id="svg_7897" fill="none" stroke-width="0.5" points="25.547874450683594,4.368098512291908 26.357929229736328,3.5086865574121475 "/>
-   <polyline stroke="black" id="svg_7898" fill="none" stroke-width="0.5" points="26.357929229736328,3.5086865574121475 27.168054580688477,4.368098512291908 "/>
-   <polyline stroke="black" id="svg_7899" fill="none" stroke-width="0.5" points="23.528329849243164,3.944626107811928 23.93930435180664,4.368098512291908 "/>
-   <polyline stroke="black" id="svg_7900" fill="none" stroke-width="0.5" points="4.813349723815918,3.944626107811928 4.355472564697266,3.944626107811928 "/>
-   <polyline stroke="black" id="svg_7901" fill="none" stroke-width="0.5" points="3.9562861919403076,4.368098512291908 3.146160364151001,3.5086865574121475 "/>
-   <polyline stroke="black" id="svg_7902" fill="none" stroke-width="0.5" points="3.146160364151001,3.5086865574121475 2.3360345363616943,4.368098512291908 "/>
-   <polyline stroke="black" id="svg_7903" fill="none" stroke-width="0.5" points="2.3360345363616943,4.368098512291908 1.5259087085723877,3.5086865574121475 "/>
-   <polyline stroke="black" id="svg_7904" fill="none" stroke-width="0.5" points="1.5259087085723877,3.5086865574121475 0.7275355458259583,4.368098512291908 "/>
-   <polyline stroke="black" id="svg_7905" fill="none" stroke-width="0.5" points="4.355472564697266,3.944626107811928 3.9562861919403076,4.368098512291908 "/>
-   <polyline stroke="black" id="svg_7906" fill="none" stroke-width="0.5" points="13.947776794433594,7.569093003869057 11.658320426940918,7.569093003869057 "/>
-   <polyline stroke="black" id="svg_7907" fill="none" stroke-width="0.5" points="11.658320426940918,7.569093003869057 11.658320426940918,6.360937371850014 "/>
-   <polyline stroke="black" id="svg_7908" fill="none" stroke-width="0.5" points="13.947776794433594,7.569093003869057 16.22551727294922,7.569093003869057 "/>
-   <polyline stroke="black" id="svg_7909" fill="none" stroke-width="0.5" points="16.22551727294922,7.569093003869057 16.22551727294922,6.360937371850014 "/>
-   <polyline stroke="black" id="svg_7910" fill="none" stroke-width="0.5" points="11.094743728637695,6.360937371850014 12.233613967895508,6.360937371850014 "/>
-   <polyline stroke="black" id="svg_7911" fill="none" stroke-width="0.5" points="15.650223731994629,6.360937371850014 16.800809860229492,6.360937371850014 "/>
-   <polyline stroke="black" id="svg_7912" fill="none" stroke-width="0.5" points="11.658320426940918,2.724003091454506 11.658320426940918,3.944626107811928 "/>
-   <polyline stroke="black" id="svg_7913" fill="none" stroke-width="0.5" points="16.22551727294922,2.724003091454506 16.22551727294922,3.944626107811928 "/>
-   <polyline stroke="black" id="svg_7914" fill="none" stroke-width="0.5" points="11.094743728637695,3.944626107811928 12.233613967895508,3.944626107811928 "/>
-   <polyline stroke="black" id="svg_7915" fill="none" stroke-width="0.5" points="15.650223731994629,3.944626107811928 16.800809860229492,3.944626107811928 "/>
-   <polyline stroke="black" id="svg_7916" fill="none" stroke-width="0.5" points="10.131980895996094,0.6813709884881973 10.296370506286621,0.5817077308893204 10.566389083862305,0.30769216269254684 10.566389083862305,2.250699535012245 "/>
-   <polyline stroke="black" id="svg_7917" fill="none" stroke-width="0.5" points="17.669660568237305,0.7685661464929581 17.669660568237305,0.6813709884881973 17.751855850219727,0.49455027282238007 17.845731735229492,0.40735481679439545 18.02191162109375,0.30769216269254684 18.3622989654541,0.30769216269254684 18.538440704345703,0.40735481679439545 18.620708465576172,0.49455027282238007 18.714584350585938,0.6813709884881973 18.714584350585938,0.8681910783052444 18.620708465576172,1.0425821095705032 18.456247329711914,1.3290271908044815 17.587467193603516,2.250699535012245 18.796850204467773,2.250699535012245 "/>
-   <polyline stroke="black" id="svg_7918" fill="none" stroke-width="0.5" points="9.274916648864746,8.005032792687416 9.274916648864746,9.948040261864662 "/>
-   <polyline stroke="black" id="svg_7919" fill="none" stroke-width="0.5" points="9.274916648864746,8.005032792687416 10.061537742614746,8.005032792687416 10.319839477539062,8.10465694963932 10.402034759521484,8.191852822899818 10.495945930480957,8.37867285311222 10.495945930480957,8.65268923342228 10.402034759521484,8.839509263634682 10.319839477539062,8.926705613732338 10.061537742614746,9.026329293847084 9.274916648864746,9.026329293847084 "/>
-   <polyline stroke="black" id="svg_7920" fill="none" stroke-width="0.5" points="18.151042938232422,8.042396321892738 18.151042938232422,9.985404267907143 "/>
-   <polyline stroke="black" id="svg_7921" fill="none" stroke-width="0.5" points="17.54052734375,8.042396321892738 18.749767303466797,8.042396321892738 "/>
-   <polyline stroke="black" id="svg_7922" fill="none" stroke-width="0.5" points="6.187051773071289,7.569093003869057 6.187051773071289,2.724003091454506 "/>
-   <polyline stroke="black" id="svg_7923" fill="none" stroke-width="0.5" points="6.187051773071289,2.724003091454506 5.376925945281982,3.5834148079156876 "/>
-   <polyline stroke="black" id="svg_7924" fill="none" stroke-width="0.5" points="6.187051773071289,2.724003091454506 6.9854254722595215,3.5834148079156876 "/>
-   <polyline stroke="black" id="svg_7925" fill="none" stroke-width="0.5" points="8.006878852844238,2.724003091454506 8.006878852844238,7.569093003869057 "/>
-   <polyline stroke="black" id="svg_7926" fill="none" stroke-width="0.5" points="8.006878852844238,7.569093003869057 8.817004203796387,6.722149148583412 "/>
-   <polyline stroke="black" id="svg_7927" fill="none" stroke-width="0.5" points="8.006878852844238,7.569093003869057 7.196753025054932,6.722149148583412 "/>
-   <polyline stroke="black" id="svg_7928" fill="none" stroke-width="0.5" points="18.514936447143555,7.569093003869057 19.876922607421875,7.569093003869057 "/>
-   <polyline stroke="black" id="svg_7929" fill="none" stroke-width="0.5" points="23.07048797607422,7.569093003869057 21.70850372314453,7.569093003869057 "/>
-   <polyline stroke="black" id="svg_7930" fill="none" stroke-width="0.5" points="18.514936447143555,2.724003091454506 19.876922607421875,2.724003091454506 "/>
-   <polyline stroke="black" id="svg_7931" fill="none" stroke-width="0.5" points="23.07048797607422,2.724003091454506 21.70850372314453,2.724003091454506 "/>
-   <polyline stroke="black" id="svg_7932" fill="none" stroke-width="0.5" points="21.70850372314453,2.724003091454506 19.876922607421875,7.569093003869057 "/>
-   <polyline stroke="black" id="svg_7933" fill="none" stroke-width="0.5" points="19.876922607421875,2.724003091454506 21.70850372314453,7.569093003869057 "/>
-   <polyline stroke="black" id="svg_7934" fill="none" stroke-width="0.5" points="21.70850372314453,7.569093003869057 22.095972061157227,6.435665383934975 "/>
-   <polyline stroke="black" id="svg_7935" fill="none" stroke-width="0.5" points="21.70850372314453,7.569093003869057 20.62843132019043,7.158050313591957 "/>
-   <polyline stroke="black" id="svg_7936" fill="none" stroke-width="0.5" points="19.876922607421875,2.724003091454506 19.466018676757812,3.857430472970009 "/>
-   <polyline stroke="black" id="svg_7937" fill="none" stroke-width="0.5" points="19.876922607421875,2.724003091454506 20.945314407348633,3.1599428802728653 "/>
+  <g id="svg_8068">
+   <polyline id="svg_394" fill="none" stroke="black" stroke-width="0.5" points="136.8900146484375,0 126.00006103515625,0 "/>
+   <polyline id="svg_395" fill="none" stroke="black" stroke-width="0.5" points="126.00006103515625,0 126.00006103515625,62.22998046875 "/>
+   <polyline id="svg_396" fill="none" stroke="black" stroke-width="0.5" points="126.00006103515625,62.22998046875 136.8900146484375,62.22998046875 "/>
+   <polyline id="svg_397" fill="none" stroke="black" stroke-width="0.5" points="136.8900146484375,62.22998046875 136.8900146484375,0 "/>
+   <polyline id="svg_398" fill="none" stroke="black" stroke-width="0.5" points="66.8900146484375,31.120010375976562 66.8900146484375,10.889999389648438 "/>
+   <polyline id="svg_399" fill="none" stroke="black" stroke-width="0.5" points="66.8900146484375,10.889999389648438 126.00006103515625,0 "/>
+   <polyline id="svg_400" fill="none" stroke="black" stroke-width="0.5" points="66.8900146484375,31.120010375976562 66.8900146484375,51.34002685546875 "/>
+   <polyline id="svg_401" fill="none" stroke="black" stroke-width="0.5" points="66.8900146484375,51.34002685546875 126.00006103515625,62.22998046875 "/>
+   <polyline id="svg_402" fill="none" stroke="black" stroke-width="0.5" points="66.8900146484375,10.889999389648438 57.55999755859375,10.889999389648438 "/>
+   <polyline id="svg_403" fill="none" stroke="black" stroke-width="0.5" points="57.55999755859375,10.889999389648438 57.55999755859375,51.34002685546875 "/>
+   <polyline id="svg_404" fill="none" stroke="black" stroke-width="0.5" points="66.8900146484375,51.34002685546875 57.55999755859375,51.34002685546875 "/>
+   <polyline id="svg_405" fill="none" stroke="black" stroke-width="0.5" points="0,0 10.8900146484375,0 "/>
+   <polyline id="svg_406" fill="none" stroke="black" stroke-width="0.5" points="10.8900146484375,0 10.8900146484375,62.22998046875 "/>
+   <polyline id="svg_407" fill="none" stroke="black" stroke-width="0.5" points="10.8900146484375,62.22998046875 0,62.22998046875 "/>
+   <polyline id="svg_408" fill="none" stroke="black" stroke-width="0.5" points="0,62.22998046875 0,0 "/>
+   <polyline id="svg_409" fill="none" stroke="black" stroke-width="0.5" points="57.55999755859375,10.889999389648438 10.8900146484375,0 "/>
+   <polyline id="svg_410" fill="none" stroke="black" stroke-width="0.5" points="57.55999755859375,51.34002685546875 10.8900146484375,62.22998046875 "/>
+   <polyline id="svg_411" fill="none" stroke="black" stroke-width="0.5" points="121.76995849609375,22.790008544921875 88.17001342773438,22.790008544921875 "/>
+   <polyline id="svg_412" fill="none" stroke="black" stroke-width="0.5" points="88.17001342773438,38.34001159667969 121.76995849609375,38.34001159667969 "/>
+   <polyline id="svg_413" fill="none" stroke="black" stroke-width="0.5" points="121.76995849609375,38.34001159667969 121.76995849609375,22.790008544921875 "/>
+   <polyline id="svg_414" fill="none" stroke="black" stroke-width="0.5" points="121.76995849609375,22.790008544921875 113.3699951171875,38.34001159667969 "/>
+   <polyline id="svg_415" fill="none" stroke="black" stroke-width="0.5" points="113.3699951171875,22.790008544921875 104.97000122070312,38.34001159667969 "/>
+   <polyline id="svg_416" fill="none" stroke="black" stroke-width="0.5" points="104.97000122070312,22.790008544921875 96.57000732421875,38.34001159667969 "/>
+   <polyline id="svg_417" fill="none" stroke="black" stroke-width="0.5" points="96.57000732421875,22.790008544921875 88.17001342773438,38.34001159667969 "/>
+   <polyline id="svg_418" fill="none" stroke="black" stroke-width="0.5" points="88.17001342773438,38.34001159667969 88.17001342773438,22.790008544921875 "/>
+   <polyline id="svg_607" fill="none" stroke="black" stroke-width="0.5" points="90.19000244140625,17.449996948242188 89.95001220703125,17.210006713867188 89.58999633789062,17.090011596679688 89.1199951171875,17.090011596679688 88.760009765625,17.210006713867188 88.52999877929688,17.449996948242188 88.52999877929688,17.680007934570312 88.6400146484375,17.919998168945312 88.760009765625,18.040008544921875 89,18.160003662109375 89.71002197265625,18.389999389648438 89.95001220703125,18.510009765625 90.07000732421875,18.6300048828125 90.19000244140625,18.870010375976562 90.19000244140625,19.220001220703125 89.95001220703125,19.460006713867188 89.58999633789062,19.580001831054688 89.1199951171875,19.580001831054688 88.760009765625,19.460006713867188 88.52999877929688,19.220001220703125 "/>
+   <polyline id="svg_608" fill="none" stroke="black" stroke-width="0.5" points="92.67001342773438,17.680007934570312 92.55999755859375,17.449996948242188 92.32000732421875,17.210006713867188 92.08001708984375,17.090011596679688 91.61001586914062,17.090011596679688 91.3699951171875,17.210006713867188 91.1300048828125,17.449996948242188 91.010009765625,17.680007934570312 90.89999389648438,18.040008544921875 90.89999389648438,18.6300048828125 91.010009765625,18.990005493164062 91.1300048828125,19.220001220703125 91.3699951171875,19.460006713867188 91.61001586914062,19.580001831054688 92.08001708984375,19.580001831054688 92.32000732421875,19.460006713867188 92.55999755859375,19.220001220703125 92.67001342773438,18.990005493164062 "/>
+   <polyline id="svg_609" fill="none" stroke="black" stroke-width="0.5" points="93.5,17.090011596679688 93.5,19.580001831054688 "/>
+   <polyline id="svg_610" fill="none" stroke="black" stroke-width="0.5" points="93.5,17.090011596679688 94.57000732421875,17.090011596679688 94.93002319335938,17.210006713867188 95.04000854492188,17.330001831054688 95.16000366210938,17.57000732421875 95.16000366210938,17.800003051757812 95.04000854492188,18.040008544921875 94.93002319335938,18.160003662109375 94.57000732421875,18.279998779296875 93.5,18.279998779296875 "/>
+   <polyline id="svg_611" fill="none" stroke="black" stroke-width="0.5" points="94.33001708984375,18.279998779296875 95.16000366210938,19.580001831054688 "/>
+   <polyline id="svg_612" fill="none" stroke="black" stroke-width="0.5" points="95.99002075195312,17.090011596679688 95.99002075195312,19.580001831054688 "/>
+   <polyline id="svg_613" fill="none" stroke="black" stroke-width="0.5" points="95.99002075195312,17.090011596679688 97.52999877929688,17.090011596679688 "/>
+   <polyline id="svg_614" fill="none" stroke="black" stroke-width="0.5" points="95.99002075195312,18.279998779296875 96.94000244140625,18.279998779296875 "/>
+   <polyline id="svg_615" fill="none" stroke="black" stroke-width="0.5" points="95.99002075195312,19.580001831054688 97.52999877929688,19.580001831054688 "/>
+   <polyline id="svg_616" fill="none" stroke="black" stroke-width="0.5" points="98.010009765625,17.090011596679688 98.60000610351562,19.580001831054688 "/>
+   <polyline id="svg_617" fill="none" stroke="black" stroke-width="0.5" points="99.19000244140625,17.090011596679688 98.60000610351562,19.580001831054688 "/>
+   <polyline id="svg_618" fill="none" stroke="black" stroke-width="0.5" points="99.19000244140625,17.090011596679688 99.79000854492188,19.580001831054688 "/>
+   <polyline id="svg_619" fill="none" stroke="black" stroke-width="0.5" points="100.3800048828125,17.090011596679688 99.79000854492188,19.580001831054688 "/>
+   <polyline id="svg_620" fill="none" stroke="black" stroke-width="0.5" points="105.24002075195312,17.680007934570312 105.1199951171875,17.449996948242188 104.8800048828125,17.210006713867188 104.6400146484375,17.090011596679688 104.17001342773438,17.090011596679688 103.93002319335938,17.210006713867188 103.70001220703125,17.449996948242188 103.58001708984375,17.680007934570312 103.46002197265625,18.040008544921875 103.46002197265625,18.6300048828125 103.58001708984375,18.990005493164062 103.70001220703125,19.220001220703125 103.93002319335938,19.460006713867188 104.17001342773438,19.580001831054688 104.6400146484375,19.580001831054688 104.8800048828125,19.460006713867188 105.1199951171875,19.220001220703125 105.24002075195312,18.990005493164062 "/>
+   <polyline id="svg_621" fill="none" stroke="black" stroke-width="0.5" points="106.66000366210938,17.090011596679688 106.42001342773438,17.210006713867188 106.19000244140625,17.449996948242188 106.07000732421875,17.680007934570312 105.95001220703125,18.040008544921875 105.95001220703125,18.6300048828125 106.07000732421875,18.990005493164062 106.19000244140625,19.220001220703125 106.42001342773438,19.460006713867188 106.66000366210938,19.580001831054688 107.1300048828125,19.580001831054688 107.3699951171875,19.460006713867188 107.61001586914062,19.220001220703125 107.73001098632812,18.990005493164062 107.83999633789062,18.6300048828125 107.83999633789062,18.040008544921875 107.73001098632812,17.680007934570312 107.61001586914062,17.449996948242188 107.3699951171875,17.210006713867188 107.1300048828125,17.090011596679688 106.66000366210938,17.090011596679688 "/>
+   <polyline id="svg_622" fill="none" stroke="black" stroke-width="0.5" points="108.67001342773438,17.090011596679688 108.67001342773438,19.580001831054688 "/>
+   <polyline id="svg_623" fill="none" stroke="black" stroke-width="0.5" points="108.67001342773438,17.090011596679688 110.33001708984375,19.580001831054688 "/>
+   <polyline id="svg_624" fill="none" stroke="black" stroke-width="0.5" points="110.33001708984375,17.090011596679688 110.33001708984375,19.580001831054688 "/>
+   <polyline id="svg_625" fill="none" stroke="black" stroke-width="0.5" points="110.93002319335938,17.090011596679688 111.8699951171875,19.580001831054688 "/>
+   <polyline id="svg_626" fill="none" stroke="black" stroke-width="0.5" points="112.82000732421875,17.090011596679688 111.8699951171875,19.580001831054688 "/>
+   <polyline id="svg_627" fill="none" stroke="black" stroke-width="0.5" points="113.42001342773438,17.090011596679688 113.42001342773438,19.580001831054688 "/>
+   <polyline id="svg_628" fill="none" stroke="black" stroke-width="0.5" points="113.42001342773438,17.090011596679688 114.96002197265625,17.090011596679688 "/>
+   <polyline id="svg_629" fill="none" stroke="black" stroke-width="0.5" points="113.42001342773438,18.279998779296875 114.36001586914062,18.279998779296875 "/>
+   <polyline id="svg_630" fill="none" stroke="black" stroke-width="0.5" points="113.42001342773438,19.580001831054688 114.96002197265625,19.580001831054688 "/>
+   <polyline id="svg_631" fill="none" stroke="black" stroke-width="0.5" points="115.30999755859375,17.090011596679688 116.260009765625,18.279998779296875 116.260009765625,19.580001831054688 "/>
+   <polyline id="svg_632" fill="none" stroke="black" stroke-width="0.5" points="117.21002197265625,17.090011596679688 116.260009765625,18.279998779296875 "/>
+   <polyline id="svg_633" fill="none" stroke="black" stroke-width="0.5" points="118.3900146484375,17.090011596679688 118.16000366210938,17.210006713867188 117.92001342773438,17.449996948242188 117.80001831054688,17.680007934570312 117.68002319335938,18.040008544921875 117.68002319335938,18.6300048828125 117.80001831054688,18.990005493164062 117.92001342773438,19.220001220703125 118.16000366210938,19.460006713867188 118.3900146484375,19.580001831054688 118.87002563476562,19.580001831054688 119.0999755859375,19.460006713867188 119.3399658203125,19.220001220703125 119.46002197265625,18.990005493164062 119.5799560546875,18.6300048828125 119.5799560546875,18.040008544921875 119.46002197265625,17.680007934570312 119.3399658203125,17.449996948242188 119.0999755859375,17.210006713867188 118.87002563476562,17.090011596679688 118.3900146484375,17.090011596679688 "/>
+   <polyline id="svg_634" fill="none" stroke="black" stroke-width="0.5" points="120.4100341796875,17.090011596679688 120.4100341796875,19.580001831054688 "/>
+   <polyline id="svg_635" fill="none" stroke="black" stroke-width="0.5" points="120.4100341796875,17.090011596679688 121.47003173828125,17.090011596679688 121.8299560546875,17.210006713867188 121.949951171875,17.330001831054688 122.070068359375,17.57000732421875 122.070068359375,17.800003051757812 121.949951171875,18.040008544921875 121.8299560546875,18.160003662109375 121.47003173828125,18.279998779296875 120.4100341796875,18.279998779296875 "/>
+   <polyline id="svg_636" fill="none" stroke="black" stroke-width="0.5" points="121.239990234375,18.279998779296875 122.070068359375,19.580001831054688 "/>
   </g>
  </g>
 </svg>
