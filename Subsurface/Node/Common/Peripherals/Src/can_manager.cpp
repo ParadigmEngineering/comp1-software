@@ -1,6 +1,5 @@
 #include "Peripherals/Inc/can_manager.h"
 
-
 CANManager::CANManager(CANInterface* can_interface)
     : m_can_interface(can_interface)
 {}
