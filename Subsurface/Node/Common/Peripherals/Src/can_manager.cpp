@@ -5,6 +5,17 @@ CANManager::CANManager(CANInterface* can_interface)
     : m_can_interface(can_interface)
 {}
 
+#ifdef UNIT_TEST
+void CANManager::setRxBuffer(uint8_t* buffer, int len)
+{
+    memset(m_rx_buffer, 0, 8);
+    for (int i = 0; i < len; ++i)
+    {
+        m_rx_buffer[i] = buffer[i];
+    }
+}
+#endif // UNIT_TEST
+
 /// TRANSMIT ///
 bool CANManager::transmit()
 {

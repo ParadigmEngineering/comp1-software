@@ -29,14 +29,7 @@ public:
     uint8_t* getRxBuffer() { return m_rx_buffer; }
 
 #ifdef UNIT_TEST
-    void setRxBuffer(uint8_t* buffer, int len)
-    {
-        memset(m_rx_buffer, 0, 8);
-        for (int i = 0; i < len; ++i)
-        {
-            m_rx_buffer[i] = buffer[i];
-        }
-    }
+    void setRxBuffer(uint8_t* buffer, int len);
 #endif // UNIT_TEST
 
     template<typename T>
