@@ -31,12 +31,12 @@ public:
     CANInterface(CAN_HandleTypeDef *can_handle);
 
     // Start CAN peripheral - returns true if successful
-    bool start(void);
+    bool start();
     // Stop CAN peripheral - returns true if successful
-    bool stop(void);
+    bool stop();
 
     // Returns number of empty transmit mailboxes
-    uint8_t getNumEmptyTxMailboxes(void);
+    uint8_t getNumEmptyTxMailboxes();
     // Set transmit mailbox to CAN_TX_MAILBOX0,1,2
     void setTxMailbox(CanTxMailbox mailbox);
     // Check if a tx message is pending in CAN_TX_MAILBOX0,1,2
@@ -47,9 +47,9 @@ public:
     void setTxCanId(uint16_t can_id);
 
     // Get number of messages in recieve fifo 0
-    uint8_t getNumMessagesFifo0(void);
+    uint8_t getNumMessagesFifo0();
     // Get number of messages in recieve fifo 0
-    uint8_t getNumMessagesFifo1(void);
+    uint8_t getNumMessagesFifo1();
     // Set recieve fifo to CAN_RX_FIFO0,1
     void setRxFifo(CanRxFifo fifo);
     // Copy message from receive fifo - returns true if successful

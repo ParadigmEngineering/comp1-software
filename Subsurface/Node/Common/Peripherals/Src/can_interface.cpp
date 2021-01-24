@@ -20,16 +20,16 @@ CANInterface::CANInterface(CAN_HandleTypeDef *can_handle)
 }
 
 /// START/STOP ///
-bool CANInterface::start(void) {
+bool CANInterface::start() {
     return halStatusToBool( HAL_CAN_Start(m_can_handle) );
 }
 
-bool CANInterface::stop(void) {
+bool CANInterface::stop() {
     return halStatusToBool( HAL_CAN_Stop(m_can_handle) );
 }
 
 /// TRANSMIT ///
-uint8_t CANInterface::getNumEmptyTxMailboxes(void) 
+uint8_t CANInterface::getNumEmptyTxMailboxes() 
 {
     return HAL_CAN_GetTxMailboxesFreeLevel(m_can_handle);
 }
@@ -55,12 +55,12 @@ void CANInterface::setTxCanId(uint16_t can_id)
 }
 
 /// RECEIVE ///
-uint8_t CANInterface::getNumMessagesFifo0(void) 
+uint8_t CANInterface::getNumMessagesFifo0() 
 {
     return HAL_CAN_GetRxFifoFillLevel(m_can_handle, CAN_FILTER_FIFO0);
 }
 
-uint8_t CANInterface::getNumMessagesFifo1(void)
+uint8_t CANInterface::getNumMessagesFifo1()
 {
     return HAL_CAN_GetRxFifoFillLevel(m_can_handle, CAN_FILTER_FIFO1);
 }
