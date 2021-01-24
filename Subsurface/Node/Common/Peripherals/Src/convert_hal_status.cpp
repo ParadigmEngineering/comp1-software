@@ -2,8 +2,5 @@
 
 bool halStatusToBool(HAL_StatusTypeDef status)
 {
-    if (status == 0x00U) {
-        return true;
-    }
-    return false;
+    return status == 0x00U;
 }
