@@ -39,13 +39,7 @@ public:
         memset(m_tx_buffer, 0, 8);
         // Make sure we won't overflow
         if (sizeof(T) + position > 8) { return false; }
-
-        uint8_t data_as_uint8_t[8] = { 0 };
-        memcpy(data_as_uint8_t, &data, sizeof(T));
-        for (uint8_t i = 0; i < sizeof(T); i++)
-        {
-            m_tx_buffer[i + position] = data_as_uint8_t[i];
-        }
+        memcpy(m_tx_buffer + position, &data, sizeof(T));
 
         return true;
     }
