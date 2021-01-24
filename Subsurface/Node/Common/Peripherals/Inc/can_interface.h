@@ -48,7 +48,7 @@ public:
 
     // Get number of messages in recieve fifo 0
     uint8_t getNumMessagesFifo0();
-    // Get number of messages in recieve fifo 0
+    // Get number of messages in recieve fifo 1
     uint8_t getNumMessagesFifo1();
     // Set recieve fifo to CAN_RX_FIFO0,1
     void setRxFifo(CanRxFifo fifo);
