@@ -64,4 +64,4 @@ public:
     bool receive(uint8_t *rxData);
 };
 
-#endif
+#endif // NODE_CAN_INTERFACE_H
