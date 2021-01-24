@@ -7,13 +7,13 @@ enum class CanTxMailbox : uint32_t
 {
     MAILBOX0 = CAN_TX_MAILBOX0,
     MAILBOX1 = CAN_TX_MAILBOX1,
-    MAILBOX2 = CAN_TX_MAILBOX2,
+    MAILBOX2 = CAN_TX_MAILBOX2
 };
 
-enum class CanRxFifo
+enum class CanRxFifo : uint32_t
 {
-    FIFO0,
-    FIFO1,
+    FIFO0 = CAN_RX_FIFO0,
+    FIFO1 = CAN_RX_FIFO1
 };
 
 class CANInterface
@@ -22,9 +22,9 @@ private:
     CAN_HandleTypeDef *m_can_handle;
 
     CAN_TxHeaderTypeDef m_tx_header;
-    uint32_t m_tx_mailbox = CAN_TX_MAILBOX0;
+    CanTxMailbox m_tx_mailbox = CanTxMailbox::MAILBOX0;
     CAN_RxHeaderTypeDef m_rx_header;
-    uint32_t m_rx_fifo = CAN_RX_FIFO0;
+    CanRxFifo m_rx_fifo = CanRxFifo::FIFO0;
 
 public:
     // Constructor
