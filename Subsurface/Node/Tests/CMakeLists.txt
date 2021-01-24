@@ -14,11 +14,13 @@ set(HEADERS
 
 set(SOURCES
     Unity/src/Unity.c
+)
+
+set(CAN_SOURCES
     ../Common/Peripherals/Src/can_manager.cpp
     mock/mock_can_interface.cpp
-    tests.cpp
 )
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-add_executable(Node-Tests ${SOURCES})
+add_executable(CAN-Tests can/tests.cpp ${SOURCES} ${CAN_SOURCES})
