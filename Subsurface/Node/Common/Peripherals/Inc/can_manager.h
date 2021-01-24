@@ -54,4 +54,4 @@ public:
     }
 };
 
-#endif
+#endif // NODE_CAN_MANAGER_H
