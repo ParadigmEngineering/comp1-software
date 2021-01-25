@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -6,8 +8,11 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./navigation-bar.component.css']
 })
 export class NavigationBarComponent implements OnInit {
-  @Input() pages: { name: string, routes: string }[];
-  constructor() {}
+  @Input() pages: { name: string, route: string }[];
+  @Input() activatedPage: string;
+  constructor() {
+    
+  }
   ngOnInit(): void {
   }
 
