@@ -1,0 +1,13 @@
+.estop{
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    color:white;
+    background-color: rgb(156, 16, 16);
+    text-align: center;
+    width: 13vh;
+    height: 5vh;
+    border-style:none;
+    border-radius: 5px;
+    text-shadow: -1px 1px black;
+}
