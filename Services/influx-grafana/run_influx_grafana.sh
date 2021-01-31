@@ -19,4 +19,3 @@ docker run -d \
     -v $influxPath:/var/lib/influxdb \
     -v $grafanaPath:/var/lib/grafana \
     para-influx-grafana:1.0 
-    
