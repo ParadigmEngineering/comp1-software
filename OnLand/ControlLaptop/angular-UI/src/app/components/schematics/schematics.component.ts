@@ -68,7 +68,8 @@ export class SchematicsComponent implements OnInit {
 
 				)
 			);
-		this.dia.linkTemplate = $(go.Link,
+		this.dia.linkTemplate = 
+		$(go.Link,
 			{ routing: go.Link.Orthogonal },
 			$(go.Shape,
 				new go.Binding("stroke", "color"),  // shape.stroke = data.color
@@ -93,10 +94,10 @@ export class SchematicsComponent implements OnInit {
 		{ key: 'Delta' }
 	];
 	public diagramLinkData = [
-		{ key: -1, from: 'Motor_small_1', fromPort: "Bottom", to: 'P1_1', color: 'red', toPort: "Left" },
-		{ key: -1, from: 'Relief_Valve_1', to: 'Motor_small_1', color: 'green', toPort: "Right" },
-		{ key: -1, from: 'P1_2', to: 'Motor_small_1', color: 'green', toPort: "Right" },
-		{ key: -1, from: 'P1_1', to: 'Relief_Valve_1', color: 'red', toPort: "Top" },
+		{ key: -1, from: 'Motor_small_1', to: 'P1_1', color: 'red', fromPort: "Left", toPort: "Right" },
+		{ key: -1, from: 'Relief_Valve_1', to: 'Motor_small_1', color: 'green', fromPort: "Right", toPort: "Right" },
+		{ key: -1, from: 'P1_2', to: 'Relief_Valve_1', color: 'green', fromPort: "Right", toPort: "Right" },
+		{ key: -1, from: 'P1_1', to: 'Relief_Valve_1', color: 'red', fromPort: "Right", toPort: "Top", "points":[511,280] },
 
 	];
 	public diagramDivClassName: string = 'myDiagramDiv';
