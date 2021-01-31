@@ -29,6 +29,8 @@ docker start docker-influxdb-grafana
 ```
 
 #### References
+This dockerfile was pulled from dockerhub for our use.
+
 Refer to: https://github.com/philhawthorne/docker-influxdb-grafana for more info
 
 Also, docker/README.md has more information about accessing influx after starting the container.
