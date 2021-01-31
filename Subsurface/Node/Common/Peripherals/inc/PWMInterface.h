@@ -30,7 +30,7 @@ public:
     // Set Prescaler
     void setPrescaler();
 
-    // Set Autoload
+    // Set Autoreload
     void setAutoreload();
 
     // Set Compare
@@ -50,4 +50,4 @@ private:
     TIM_HandleTypeDef* m_timer;
 
 };
-#endif
+#endif // PWMINTERFACE_H
