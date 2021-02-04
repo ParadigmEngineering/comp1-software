@@ -1,3 +1,14 @@
-<label> The State </label>
+<div class="state-container">
+  <label class="state-label"> CURRENT <br> STATE 
+  </label>
 
-<div style="color:white"> this is a box in the future </div>
+  <button class="state-button" (click)="toggleFlag()" [ngStyle]="{'background-color': armedFlag ? 'green' : 'red' }">  
+   {{ (armedFlag) ? "ARMED" : "DISARMED" }}
+  </button>
+
+  <!-- [ngStyle]="(states === page.route)?'button-activated':'button-unactivated'"
+
+
+  <some-element [ngStyle]="{'background-color: #3b824f;': styleExp}"></some-element>
+  <div [ngStyle]="{'background-color': armedFlag ? 'green' : 'red' }"></div> -->
+</div>

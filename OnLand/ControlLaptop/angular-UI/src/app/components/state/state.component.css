@@ -1,0 +1,34 @@
+.state-container{
+  background: grey;
+
+  font-family: Roboto;
+  font-size: 14;
+  font-weight: 400;
+  line-height: 16.41px;
+  color: #C8C8C8;
+
+  display:grid;
+  grid-template-columns: auto auto;
+  place-items: center;
+
+  width: 265px;
+  height: 35px;
+
+}
+
+.state-label{
+  width: 100px;
+  height: 35px;
+  top: 8px;
+  Left: 295px;
+}
+
+.state-button{
+
+  height: 28px;
+  width: 153px;
+  left: 374px;
+  vertical-align: center;
+  border-radius: 4px;
+
+}

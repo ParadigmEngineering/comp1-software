@@ -8,6 +8,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class StateComponent implements OnInit {
 
+  armedFlag = false;
+
+  toggleFlag(){
+    this.armedFlag=!this.armedFlag;
+  }
+  
   constructor() { }
 
   ngOnInit(): void {
