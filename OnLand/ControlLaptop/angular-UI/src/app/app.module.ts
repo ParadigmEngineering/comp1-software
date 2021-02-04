@@ -8,6 +8,9 @@ import { NavigationButtonComponent } from './components/navigation-bar/navigatio
 import { LogoBarComponent } from './components/logo-bar/logo-bar.component';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 import { NavigationPageComponent } from './pages/navigation-page/navigation-page.component';
+import { PowerMetricsPageComponent } from './pages/powermetrics-page/powermetrics-page.component';
+import { ControlPageComponent } from './pages/control-page/control-page.component';
+import { ConfigurationPageComponent } from './pages/configuration-page/configuration-page.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { NavigationPageComponent } from './pages/navigation-page/navigation-page
     NavigationButtonComponent,
     LogoBarComponent,
     DashboardPageComponent,
-    NavigationPageComponent
+    NavigationPageComponent,
+    PowerMetricsPageComponent,
+    ControlPageComponent,
+    ConfigurationPageComponent
   ],
   imports: [
     BrowserModule,

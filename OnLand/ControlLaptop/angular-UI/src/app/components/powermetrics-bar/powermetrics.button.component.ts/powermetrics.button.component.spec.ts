@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PowerMetricsPageComponent } from './powermetrics-page.component';
+import { PowerMetricsButtonComponent } from './powermetrics-button.component';
 
-describe('PowerMetricsPageComponent', () => {
-  let component: PowerMetricsPageComponent;
-  let fixture: ComponentFixture<PowerMetricsPageComponent>;
+describe('NPowerMetricsButtonComponent', () => {
+  let component: PowerMetricsButtonComponent;
+  let fixture: ComponentFixture<PowerMetricsButtonComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PowerMetricsPageComponent ]
+      declarations: [ PowerMetricsButtonComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PowerMetricsPageComponent);
+    fixture = TestBed.createComponent(PowerMetricsButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

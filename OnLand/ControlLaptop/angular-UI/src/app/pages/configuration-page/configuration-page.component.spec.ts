@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PowerMetricsPageComponent } from './powermetrics-page.component';
+import { ConfigurationPageComponent } from './configuration-page.component';
 
-describe('PowerMetricsPageComponent', () => {
-  let component: PowerMetricsPageComponent;
-  let fixture: ComponentFixture<PowerMetricsPageComponent>;
+describe('ConfigurationPageComponent', () => {
+  let component: ConfigurationPageComponent;
+  let fixture: ComponentFixture<ConfigurationPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PowerMetricsPageComponent ]
+      declarations: [ ConfigurationPageComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PowerMetricsPageComponent);
+    fixture = TestBed.createComponent(ConfigurationPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

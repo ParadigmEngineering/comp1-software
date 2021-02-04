@@ -11,9 +11,9 @@ export class AppComponent {
   pages: { name: string, route: string }[] = [
     { name: 'DASHBOARD', route: '/dashboard-page' },
     { name: 'NAVIGATION', route: '/navigation-page' },
-    { name: 'POWER METRICS', route: '' },
-    { name: 'CONTROL', route: '' },
-    { name: 'CONFIGURATION', route: '' }
+    { name: 'POWER METRICS', route: '/powermetrics-page' },
+    { name: 'CONTROL', route: '/control-page' },
+    { name: 'CONFIGURATION', route: '/configuration-page' }
   ]
   activatedPage: string;
 
