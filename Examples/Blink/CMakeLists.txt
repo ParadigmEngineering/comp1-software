@@ -38,6 +38,7 @@ set(STM32CUBEMX_GENERATED_FILES
         Core/Inc/can.h
         Core/Inc/gpio.h
         Core/Inc/usart.h
+        Core/Inc/canTest.h
 
         Core/Src/main.cpp
         Core/Src/stm32f3xx_hal_msp.c
