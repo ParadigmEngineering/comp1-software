@@ -46,6 +46,7 @@ set(STM32CUBEMX_GENERATED_FILES
         Core/Src/can.c
         Core/Src/gpio.c
         Core/Src/usart.c
+        Core/Src/canTest.cpp
 
         startup_stm32f303xe.s
         )
