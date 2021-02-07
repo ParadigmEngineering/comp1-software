@@ -57,6 +57,8 @@ set(SOURCES
         ../../Subsurface/Node/Common/Peripherals/Src/can_interface.cpp
         ../../Subsurface/Node/Common/Peripherals/Src/can_manager.cpp
         ../../Subsurface/Node/Common/Peripherals/Src/convert_hal_status.cpp
+        ../../Subsurface/Node/Common/Peripherals/src/SPIInterface.cpp
+
 )
 
 set(EXECUTABLE ${PROJECT_NAME}.out)

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -6,12 +8,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  pages: { name: string, routes: string }[] = [
-    { name: 'HOME', routes: '/home-page' },
-    { name: 'SCHEMATICS', routes: '/schematics' },
-    { name: 'CONFIGURATION', routes: '' },
-    { name: 'CONFIGURATION', routes: '' },
-    { name: 'CONFIGURATION', routes: '' }
+  pages: { name: string, route: string }[] = [
+    { name: 'DASHBOARD', route: '/dashboard-page' },
+    { name: 'NAVIGATION', route: '/navigation-page' },
+    { name: 'POWER METRICS', route: '' },
+    { name: 'CONTROL', route: '' },
+    { name: 'CONFIGURATION', route: '' }
   ]
-  title = 'angular-UI';
+  activatedPage: string;
+
+  constructor(private route: Router) {
+    this.route.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe((route: NavigationEnd) => {
+      this.activatedPage = route.urlAfterRedirects;
+      console.log(`current route:: ${this.activatedPage}`)
+    })
+  }
+
 }

@@ -22,6 +22,28 @@ Prerequisite: [Node.js(LTS version will be fine) and npm](https://docs.npmjs.com
 5. To build and serves the app locally, run `ng serve`. If it's build successfully, there should be a link that look like this: http://localhost:4200/. 
 6. Navigate to the link in your browser, and your should be able to see the app.
 
+## Flight Computer setup Guide
+Prerequisites:
+ - CMake (at least version 3.13)
+ - A compiler:
+   - MacOS - gcc 9 - `brew install gcc` or install through xcode
+   - Linux - gcc 9 - `sudo apt install build-essential`
+   - Arm64 Linux (Pi 4)- gcc 9.3 - Manually install from [here](https://github.com/abhiTronix/raspberry-pi-cross-compilers/wiki/64-Bit-Cross-Compiler:-Installation-Instructions)
+   - Arm32 Linux (Pi 3B+) - gcc 9.3 - Manually install from [here](https://github.com/abhiTronix/raspberry-pi-cross-compilers/wiki/Cross-Compiler:-Installation-Instructions)
+   - Windows - Visual Studio 2019 cl.exe should work fine
+     - Note: Ensure that C++ Cmake tools for Windows is installed along with Desktop development with C++
+
+Setup:
+1. In a command prompt (Windows)/terminal (MacOS/Linux), navigate to `comp1-software/Subsurface/FlightComputer`
+2. Make a build directory, and enter it
+3. Building for Raspberry pi:  
+Invoke cmake using `cmake -DCMAKE_TOOLCHAIN_FILE=../arm-linux-gnueabihf-gcc.cmake ..`, this should automatically find the cross compiler (assuming it has been added to your PATH), and generate a Makefile.  
+Building for everything else:  
+Invoke cmake using `cmake ..`, this should generate a Visual Studio Solution (Windows), or a Makefile (MacOS/Linux)
+4. On Windows: Open the .sln file in Visual Studio, and in the solution explorer set the FlightComputer project as the startup project (right click, "set as startup project"), then build and run.  
+On Linux/MacOS/Arm64 Linux: Run `make`, and this should build the project, and then run the executable with `./FlightComputer`
+
+
 ## Node (embedded) setup Guide
 Prerequisites:
  - [STM32CubeMx](https://www.st.com/en/development-tools/stm32cubemx.html) (Version 6.1.0)
@@ -29,6 +51,12 @@ Prerequisites:
  - The following packages (should be able to install from package manager):
    - build-essential (`sudo apt install build-essential`)
    - gcc-arm-none-eabi Version 9.2.1 (`sudo apt install gcc-arm-none-eabi`)
+     - For macOS users, do the following:
+     ```shell
+     brew tap PX4/homebrew-px4
+     brew update
+     brew install gcc-arm-none-eabi
+     ```
    - CMake (see below instructions)
 
 CMake

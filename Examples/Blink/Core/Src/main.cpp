@@ -4,6 +4,8 @@
 #include "can.h"
 
 #include "Peripherals/Inc/can_manager.h"
+#include "spi.h"
+#include "Peripherals/inc/SPIInterface.h"
 
 void SystemClock_Config(void);
 
