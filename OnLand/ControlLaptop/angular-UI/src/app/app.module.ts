@@ -8,7 +8,7 @@ import { NavigationButtonComponent } from './components/navigation-bar/navigatio
 import { LogoBarComponent } from './components/logo-bar/logo-bar.component';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 import { NavigationPageComponent } from './pages/navigation-page/navigation-page.component';
-import { StateComponent } from './components/state/state.component';
+import { StateComponent } from './components/logo-bar/state/state.component';
 
 @NgModule({
   declarations: [
