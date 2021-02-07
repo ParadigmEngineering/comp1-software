@@ -18,6 +18,7 @@ import { NavigationPageComponent } from './pages/navigation-page/navigation-page
 import { PowerMetricsPageComponent } from './pages/powermetrics-page/powermetrics-page.component';
 import { ControlPageComponent } from './pages/control-page/control-page.component';
 import { ConfigurationPageComponent } from './pages/configuration-page/configuration-page.component';
+import { EstopComponent } from './components/estop/estop.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ConfigurationPageComponent } from './pages/configuration-page/configura
     PowerMetricsPageComponent,
     ControlPageComponent,
     ConfigurationPageComponent
+    EstopComponent
   ],
   imports: [
     BrowserModule,
