@@ -3,11 +3,11 @@ import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-control-bar',
-  templateUrl: './control-bar.component.html',
-  styleUrls: ['./control-bar.component.css']
+  selector: 'app-configuration-bar',
+  templateUrl: './configuration-bar.component.html',
+  styleUrls: ['./configuration-bar.component.css']
 })
-export class ControlBarComponent implements OnInit {
+export class ConfigurationBarComponent implements OnInit {
   @Input() pages: { name: string, route: string }[];
   @Input() activatedPage: string;
   constructor() {
