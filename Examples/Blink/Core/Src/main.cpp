@@ -2,10 +2,12 @@
 #include "usart.h"
 #include "gpio.h"
 #include "can.h"
+#include "tim.h"
 
 #include "Peripherals/Inc/can_manager.h"
 #include "spi.h"
 #include "Peripherals/inc/SPIInterface.h"
+#include "Peripherals/Inc/PWMManager.h"
 
 void SystemClock_Config(void);
 
@@ -15,12 +17,12 @@ void SystemClock_Config(void);
   */
 int main(void)
 {
-<<<<<<< HEAD
-=======
-  /* USER CODE BEGIN 1 */
-  
-/*
-  int terminate = 0;
+
+    HAL_Init();
+
+  	SystemClock_Config();
+}
+
 /**
   * @brief System Clock Configuration
   * @retval None
