@@ -43,6 +43,7 @@ set(STM32CUBEMX_GENERATED_FILES
         Core/Inc/usart.h
         Core/Inc/canTest.h
         Core/Inc/i2c.h
+        Core/Inc/pwmTest.h
 
         Core/Src/main.cpp
         Core/Src/stm32f3xx_hal_msp.c
@@ -53,6 +54,7 @@ set(STM32CUBEMX_GENERATED_FILES
         Core/Src/usart.c
         Core/Src/canTest.cpp
         Core/Src/i2c.c
+        Core/Src/pwmTest.cpp
 
         startup_stm32f303xe.s
         )
