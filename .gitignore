@@ -9,3 +9,8 @@ Makefile
 startup_stm32f303xe.s
 STM32F303RETx_FLASH.ld
 
+# Generated protobuf files
+*.pb.cc
+*.pb.h
+*pb2.py
+Protobuf/Paradigm
