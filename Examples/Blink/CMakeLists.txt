@@ -35,22 +35,30 @@ set(STM32CUBEMX_GENERATED_FILES
         Core/Inc/main.h
         Core/Inc/stm32f3xx_hal_conf.h
         Core/Inc/stm32f3xx_it.h
+        Core/Inc/can.h
         Core/Inc/gpio.h
         Core/Inc/usart.h
+        Core/Inc/canTest.h
 
         Core/Src/main.cpp
         Core/Src/stm32f3xx_hal_msp.c
         Core/Src/stm32f3xx_it.c
         Core/Src/system_stm32f3xx.c
+        Core/Src/can.c
         Core/Src/gpio.c
         Core/Src/usart.c
+        Core/Src/canTest.cpp
 
         startup_stm32f303xe.s
         )
 
 set(SOURCES
         # Add user-created source files to this variable
+        ../../Subsurface/Node/Common/Peripherals/Src/can_interface.cpp
+        ../../Subsurface/Node/Common/Peripherals/Src/can_manager.cpp
+        ../../Subsurface/Node/Common/Peripherals/Src/convert_hal_status.cpp
         ../../Subsurface/Node/Common/Peripherals/src/SPIInterface.cpp
+
 )
 
 set(EXECUTABLE ${PROJECT_NAME}.out)
