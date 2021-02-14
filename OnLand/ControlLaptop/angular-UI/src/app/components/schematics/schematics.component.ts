@@ -94,10 +94,10 @@ export class SchematicsComponent implements OnInit {
 		{ key: 'Delta' }
 	];
 	public diagramLinkData = [
-		{ key: -1, from: 'Motor_small_1', to: 'P1_1', color: 'red', fromPort: "Left", toPort: "Right" },
-		{ key: -1, from: 'Relief_Valve_1', to: 'Motor_small_1', color: 'green', fromPort: "Right", toPort: "Right" },
-		{ key: -1, from: 'P1_2', to: 'Relief_Valve_1', color: 'green', fromPort: "Right", toPort: "Right" },
-		{ key: -1, from: 'P1_1', to: 'Relief_Valve_1', color: 'red', fromPort: "Right", toPort: "Top", "points":[511,280] },
+		{ from: 'Motor_small_1', to: 'P1_1', color: 'red', fromPort: "Left", toPort: "Right" },
+		{ from: 'Relief_Valve_1', to: 'Motor_small_1', color: 'green', fromPort: "Right", toPort: "Right" },
+		{ from: 'P1_2', to: 'Relief_Valve_1', color: 'green', fromPort: "Right", toPort: "Right" },
+		{ from: 'P1_1', to: 'Relief_Valve_1', color: 'red', fromPort: "Right", toPort: "Top", "points":[511,280] },
 
 	];
 	public diagramDivClassName: string = 'myDiagramDiv';
@@ -114,9 +114,18 @@ export class SchematicsComponent implements OnInit {
 		this.diagramNodeData = DataSyncService.syncNodeData(changes, this.diagramNodeData);
 		this.diagramLinkData = DataSyncService.syncLinkData(changes, this.diagramLinkData);
 		this.diagramModelData = DataSyncService.syncModelData(changes, this.diagramModelData);
-	};/* dia.commit(m => {
-		let link1=m.findLinkForKey('x')
-		link1.setProperties({color:"blue"})
-	}) */
+	};
+	
+	handleInspectorChange() {
+		this.dia.commit(m => {
+		let node1=m.findNodeForKey('Relief_Valve_1')
+		let node2=m.findNodeForKey('Motor_small_1')
+		node1.findLinksBetween(node2).each(x => {
+			console.log('x')
+			this.dia.model.set(x.data, "color", "orange")
+		})
+	})
+}
+	
 
 }
