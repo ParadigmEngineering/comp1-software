@@ -11,14 +11,13 @@ import { LogoBarComponent } from './components/logo-bar/logo-bar.component';
 import { NavigationButtonComponent } from './components/navigation-bar/navigation-button/navigation-button.component';
 import { PowerMetricsButtonComponent } from './components/powermetrics-bar/powermetrics-button/powermetrics-button.component';
 import { ControlButtonComponent } from './components/control-bar/control-button/control-button.component';
-import { ConfigurationButtonComponent } from './components/configuration-bar/configuration-button/configuration-buttom.component';
 
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 import { NavigationPageComponent } from './pages/navigation-page/navigation-page.component';
 import { PowerMetricsPageComponent } from './pages/powermetrics-page/powermetrics-page.component';
 import { ControlPageComponent } from './pages/control-page/control-page.component';
 import { ConfigurationPageComponent } from './pages/configuration-page/configuration-page.component';
-import { EstopComponent } from './components/estop/estop.component';
+import { EstopComponent } from './components/logo-bar/estop/estop.component';
 
 @NgModule({
   declarations: [
@@ -29,13 +28,12 @@ import { EstopComponent } from './components/estop/estop.component';
     PowerMetricsBarComponent,
     ControlBarComponent,
     ControlButtonComponent,
-    ConfigurationButtonComponent,
     LogoBarComponent,
     DashboardPageComponent,
     NavigationPageComponent,
     PowerMetricsPageComponent,
     ControlPageComponent,
-    ConfigurationPageComponent
+    ConfigurationPageComponent,
     EstopComponent
   ],
   imports: [

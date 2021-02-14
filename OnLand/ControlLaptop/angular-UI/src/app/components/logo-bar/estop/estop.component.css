@@ -1,7 +1,4 @@
 .estop{
-    position: absolute;
-    right: 30px;
-    top: 10px;
     color:white;
     background-color: rgb(156, 16, 16);
     text-align: center;
@@ -10,4 +7,6 @@
     border-style:none;
     border-radius: 5px;
     text-shadow: -1px 1px black;
+    box-shadow: 3px 4px 11px -3px #000000;
+    box-shadow: inset 3px 4px 11px -3px rgba(255, 255, 255, 0.25);
 }
