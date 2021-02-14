@@ -14,10 +14,12 @@ import { ControlButtonComponent } from './components/control-bar/control-button/
 
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 import { NavigationPageComponent } from './pages/navigation-page/navigation-page.component';
+import { StateComponent } from './components/logo-bar/state/state.component';
 import { PowerMetricsPageComponent } from './pages/powermetrics-page/powermetrics-page.component';
 import { ControlPageComponent } from './pages/control-page/control-page.component';
 import { ConfigurationPageComponent } from './pages/configuration-page/configuration-page.component';
 import { EstopComponent } from './components/logo-bar/estop/estop.component';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { EstopComponent } from './components/logo-bar/estop/estop.component';
     LogoBarComponent,
     DashboardPageComponent,
     NavigationPageComponent,
+    StateComponent,
     PowerMetricsPageComponent,
     ControlPageComponent,
     ConfigurationPageComponent,
