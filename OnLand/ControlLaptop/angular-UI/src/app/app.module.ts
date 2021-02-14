@@ -19,6 +19,7 @@ import { PowerMetricsPageComponent } from './pages/powermetrics-page/powermetric
 import { ControlPageComponent } from './pages/control-page/control-page.component';
 import { ConfigurationPageComponent } from './pages/configuration-page/configuration-page.component';
 import { EstopComponent } from './components/logo-bar/estop/estop.component';
+import { HeartbeatDetectionComponent } from './components/logo-bar/heartbeat-detection/heartbeat-detection.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { EstopComponent } from './components/logo-bar/estop/estop.component';
     PowerMetricsPageComponent,
     ControlPageComponent,
     ConfigurationPageComponent,
-    EstopComponent
+    EstopComponent,
+    HeartbeatDetectionComponent
   ],
   imports: [
     BrowserModule,
