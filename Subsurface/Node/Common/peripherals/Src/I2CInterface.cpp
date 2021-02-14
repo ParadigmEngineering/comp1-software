@@ -53,3 +53,4 @@ HAL_StatusTypeDef I2CInterface::configDigitalFilter(uint32_t FilterState)
 {
 	return HAL_I2CEx_ConfigDigitalFilter(m_hi2c, FilterState);
 }
+

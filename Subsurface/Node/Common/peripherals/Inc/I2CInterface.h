@@ -75,4 +75,5 @@ public:
 	HAL_StatusTypeDef configDigitalFilter(uint32_t FilterState);
 };
 
+
 #endif

@@ -31,6 +31,11 @@ set(STM32CUBEMX_GENERATED_FILES
         Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pcd_ex.c
         Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_can.c
         Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_usb.c
+        Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c.c
+        Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c_ex.c
+
+
+
 
         Core/Inc/main.h
         Core/Inc/stm32f3xx_hal_conf.h
@@ -52,7 +57,7 @@ set(STM32CUBEMX_GENERATED_FILES
 
 set(SOURCES
         # Add user-created source files to this variable
-        ../../Subsurface/Node/Common/peripherals/src
+        ../../Subsurface/Node/Common/Peripherals/Src
 
 )
 
