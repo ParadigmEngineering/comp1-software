@@ -4,6 +4,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-direction: row;
+}
+
+.logo-state-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    justify-content: space-around;
 }
 
 #logo-container{
@@ -11,8 +19,10 @@
     align-items: center;
 }
 
+#state-component{
+    margin-left: 5rem;
+}
 #paradigm{
-   
     /* NAVIGATION */
     font-family: Roboto;
     font-style: normal;
