@@ -2,10 +2,12 @@
 #include "usart.h"
 #include "gpio.h"
 #include "can.h"
+#include "tim.h"
 
 #include "Peripherals/Inc/can_manager.h"
 #include "spi.h"
 #include "Peripherals/inc/SPIInterface.h"
+#include "Peripherals/Inc/PWMManager.h"
 
 void SystemClock_Config(void);
 
