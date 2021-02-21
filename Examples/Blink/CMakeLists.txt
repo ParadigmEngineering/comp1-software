@@ -66,6 +66,8 @@ set(SOURCES
         ../../Subsurface/Node/Common/Peripherals/Src/convert_hal_status.cpp
         ../../Subsurface/Node/Common/Peripherals/src/SPIInterface.cpp
         ../../Subsurface/Node/Common/Peripherals/Src/I2CInterface.cpp
+        ../../Subsurface/Node/Common/Peripherals/Src/PWMInterface.cpp
+        ../../Subsurface/Node/Common/Peripherals/Src/PWMManager.cpp
 )
 
 set(EXECUTABLE ${PROJECT_NAME}.out)
