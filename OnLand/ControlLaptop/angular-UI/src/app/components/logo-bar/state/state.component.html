@@ -1,0 +1,9 @@
+<div class="state-container">
+  <label class="state-label"> CURRENT <br> STATE:
+  </label>
+
+  <button class="state-button" (click)="toggleFlag()" [ngStyle]="{'background-color': armedFlag ? '#A10B0B' : '#3B824F' }">  
+   {{ (armedFlag) ? "ARMED" : "DISARMED" }}
+  </button>
+
+</div>
