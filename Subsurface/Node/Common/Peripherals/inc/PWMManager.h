@@ -1,8 +1,8 @@
-#include "PWMInterface.h"
-#include <cstdint>
-
 #ifndef PWMMANAGER_H
 #define PWMMANAGER_H
+
+#include "PWMInterface.h"
+#include <cstdint>
 
 class PWMManager
 {
