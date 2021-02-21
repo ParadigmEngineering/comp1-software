@@ -46,8 +46,8 @@ private:
     uint32_t m_preScaler;
     uint32_t m_period;
     uint32_t m_pulse;
-    uint32_t m_channel;
     TIM_HandleTypeDef* m_timer;
+    uint32_t m_channel;
 
 };
 #endif // PWMINTERFACE_H
