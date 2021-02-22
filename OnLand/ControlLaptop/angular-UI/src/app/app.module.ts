@@ -20,6 +20,7 @@ import { ControlPageComponent } from './pages/control-page/control-page.componen
 import { ConfigurationPageComponent } from './pages/configuration-page/configuration-page.component';
 import { EstopComponent } from './components/logo-bar/estop/estop.component';
 import { HeartbeatDetectionComponent } from './components/logo-bar/heartbeat-detection/heartbeat-detection.component';
+import { NavigationInfoComponent } from './components/navigation-info/navigation-info.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { HeartbeatDetectionComponent } from './components/logo-bar/heartbeat-det
     ControlPageComponent,
     ConfigurationPageComponent,
     EstopComponent,
-    HeartbeatDetectionComponent
+    HeartbeatDetectionComponent,
+    NavigationInfoComponent
   ],
   imports: [
     BrowserModule,
