@@ -10,6 +10,8 @@ include_directories(src)
 
 set(HEADERS
     include/FlightComputer.h
+    include/Message.h
+    include/NetClient.h
     include/catch.hpp
 )
 
