@@ -42,6 +42,3 @@ COPY /Y Paradigm\py\* %PDS%
 COPY /Y Paradigm\py\* %FLASK%
 
 echo Proto Update Complete
-                        
-
-
