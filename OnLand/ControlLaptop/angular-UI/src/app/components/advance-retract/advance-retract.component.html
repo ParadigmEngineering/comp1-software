@@ -2,9 +2,9 @@
 
   <div class="advance-label">
     ADVANCE
-    <ion-toggle class="advance-toggle" [disabled]="advanceFlag"></ion-toggle>
+    <ion-toggle class="advance-toggle" [checked]="advanceFlag" (ionChange)="toggleFlag()"></ion-toggle>
   </div>  
 
-  <button class="retract-button" (click)="toggleFlag()"> RETRACT </button>
+  <ion-button class="retract-button" [disabled]="!advanceFlag"> RETRACT </ion-button>
   
 </div>
