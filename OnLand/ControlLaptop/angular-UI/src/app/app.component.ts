@@ -25,9 +25,14 @@ export class AppComponent {
       this.activatedPage = route.urlAfterRedirects;
       console.log(`current route:: ${this.activatedPage}`)
     })
-    this.socket.sendMessage('xxxxxx');
+
+    // test sending and receiving message to/from the server 
+    setInterval(() => {
+      let random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
+      this.socket.sendMessage(`${random}`);
+    }, 5000)
     this.socket.onNewMessage().subscribe(msg => {
-      console.log('got a msg: ' + msg);
+      console.log('got a msg from server: ' + JSON.stringify(msg));
     });
   }
     

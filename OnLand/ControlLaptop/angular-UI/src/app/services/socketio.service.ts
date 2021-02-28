@@ -15,6 +15,7 @@ export class SocketioService {
 
   // EMITTER
   sendMessage(msg: string) {
+    console.log(`send a msg to server`)
     this.socket.emit('telemetry', { message: msg });
   }
 
