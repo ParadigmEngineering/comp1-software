@@ -1,9 +1,12 @@
 from flask import Flask, render_template
 from flask_socketio import SocketIO
+from flask_cors import CORS
+
     
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
-sio = SocketIO(app)
+
+sio = SocketIO(app, cors_allowed_origins="*")
 
 # Standard Flask route
 @app.route('/')

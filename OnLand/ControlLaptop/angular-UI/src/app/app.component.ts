@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { SocketioService } from './services/socketio.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,7 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   pages: { name: string, route: string }[] = [
     { name: 'DASHBOARD', route: '/dashboard-page' },
     { name: 'NAVIGATION', route: '/navigation-page' },
@@ -17,11 +19,17 @@ export class AppComponent {
   ]
   activatedPage: string;
 
-  constructor(private route: Router) {
+  constructor(private route: Router, private socket: SocketioService) {
+
     this.route.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe((route: NavigationEnd) => {
       this.activatedPage = route.urlAfterRedirects;
       console.log(`current route:: ${this.activatedPage}`)
     })
+    this.socket.sendMessage('xxxxxx');
+    this.socket.onNewMessage().subscribe(msg => {
+      console.log('got a msg: ' + msg);
+    });
   }
+    
 
 }
