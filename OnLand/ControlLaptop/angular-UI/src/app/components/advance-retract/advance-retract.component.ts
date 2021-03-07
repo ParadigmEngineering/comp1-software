@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AdvanceRetractComponent implements OnInit {
 
     advanceFlag = false;
-    timeoutHandler: NodeJS.Timeout;
+    timeoutHandler: any;
     count: number = 0;
 
 
