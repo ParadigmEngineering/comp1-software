@@ -33,24 +33,24 @@
 }
 
 .advance-toggle{
-  height: 22px;
-  width: 45px;
+  height: 21px;
+  width: 40px;
 
   /* Ionic properties */
   --background: #F3EBEB;
   --handle-background: #A41313;
 
   --background-checked: #F3EBEB;
-  --handle-background-checked: #3B824F;
+  --handle-background-checked: rgba(59, 130, 79, 1);
 
   --border-radius: 10px;
 
   /* toggle properties */
   --handle-spacing: 1px;
-  --handle-box-shadow: 100px;
+  --handle-box-shadow: inset 4px 4px 4px #36363636;
   --handle-border-radius: 10px;
-  --handle-height: 21px;
-  --handle-width: 24px;
+  --handle-height: 98%;
+  --handle-width: 23px;
 
 }
 

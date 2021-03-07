@@ -5,6 +5,6 @@
     <ion-toggle class="advance-toggle" [checked]="advanceFlag" (ionChange)="toggleFlag()"></ion-toggle>
   </div>  
 
-  <ion-button class="retract-button" [disabled]="!advanceFlag"> RETRACT </ion-button>
+  <ion-button class="retract-button" [disabled]="!advanceFlag" (mousedown)="mouseDown()" (mouseup)="mouseUp()"> RETRACT </ion-button>
   
 </div>
