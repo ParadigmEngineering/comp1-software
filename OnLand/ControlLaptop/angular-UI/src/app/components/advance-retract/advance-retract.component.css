@@ -1,0 +1,74 @@
+.advance-retract-container{
+  position: relative;
+  left: 1%;
+  top: 1%;
+
+  background: linear-gradient(180deg, #4A4343 0%, rgba(74, 67, 67, 0.1) 100%);
+  font-family: Antic;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #C8C8C8;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+
+  /* size of the entire box/container */
+  width: 182px;
+  height: 78px;
+ 
+}
+
+.advance-label{
+  /* size of box holding "ADVANCE" and the slide toggle */
+  height: 38px;
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+}
+
+.advance-toggle{
+  height: 21px;
+  width: 40px;
+
+  /* Ionic properties */
+  --background: #F3EBEB;
+  --handle-background: #A41313;
+
+  --background-checked: #F3EBEB;
+  --handle-background-checked: rgba(59, 130, 79, 1);
+
+  --border-radius: 10px;
+
+  /* toggle properties */
+  --handle-spacing: 1px;
+  --handle-box-shadow: inset 4px 4px 4px #36363636;
+  --handle-border-radius: 10px;
+  --handle-height: 98%;
+  --handle-width: 23px;
+
+}
+
+.retract-button{
+  /* buttons do not inherit properties */
+  font-family: Antic;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #C8C8C8;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  width:151px;
+  height:27px;
+
+  --background: #4E4E58;
+  --border-radius: 4px;
+  --box-shadow: 3px 4px 11px -3px #000000 !important;
+  --box-shadow: inset 3px 4px 11px -3px rgba(255, 255, 255, 0.25) !important;
+}
