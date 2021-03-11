@@ -31,6 +31,9 @@ set(STM32CUBEMX_GENERATED_FILES
         Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pcd_ex.c
         Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_can.c
         Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_usb.c
+        Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c.c
+        Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c_ex.c
+
 
         Core/Inc/main.h
         Core/Inc/stm32f3xx_hal_conf.h
@@ -39,6 +42,8 @@ set(STM32CUBEMX_GENERATED_FILES
         Core/Inc/gpio.h
         Core/Inc/usart.h
         Core/Inc/canTest.h
+        Core/Inc/i2c.h
+        Core/Inc/pwmTest.h
 
         Core/Src/main.cpp
         Core/Src/stm32f3xx_hal_msp.c
@@ -48,6 +53,8 @@ set(STM32CUBEMX_GENERATED_FILES
         Core/Src/gpio.c
         Core/Src/usart.c
         Core/Src/canTest.cpp
+        Core/Src/i2c.c
+        Core/Src/pwmTest.cpp
 
         startup_stm32f303xe.s
         )
@@ -58,7 +65,9 @@ set(SOURCES
         ../../Subsurface/Node/Common/Peripherals/Src/can_manager.cpp
         ../../Subsurface/Node/Common/Peripherals/Src/convert_hal_status.cpp
         ../../Subsurface/Node/Common/Peripherals/src/SPIInterface.cpp
-
+        ../../Subsurface/Node/Common/Peripherals/Src/I2CInterface.cpp
+        ../../Subsurface/Node/Common/Peripherals/Src/PWMInterface.cpp
+        ../../Subsurface/Node/Common/Peripherals/Src/PWMManager.cpp
 )
 
 set(EXECUTABLE ${PROJECT_NAME}.out)
