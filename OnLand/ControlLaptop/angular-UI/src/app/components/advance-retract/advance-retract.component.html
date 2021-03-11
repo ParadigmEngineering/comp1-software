@@ -1,0 +1,10 @@
+<div class="advance-retract-container">
+
+  <div class="advance-label">
+    ADVANCE
+    <ion-toggle class="advance-toggle" [checked]="advanceFlag" (ionChange)="toggleFlag()"></ion-toggle>
+  </div>  
+
+  <ion-button class="retract-button" [disabled]="advanceFlag" (mousedown)="mouseDown()" (mouseup)="mouseUp()"> RETRACT </ion-button>
+  
+</div>
