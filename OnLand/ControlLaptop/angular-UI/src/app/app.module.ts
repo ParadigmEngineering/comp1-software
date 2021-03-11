@@ -22,6 +22,7 @@ import { EstopComponent } from './components/logo-bar/estop/estop.component';
 import { HeartbeatDetectionComponent } from './components/logo-bar/heartbeat-detection/heartbeat-detection.component';
 import { AdvanceRetractComponent } from './components/advance-retract/advance-retract.component';
 import { IonicModule } from '@ionic/angular';
+import { NavigationInfoComponent } from './components/navigation-info/navigation-info.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { IonicModule } from '@ionic/angular';
     ConfigurationPageComponent,
     EstopComponent,
     HeartbeatDetectionComponent,
-    AdvanceRetractComponent
+    AdvanceRetractComponent,
+    NavigationInfoComponent
   ],
   imports: [
     BrowserModule,
