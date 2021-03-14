@@ -4,6 +4,7 @@
 #include "dps_config.h"
 #include "dps310_config.h"
 #include <cstdint>
+#include "Peripherals/inc/I2CInterface.h"
 
 class TwoWire;
 
