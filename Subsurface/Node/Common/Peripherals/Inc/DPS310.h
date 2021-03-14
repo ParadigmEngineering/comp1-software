@@ -3,6 +3,7 @@
 
 #include "dps_config.h"
 #include "dps310_config.h"
+#include <cstdint>
 
 class TwoWire;
 

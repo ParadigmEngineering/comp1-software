@@ -1,8 +1,7 @@
 #ifndef DPSREGISTER_H_INCLUDED
 #define DPSREGISTER_H_INCLUDED
 
-#include <Arduino.h>
-
+#include <cstdint>
 typedef struct
 {
     uint8_t regAddress;
