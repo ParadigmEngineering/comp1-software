@@ -8,6 +8,7 @@ import { io, Socket } from 'socket.io-client';
 })
 export class SocketioService {
   private socket: Socket;
+  private telemetryObserver: Observable<{}>;
 
   constructor() {
     this.socket = io('http://localhost:8080');
@@ -19,13 +20,14 @@ export class SocketioService {
     this.socket.emit('telemetry', { message: msg });
   }
 
-  // HANDLER
-  onNewMessage() {
-    return new Observable(observer => {
+  // telemetry handler
+  onTelemetry() {
+    this.telemetryObserver = new Observable(observer => {
       this.socket.on('telemetry', msg => {
         observer.next(msg);
       });
     });
+    return this.telemetryObserver;
   }
 
 }

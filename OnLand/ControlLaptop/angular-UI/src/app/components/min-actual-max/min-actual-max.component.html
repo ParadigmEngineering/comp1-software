@@ -1,19 +1,17 @@
 <div class="min-actual-max">
-    <div id = "table">
-   <h2 id = "TableName">Natural Gas</h2>
-   
-        <table id = "Group62">
-            <tr id = "headings">
-                <td>MIN</td>
-                <td>ACTUAL</td>
-                <td>MAX</td>
+    <div id="table">
+        <h2 id="tableName">Natural Gas</h2>
+        <table id="container">
+            <tr>
+                <th class="cell-design">MIN</th>
+                <th class="cell-design">ACTUAL</th>
+                <th class="cell-design">MAX</th>
             </tr>
             <tr>
-                <td>5</td>
-                <td id = "data2">6</td>
-                <td>10</td>
-
-            </tr>     
-        </table>  
-  </div>
+                <td class="cell-design">5</td>
+                <td class="cell-design actual-cell">{{actualValue}}</td>
+                <td class="cell-design">10</td>
+            </tr>
+        </table>
+    </div>
 </div>
