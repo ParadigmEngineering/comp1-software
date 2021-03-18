@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { SocketioService } from 'src/app/services/socketio/socketio.service';
+import { NaturalGasService } from 'src/app/services/natural-gas/natural-gas.service';
 
 @Component({
   selector: 'app-min-actual-max',
@@ -10,10 +10,10 @@ import { SocketioService } from 'src/app/services/socketio/socketio.service';
 export class MinActualMaxComponent implements OnInit {
   actualValue: number;
   private telemetrySubscriber: Subscription;
-  constructor(private socket: SocketioService) { }
+  constructor(private naturalGas: NaturalGasService) { }
 
   ngOnInit(): void {
-    this.telemetrySubscriber = this.socket.onTelemetry().subscribe((msg) => {
+    this.telemetrySubscriber = this.naturalGas.onTelemetry().subscribe((msg) => {
       console.log('got a msg from server: ' + JSON.stringify(msg));
       this.actualValue = msg.message;
     });

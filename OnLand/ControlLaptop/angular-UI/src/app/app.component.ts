@@ -26,7 +26,6 @@ export class AppComponent {
       console.log(`current route:: ${this.activatedPage}`)
     })
 
-
     // test sending and receiving message to/from the server 
     setInterval(() => {
       let random = Math.floor(Math.random() * (10 - 0 + 1) + 0);
