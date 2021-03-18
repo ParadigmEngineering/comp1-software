@@ -10,8 +10,8 @@ export class NaturalGasService {
   private telemetryObserver: Observable<{}>;
   constructor(private socketService: SocketioService) { }
 
-  // telemetry handler
-  onTelemetry() {
+  // listen to response for "telemetry" for now
+  onNatural() {
     this.telemetryObserver = new Observable(observer => {
       this.socketService.getSocket().on('telemetry', msg => {
         observer.next(msg);
