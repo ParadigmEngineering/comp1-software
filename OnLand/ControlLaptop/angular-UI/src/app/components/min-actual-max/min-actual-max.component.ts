@@ -13,7 +13,7 @@ export class MinActualMaxComponent implements OnInit {
   constructor(private naturalGas: NaturalGasService) { }
 
   ngOnInit(): void {
-    this.telemetrySubscriber = this.naturalGas.onNatural().subscribe((msg) => {
+    this.telemetrySubscriber = this.naturalGas.onNatural().subscribe((msg: {message: number}) => {
       console.log('got a msg from server: ' + JSON.stringify(msg));
       this.actualValue = msg.message;
     });
