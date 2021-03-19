@@ -23,6 +23,8 @@ import { HeartbeatDetectionComponent } from './components/logo-bar/heartbeat-det
 import { AdvanceRetractComponent } from './components/advance-retract/advance-retract.component';
 import { IonicModule } from '@ionic/angular';
 import { NavigationInfoComponent } from './components/navigation-info/navigation-info.component';
+import { MinActualMaxComponent } from './components/min-actual-max/min-actual-max.component';
+import { NaturalGasComponent } from './components/natural-gas/natural-gas.component';
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import { NavigationInfoComponent } from './components/navigation-info/navigation
     EstopComponent,
     HeartbeatDetectionComponent,
     AdvanceRetractComponent,
-    NavigationInfoComponent
+    NavigationInfoComponent,
+    MinActualMaxComponent,
+    NaturalGasComponent,
   ],
   imports: [
     BrowserModule,

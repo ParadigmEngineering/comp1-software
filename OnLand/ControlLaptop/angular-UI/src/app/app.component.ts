@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import { SocketioService } from './services/socketio.service';
+import { SocketioService } from './services/socketio/socketio.service';
 
 @Component({
   selector: 'app-root',
@@ -28,12 +28,9 @@ export class AppComponent {
 
     // test sending and receiving message to/from the server 
     setInterval(() => {
-      let random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
+      let random = Math.floor(Math.random() * (10 - 1 + 1) + 0);
       this.socket.sendMessage(`${random}`);
     }, 5000)
-    this.socket.onNewMessage().subscribe(msg => {
-      console.log('got a msg from server: ' + JSON.stringify(msg));
-    });
   }
     
 

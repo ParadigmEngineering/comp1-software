@@ -19,13 +19,8 @@ export class SocketioService {
     this.socket.emit('telemetry', { message: msg });
   }
 
-  // HANDLER
-  onNewMessage() {
-    return new Observable(observer => {
-      this.socket.on('telemetry', msg => {
-        observer.next(msg);
-      });
-    });
+  getSocket() :Socket{
+    return this.socket;
   }
 
 }

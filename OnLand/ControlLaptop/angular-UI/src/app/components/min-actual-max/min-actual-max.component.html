@@ -1,0 +1,19 @@
+<div class="min-actual-max">
+    <div id="table">
+        <h2 id="tableName">{{title}}</h2>
+        <table id="container">
+            <tr>
+                <th class="cell-design">MIN</th>
+                <th class="cell-design">ACTUAL</th>
+                <th class="cell-design">MAX</th>
+            </tr>
+            <tr *ngFor="let data of datas">
+                <td class="cell-design">{{data.min}}</td>
+                <td class="cell-design" [ngStyle]="{'background-color': (data.actual >= data.min && data.actual <= data.max)?'#3B824F': '#A10B0B' }">
+                    {{data.actual}}</td>
+                <td class="cell-design">{{data.max}}</td>
+            </tr>
+
+        </table>
+    </div>
+</div>
