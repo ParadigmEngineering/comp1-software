@@ -28,7 +28,7 @@ export class AppComponent {
 
     // test sending and receiving message to/from the server 
     setInterval(() => {
-      let random = Math.floor(Math.random() * (10 - 0 + 1) + 0);
+      let random = Math.floor(Math.random() * (10 - 1 + 1) + 0);
       this.socket.sendMessage(`${random}`);
     }, 5000)
   }

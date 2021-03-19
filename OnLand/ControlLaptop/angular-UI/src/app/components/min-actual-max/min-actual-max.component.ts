@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { NaturalGasService } from 'src/app/services/natural-gas/natural-gas.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { minActualMax } from 'src/app/services/models';
 
 @Component({
   selector: 'app-min-actual-max',
@@ -8,18 +7,13 @@ import { NaturalGasService } from 'src/app/services/natural-gas/natural-gas.serv
   styleUrls: ['./min-actual-max.component.css']
 })
 export class MinActualMaxComponent implements OnInit {
-  actualValue: number;
-  private telemetrySubscriber: Subscription;
-  constructor(private naturalGas: NaturalGasService) { }
+  @Input() title: string;
+  @Input() datas: minActualMax[];
 
-  ngOnInit(): void {
-    this.telemetrySubscriber = this.naturalGas.onNatural().subscribe((msg: {message: number}) => {
-      console.log('got a msg from server: ' + JSON.stringify(msg));
-      this.actualValue = msg.message;
-    });
+  constructor() { 
   }
 
-  ngOnDestroy() {
-    this.telemetrySubscriber.unsubscribe();
+  ngOnInit(): void {
+    console.log(this.datas) 
   }
 }

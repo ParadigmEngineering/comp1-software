@@ -24,6 +24,7 @@ import { AdvanceRetractComponent } from './components/advance-retract/advance-re
 import { IonicModule } from '@ionic/angular';
 import { NavigationInfoComponent } from './components/navigation-info/navigation-info.component';
 import { MinActualMaxComponent } from './components/min-actual-max/min-actual-max.component';
+import { NaturalGasComponent } from './components/natural-gas/natural-gas.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { MinActualMaxComponent } from './components/min-actual-max/min-actual-ma
     AdvanceRetractComponent,
     NavigationInfoComponent,
     MinActualMaxComponent,
+    NaturalGasComponent,
   ],
   imports: [
     BrowserModule,
