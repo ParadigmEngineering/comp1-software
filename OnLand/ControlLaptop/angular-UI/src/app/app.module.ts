@@ -22,6 +22,11 @@ import { ControlPageComponent } from './pages/control-page/control-page.componen
 import { ConfigurationPageComponent } from './pages/configuration-page/configuration-page.component';
 import { EstopComponent } from './components/logo-bar/estop/estop.component';
 import { HeartbeatDetectionComponent } from './components/logo-bar/heartbeat-detection/heartbeat-detection.component';
+import { AdvanceRetractComponent } from './components/advance-retract/advance-retract.component';
+import { IonicModule } from '@ionic/angular';
+import { NavigationInfoComponent } from './components/navigation-info/navigation-info.component';
+import { MinActualMaxComponent } from './components/min-actual-max/min-actual-max.component';
+import { NaturalGasComponent } from './components/natural-gas/natural-gas.component';
 
 
 @NgModule({
@@ -43,12 +48,17 @@ import { HeartbeatDetectionComponent } from './components/logo-bar/heartbeat-det
     ControlPageComponent,
     ConfigurationPageComponent,
     EstopComponent,
-    HeartbeatDetectionComponent
+    HeartbeatDetectionComponent,
+    AdvanceRetractComponent,
+    NavigationInfoComponent,
+    MinActualMaxComponent,
+    NaturalGasComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    GojsAngularModule
+    GojsAngularModule,
+    IonicModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,59 @@
+.min-actual-max{
+    display: flex;
+    flex-direction: row;
+    width: 202px;
+    height: 64px;
+    background: linear-gradient(180deg, #4A4343 0%, rgba(74, 67, 67, 0.1) 100%);
+    position: relative;
+    top: 458px;
+    left: 755px;
+}
+    
+h2{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 1px;
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#container{
+    width: 202px;
+    height: 46.22px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    color: #C8C8C8;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.cell-design {
+    padding-top: 0.5em;
+    padding-bottom: 0.7em;
+    background: rgba(196, 196, 196, 0.3);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.actual-cell{
+    background: #3B824F;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#tableName {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    text-align: center;
+
+    color: #FFFFFF;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}

@@ -21,7 +21,9 @@
     "@angular/router": "~10.1.1",
     "gojs": "^2.1.32",
     "gojs-angular": "^1.0.14",
+    "@ionic/angular": "^5.5.4",
     "rxjs": "~6.6.0",
+    "socket.io-client": "^3.1.2",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },
@@ -43,6 +45,7 @@
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~4.0.2"
+    "typescript": "~4.0.2",
+    "@ionic/angular-toolkit": "latest"
   }
 }

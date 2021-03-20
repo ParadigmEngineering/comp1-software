@@ -1,0 +1,35 @@
+.navigation-info{
+    border-radius: 0px;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: fit-content;
+    float: right;
+    top: 5px;
+    color: white;
+    position: relative;
+    line-height: 20%;
+    padding-left: 15px ;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 8px;
+    background-image: linear-gradient( rgb(70, 67, 67),rgba(0,0,0,0));
+    font-size:x-small;
+    
+}
+table , td{
+    background-image:linear-gradient(180deg, rgba(73,73,74,1) 0%, rgb(88, 87, 87) 11%, rgb(95, 93, 93) 100%);
+    border: 3px solid rgb(82, 77, 77);
+    border-collapse: collapse; 
+
+}
+h2{
+    padding-left: 5px;
+    font-weight: 100;
+}
+.tablep{
+    text-align: center;
+}
+label{
+    padding-left: 8px;
+}
