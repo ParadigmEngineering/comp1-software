@@ -1,43 +1,7 @@
-from tkintertoy import Window
 import socket
 import sys
 import time
 import json
-
-# try:
-#     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-# except socket.error:
-#     print('Failed to create socket')
-#     sys.exit()
-
-# host = 'localhost'
-# port = 8888
-#
-# gui = Window()
-# gui.setTitle('Paradigm Boring UDP Tool')
-# gui.addEntry("udp_message", "UDP Message")
-# gui.addButton("send_udp")
-# gui.plot("udp_message", row=0)
-# gui.plot("send_udp", row=1)
-
-# while True:
-#     gui.waitforUser()
-#     if gui.content:
-#         msg = bytes(gui.get("udp_message"), 'utf-8')
-#         try:
-#             # Set the whole string
-#             s.sendto(msg, (host, port))
-#             print("message sent:" + gui.get("udp_message"))
-#             # receive data from client (data, addr)
-#             d = s.recvfrom(1024)
-#             reply = d[0]
-#             addr = d[1]
-#             print('Server reply : ' + reply.decode('utf-8'))
-#         except socket.error as msg:
-#             print('Error Code : ' + str(msg[0]) + ' Message ' + msg[1])
-#             sys.exit()
-#     else:
-#         break
 
 
 class Message:
@@ -50,7 +14,6 @@ class Message:
 
 def createMessages(raw_messages):
     msgs = []
-    print(raw_messages)
     for message in raw_messages:
         msgs.append(Message(msgID=message["msgId"],
                             isExtendedID=message["isExtendedId"],
@@ -83,7 +46,29 @@ def sendWithUDP(msg_config, host, port):
             sys.exit()
 
 def sendWithTCP(msg_config, host, port):
-    pass
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.connect((host, port))
+    except socket.error:
+        print('Failed to create socket')
+        sys.exit()
+    msgs = createMessages(msg_config["config"]["messages"])
+    msg_frequency = msg_config["config"]["messageFrequency"]
+    for message in msgs:
+        time.sleep(1.0 / msg_frequency)
+        try:
+            # Set the whole string
+            s.sendall(bytes(message.toString(), 'utf-8'))
+            print("message sent:" + message.toString())
+            # receive data from client (data, addr)
+            d = s.recv(1024)
+            print('Server reply : ' + d.decode('utf-8'))
+        except socket.error as msg:
+            print('Error Code : ' + str(msg[0]) + ' Message ' + msg[1])
+            s.close()
+            sys.exit()
+    s.close()
+
 
 if __name__ == "__main__":
     with open('sending_config.json', mode='r') as json_config:
@@ -91,6 +76,7 @@ if __name__ == "__main__":
         host = msg_config["config"]["ip"]
         port = msg_config["config"]["port"]
         useTCP = msg_config["config"]["useTCP"]
+        print("Using TCP: " + str(useTCP))
         if useTCP:
             sendWithTCP(msg_config, host, port)
         else:
