@@ -17,13 +17,13 @@ export class SchematicsComponent implements OnInit {
 	diagramJsonData: string; // json data for modified diagram
 	showText: boolean = false;
 	public diagramNodeData: Array<go.ObjectData> = [
-		{ key: 'auger', group: "auger_group", scale: 2.5, img: '../../../assets/Auger.svg', color: "red", loc: "643.50 -54.17" },
-		{ key: 'P1_1', group: "auger_group", scale: 2.5, img: '../../../assets/P1.svg', loc: "696.50 -11.77" },
-		{ key: 'P1_2', group: "auger_group", scale: 2.5, img: '../../../assets/P1.svg', loc: "696.50 41.83" },
-		{ key: 'Relief_Valve_1', group: "auger_group", scale: 2.5, img: '../../../assets/Relief_Valve_Straight.svg', loc: "748.54 22.83" },
-		{ key: 'Motor_small_1', group: "auger_group", scale: 2.5, img: '../../../assets/Motor_small.svg', loc: "822.50 -19.17" },
-		{ key: 'auger_group', isGroup: true },
-		{ key: 'Delta' }
+		{ "key": "auger", "group": "auger_group", "scale": 2.5, "img": "../../../assets/schematic-icon/Auger.svg", "color": "red", "loc": "643.50 -54.17" },
+		{ "key": "P1_1", "group": "auger_group", "scale": 2.5, "img": "../../../assets/schematic-icon/P1.svg", "loc": "696.50 -11.77" },
+		{ "key": "P1_2", "group": "auger_group", "scale": 2.5, "img": "../../../assets/schematic-icon/P1.svg", "loc": "696.50 41.83" },
+		{ "key": "Relief_Valve_1", "group": "auger_group", "scale": 2.5, "img": "../../../assets/schematic-icon/Relief_Valve_Straight.svg", "loc": "748.54 22.83" },
+		{ "key": "Motor_small_1", "group": "auger_group", "scale": 2.5, "img": "../../../assets/schematic-icon/Motor_small.svg", "loc": "822.50 -19.17" },
+		{ "key": "auger_group", "isGroup": true },
+		{ "key": "Delta" }
 	];
 
 	public diagramLinkData: Array<go.ObjectData> = [
@@ -34,7 +34,8 @@ export class SchematicsComponent implements OnInit {
 	];
 	public observedDiagram = null;
 
-	constructor(private cdr: ChangeDetectorRef, private naturalGas: NaturalGasService /* temporary listen to natural gas service to test real time links color changes */) { }
+	constructor(private cdr: ChangeDetectorRef, private naturalGas: NaturalGasService /* temporary listen to natural gas service to test real time links color changes */) {
+	}
 	ngOnInit(): void { }
 
 	// initiatae gojs diagram 
