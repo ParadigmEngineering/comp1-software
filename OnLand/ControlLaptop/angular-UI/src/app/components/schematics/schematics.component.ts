@@ -164,6 +164,17 @@ export class SchematicsComponent implements OnInit {
 					}
 				});
 			}
+			else {
+				this.myDiagramComponent.diagram.commit(dia => {
+					const from = dia.findNodeForKey('P1_1');
+					const to = dia.findNodeForKey('Relief_Valve_1');
+					if (from !== null && to !== null) {
+						from.findLinksTo(to).each(l => {
+							dia.model.set(l.data, "color", "red");
+						})
+					}
+				});
+			}
 		});
 
 		// listen to changes from user draging the nodes and links, then append the data to show Json
