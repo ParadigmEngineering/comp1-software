@@ -1,10 +1,14 @@
 #include "Peripherals/Inc/DPS310.h"
+#include "Peripherals/Inc/convert_hal_status.h"
+
+#include <cstring>
 //#include <Wire.h>
 
 using namespace dps;
 using namespace dps310;
 
 const int32_t Dps310::scaling_facts[DPS__NUM_OF_SCAL_FACTS] = {524288, 1572864, 3670016, 7864320, 253952, 516096, 1040384, 2088960};
+static constexpr uint32_t i2cTimeout = 1000;
 
 Dps310::Dps310(void)
 {
@@ -443,6 +447,8 @@ int16_t Dps310::configTemp(uint8_t tempMr, uint8_t tempOsr)
 	}
 	m_tempMr = tempMr;
 	m_tempOsr = tempOsr;
+
+	return DPS__SUCCEEDED;
 }
 
 int16_t Dps310::configPressure(uint8_t prsMr, uint8_t prsOsr)
@@ -459,6 +465,8 @@ int16_t Dps310::configPressure(uint8_t prsMr, uint8_t prsOsr)
 	}
 	m_prsMr = prsMr;
 	m_prsOsr = prsOsr;
+
+	return DPS__SUCCEEDED;
 }
 
 int16_t Dps310::enableFIFO()
@@ -493,17 +501,15 @@ int16_t Dps310::getFIFOvalue(int32_t *value)
 
 int16_t Dps310::readByte(uint8_t regAddress)
 {
-	m_i2cbus->masterTransmit(m_slaveAddress, data?, timeout?, size?);
-	m_i2cbus->memWrite(data?, regAddress, memAddress?, memAddressSize?, size?, timeout?);
-	//m_i2cbus->endTransmission(false);
-	//request 1 byte from slave
-	if (m_i2cbus->masterReceive(m_slaveAddress, 1U) > 0)
+	m_i2cbus->masterTransmit(m_slaveAddress, &regAddress, i2cTimeout, sizeof(regAddress));
+
+	if (halStatusToBool(m_i2cbus->memRead(m_slaveAddress, regAddress, sizeof(uint8_t), i2cTimeout)))
 	{
-		return m_i2cbus->memRead(devAddress?, memAddress?, memAddressSize?, timeout?); //return this byte on success
+		return *(int16_t*)(m_i2cbus->getReceivedData());
 	}
 	else
 	{
-		return DPS__FAIL_UNKNOWN; //if 0 bytes were read successfully
+		return DPS__FAIL_UNKNOWN;
 	}
 }
 void Dps310::begin(I2CInterface &bus)
@@ -520,9 +526,6 @@ void Dps310::begin(I2CInterface &bus, uint8_t slaveAddress)
 	m_SpiI2c = 1U;
 	m_i2cbus = &bus;
 	m_slaveAddress = slaveAddress;
-
-	// Init bus
-	m_i2cbus->begin();	// Error here, why?
 
 	HAL_Delay(50); //startup time of Dps310
 
@@ -597,7 +600,7 @@ int16_t Dps310::readcoeffs(void)
 	// TODO: remove magic number
 	uint8_t buffer[18];
 	//read COEF registers to buffer
-	int16_t ret = readBlock(coeffBlock, buffer);
+	readBlock(coeffBlock, buffer);
 
 	//compose coefficients from buffer content
 	m_c0Half = (buffer[0] << 4) | ((buffer[1] >> 4) & 0x0F);
@@ -634,24 +637,29 @@ int16_t Dps310::writeByte(uint8_t regAddress, uint8_t data)
 
 int16_t Dps310::writeByte(uint8_t regAddress, uint8_t data, uint8_t check)
 {
-	m_i2cbus->masterTransmit(m_slaveAddress, data?, timeout?, size?);
-	m_i2cbus->memWrite(data?, regAddress, memAddress?, memAddressSize?, size?, timeout?);		  //Write Register number to buffer
-	//m_i2cbus->write(data);				  //Write data to buffer
-	if (m_i2cbus->getError() != 0) //Send buffer content to slave
+	m_i2cbus->masterTransmit(m_slaveAddress, &regAddress, i2cTimeout, sizeof(regAddress));
+
+	if (!halStatusToBool(m_i2cbus->memWrite(&data, m_slaveAddress, regAddress, sizeof(regAddress), sizeof(data), i2cTimeout)))		  //Write Register number to buffer
 	{
 		return DPS__FAIL_UNKNOWN;
 	}
 	else
 	{
 		if (check == 0)
-			return 0;					  //no checking
-		if (readByte(regAddress) == data) //check if desired by calling function
 		{
-			return DPS__SUCCEEDED;
+			return 0;
 		}
 		else
 		{
-			return DPS__FAIL_UNKNOWN;
+			if (halStatusToBool(m_i2cbus->memRead(m_slaveAddress, regAddress, sizeof(uint8_t), i2cTimeout)) &&
+				m_i2cbus->getReceivedData()[0] == data)
+			{
+				return DPS__SUCCEEDED;
+			}
+			else
+			{
+				return DPS__FAIL_UNKNOWN;
+			}
 		}
 	}
 }
@@ -725,21 +733,21 @@ int16_t Dps310::readByteBitfield(RegMask_t regMask)
 int16_t Dps310::readBlock(RegBlock_t regBlock, uint8_t *buffer)
 {
 	//do not read if there is no buffer
-	if (buffer == NULL)
+	if (buffer == NULL || regBlock.length > 8)
 	{
 		return 0; //0 bytes read successfully
 	}
 
-	m_i2cbus->masterTransmit(m_slaveAddress, data?, timeout?, size?);
-	m_i2cbus->memWrite(data?, regAddress?, memAddress?, memAddressSize?, size?, timeout?);
-	//m_i2cbus->endTransmission(false);
+	uint16_t ret = 0;
+	m_i2cbus->masterTransmit(m_slaveAddress, &regBlock.regAddress, i2cTimeout, sizeof(regBlock.regAddress));
+
 	//request length bytes from slave
-	int16_t ret = m_i2cbus->masterReceive(m_slaveAddress, regBlock.length);
-	//read all received bytes to buffer
-	for (int16_t count = 0; count < ret; count++)
+	if (!halStatusToBool(m_i2cbus->masterReceive(m_slaveAddress, i2cTimeout)))
 	{
-		buffer[count] = m_i2cbus->memRead(devAddress?, memAddress?, memAddressSize?, timeout?);
+		std::memcpy(buffer, m_i2cbus->getReceivedData(), regBlock.length);
+		ret = regBlock.length;	
 	}
+
 	return ret;
 }
 
