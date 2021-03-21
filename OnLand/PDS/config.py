@@ -1,7 +1,7 @@
 """ config.py
 
 Configuration values for:
-    - Influx
+    - InfluxDB
     - Vehicle ECU TCP/UDP Connections
     - Surface ECU TCP/UDP Connections
 """
@@ -20,7 +20,9 @@ TEAM_NAME = "Paradigm Boring"
 SOCKET_SERVER = "http://localhost:5000"
 
 # Vehicle ECU
-VEHICLE_IP = ""
+VEHICLE_IP = "127.0.0.1"
+VEHICLE_UDP_PORT = 5005
 
 # Surface ECU
-SURFACE_IP = ""
+SURFACE_IP = "127.0.0.1"
+SURFACE_UDP_PORT = 5006
