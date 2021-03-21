@@ -731,7 +731,7 @@ int16_t Dps310::readBlock(RegBlock_t regBlock, uint8_t *buffer)
 	}
 
 	m_i2cbus->masterTransmit(m_slaveAddress, data?, timeout?, size?);
-	m_i2cbus->memWrite(data?, regAddress, memAddress?, memAddressSize?, size?, timeout?);
+	m_i2cbus->memWrite(data?, regAddress?, memAddress?, memAddressSize?, size?, timeout?);
 	//m_i2cbus->endTransmission(false);
 	//request length bytes from slave
 	int16_t ret = m_i2cbus->masterReceive(m_slaveAddress, regBlock.length);
