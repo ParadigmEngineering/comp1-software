@@ -493,13 +493,13 @@ int16_t Dps310::getFIFOvalue(int32_t *value)
 
 int16_t Dps310::readByte(uint8_t regAddress)
 {
-	m_i2cbus->masterTransmit(m_slaveAddress, );
-	m_i2cbus->memWrite(regAddress);
+	m_i2cbus->masterTransmit(m_slaveAddress, data?, timeout?, size?);
+	m_i2cbus->memWrite(data?, regAddress, memAddress?, memAddressSize?, size?, timeout?);
 	//m_i2cbus->endTransmission(false);
 	//request 1 byte from slave
 	if (m_i2cbus->masterReceive(m_slaveAddress, 1U) > 0)
 	{
-		return m_i2cbus->memRead(); //return this byte on success
+		return m_i2cbus->memRead(devAddress?, memAddress?, memAddressSize?, timeout?); //return this byte on success
 	}
 	else
 	{
@@ -522,7 +522,7 @@ void Dps310::begin(I2CInterface &bus, uint8_t slaveAddress)
 	m_slaveAddress = slaveAddress;
 
 	// Init bus
-	m_i2cbus->begin();
+	m_i2cbus->begin();	// Error here, why?
 
 	HAL_Delay(50); //startup time of Dps310
 
@@ -634,8 +634,8 @@ int16_t Dps310::writeByte(uint8_t regAddress, uint8_t data)
 
 int16_t Dps310::writeByte(uint8_t regAddress, uint8_t data, uint8_t check)
 {
-	m_i2cbus->masterTransmit(m_slaveAddress);
-	m_i2cbus->memWrite(regAddress);		  //Write Register number to buffer
+	m_i2cbus->masterTransmit(m_slaveAddress, data?, timeout?, size?);
+	m_i2cbus->memWrite(data?, regAddress, memAddress?, memAddressSize?, size?, timeout?);		  //Write Register number to buffer
 	//m_i2cbus->write(data);				  //Write data to buffer
 	if (m_i2cbus->getError() != 0) //Send buffer content to slave
 	{
@@ -730,15 +730,15 @@ int16_t Dps310::readBlock(RegBlock_t regBlock, uint8_t *buffer)
 		return 0; //0 bytes read successfully
 	}
 
-	m_i2cbus->masterTransmit(m_slaveAddress);
-	m_i2cbus->memWrite(regBlock.regAddress);
+	m_i2cbus->masterTransmit(m_slaveAddress, data?, timeout?, size?);
+	m_i2cbus->memWrite(data?, regAddress, memAddress?, memAddressSize?, size?, timeout?);
 	//m_i2cbus->endTransmission(false);
 	//request length bytes from slave
-	int16_t ret = m_i2cbus->masterReceive(m_slaveAddress, regBlock.length, 1U);
+	int16_t ret = m_i2cbus->masterReceive(m_slaveAddress, regBlock.length);
 	//read all received bytes to buffer
 	for (int16_t count = 0; count < ret; count++)
 	{
-		buffer[count] = m_i2cbus->memRead();
+		buffer[count] = m_i2cbus->memRead(devAddress?, memAddress?, memAddressSize?, timeout?);
 	}
 	return ret;
 }
