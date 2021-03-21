@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import * as go from 'gojs';
 import { DataSyncService, DiagramComponent, PaletteComponent } from 'gojs-angular';
 
@@ -10,7 +10,8 @@ import { DataSyncService, DiagramComponent, PaletteComponent } from 'gojs-angula
 })
 export class SchematicsComponent implements OnInit {
 	@ViewChild('myDiagram', { static: true }) public myDiagramComponent: DiagramComponent;
-
+	rapidPageValue;
+	showText: boolean = false;
 	public diagramNodeData: Array<go.ObjectData> = [
 		{ key: 'auger', group: "auger_group", scale: 2.5, img: '../../../assets/Auger.svg', color: "red", loc: "643.50 -54.17" },
 		{ key: 'P1_1', group: "auger_group", scale: 2.5, img: '../../../assets/P1.svg', loc: "696.50 -11.77" },
@@ -27,8 +28,11 @@ export class SchematicsComponent implements OnInit {
 		{ from: 'P1_2', to: 'Relief_Valve_1', color: 'green', fromPort: "Right", toPort: "Right" },
 		{ from: 'P1_1', to: 'Relief_Valve_1', color: 'red', fromPort: "Right", toPort: "Top", "points": [511, 280] },
 	];
+	public observedDiagram = null;
 
-	constructor() { }
+	// currently selected node; for inspector
+	public selectedNode: go.Node | null = null;
+	constructor(private cdr: ChangeDetectorRef) { }
 	ngOnInit(): void {
 	}
 
@@ -91,7 +95,8 @@ export class SchematicsComponent implements OnInit {
 
 		dia.linkTemplate =
 			$(go.Link,
-				{ routing: go.Link.Orthogonal },
+				{ routing: go.Link.AvoidsNodes, reshapable: true },
+				new go.Binding("points").makeTwoWay(),
 				$(go.Shape,
 					new go.Binding("stroke", "color"),  // shape.stroke = data.color
 					new go.Binding("strokeWidth", "thick")));
@@ -116,6 +121,52 @@ export class SchematicsComponent implements OnInit {
 		this.diagramModelData = DataSyncService.syncModelData(changes, this.diagramModelData);
 	};
 
+	public ngAfterViewInit() {
 
+		if (this.observedDiagram) return;
+		this.observedDiagram = this.myDiagramComponent.diagram;
+		this.cdr.detectChanges(); // IMPORTANT: without this, Angular will throw ExpressionChangedAfterItHasBeenCheckedError (dev mode only)
 
+		const appComp: SchematicsComponent = this;
+		// listener for inspector
+		this.myDiagramComponent.diagram.addDiagramListener('ChangedSelection', (e) => {
+			console.log(e.diagram.model.toJson())
+			this.rapidPageValue = e.diagram.model.toJson();
+			console.log(this.rapidPageValue)
+
+			if (e.diagram.selection.count === 0) {
+				appComp.selectedNode = null;
+				console.log('x')
+			}
+			const node = e.diagram.selection.first();
+			if (node instanceof go.Node) {
+				appComp.selectedNode = node;
+				console.log(node)
+			} else {
+				appComp.selectedNode = null;
+				console.log('x2')
+			}
+		});
+
+	} 
+
+	public handleInspectorChange(newNodeData) {
+		const key = newNodeData.key;
+		// find the entry in nodeDataArray with this key, replace it with newNodeData
+		let index = null;
+		for (let i = 0; i < this.diagramNodeData.length; i++) {
+			const entry = this.diagramNodeData[i];
+			if (entry.key && entry.key === key) {
+				index = i;
+			}
+		}
+
+		if (index >= 0) {
+			// here, we set skipsDiagramUpdate to false, since GoJS does not yet have this update
+			this.skipsDiagramUpdate = false;
+			this.diagramNodeData[index] = _.cloneDeep(newNodeData);
+			// this.diagramNodeData[index] = _.cloneDeep(newNodeData);
+		}
+
+	}
 }
