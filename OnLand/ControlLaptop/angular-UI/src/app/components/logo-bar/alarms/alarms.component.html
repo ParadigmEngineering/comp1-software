@@ -1,0 +1,7 @@
+<div class="alarms-container">
+  
+    <button class="alarms-button" (click)="toggleFlag()" [ngStyle]="{'background-color': armedFlag ? '#3B824F' : '#A10B0B' }">  
+     {{ (armedFlag) ? "No Alarms" : "Communication Lost"}}
+    </button>
+  
+  </div>
