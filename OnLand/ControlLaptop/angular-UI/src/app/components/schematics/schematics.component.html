@@ -1,13 +1,13 @@
 <div>
-  <gojs-diagram #myDiagram [initDiagram]='initDiagram' [nodeDataArray]='diagramNodeData' [linkDataArray]='diagramLinkData'
-  [divClassName]='diagramDivClassName' [modelData]='diagramModelData' [skipsDiagramUpdate]='skipsDiagramUpdate'
-  (modelChange)='diagramModelChange($event)'>
-</gojs-diagram>
-<button (click)="showText = !showText"> Show JSON: </button>
-<div *ngIf="showText">
-  <textarea id="mySavedModel" style="width:100%;height:300px">
-    {{rapidPageValue}}
+  <gojs-diagram #myDiagram [initDiagram]='initDiagram' [nodeDataArray]='diagramNodeData'
+    [linkDataArray]='diagramLinkData' [divClassName]='diagramDivClassName' [modelData]='diagramModelData'
+    [skipsDiagramUpdate]='skipsDiagramUpdate' (modelChange)='diagramModelChange($event)'>
+  </gojs-diagram>
+  <button (click)="showText = !showText"> Show JSON: </button>
+  <div *ngIf="showText">
+    <textarea style="width:100%;height:300px">
+    {{diagramJsonData}}
     </textarea>
-</div>
+  </div>
 
 </div>

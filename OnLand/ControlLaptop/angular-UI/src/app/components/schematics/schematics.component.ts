@@ -1,6 +1,8 @@
 import { ChangeDetectorRef, Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import * as go from 'gojs';
-import { DataSyncService, DiagramComponent, PaletteComponent } from 'gojs-angular';
+import { DataSyncService, DiagramComponent } from 'gojs-angular';
+import { Subscription } from 'rxjs';
+import { NaturalGasService } from 'src/app/services/natural-gas/natural-gas.service';
 
 @Component({
 	selector: 'app-schematics',
@@ -8,34 +10,34 @@ import { DataSyncService, DiagramComponent, PaletteComponent } from 'gojs-angula
 	styleUrls: ['./schematics.component.css'],
 	encapsulation: ViewEncapsulation.ShadowDom
 })
+
 export class SchematicsComponent implements OnInit {
+	private telemetrySubscriber: Subscription; // telemetry socketio subscriber
 	@ViewChild('myDiagram', { static: true }) public myDiagramComponent: DiagramComponent;
-	rapidPageValue;
+	diagramJsonData: string; // json data for modified diagram
 	showText: boolean = false;
 	public diagramNodeData: Array<go.ObjectData> = [
 		{ key: 'auger', group: "auger_group", scale: 2.5, img: '../../../assets/Auger.svg', color: "red", loc: "643.50 -54.17" },
 		{ key: 'P1_1', group: "auger_group", scale: 2.5, img: '../../../assets/P1.svg', loc: "696.50 -11.77" },
 		{ key: 'P1_2', group: "auger_group", scale: 2.5, img: '../../../assets/P1.svg', loc: "696.50 41.83" },
-		{ key: 'Relief_Valve_1', group: "auger_group", scale: 2.5, img: '../../../assets/Relief_Valve_Straight.svg', loc: "756.54 41.83" },
+		{ key: 'Relief_Valve_1', group: "auger_group", scale: 2.5, img: '../../../assets/Relief_Valve_Straight.svg', loc: "748.54 22.83" },
 		{ key: 'Motor_small_1', group: "auger_group", scale: 2.5, img: '../../../assets/Motor_small.svg', loc: "822.50 -19.17" },
 		{ key: 'auger_group', isGroup: true },
 		{ key: 'Delta' }
 	];
 
 	public diagramLinkData: Array<go.ObjectData> = [
-		{ from: 'Motor_small_1', to: 'P1_1', color: 'red', fromPort: "Left", toPort: "Right" },
-		{ from: 'Relief_Valve_1', to: 'Motor_small_1', color: 'green', fromPort: "Right", toPort: "Right" },
-		{ from: 'P1_2', to: 'Relief_Valve_1', color: 'green', fromPort: "Right", toPort: "Right" },
-		{ from: 'P1_1', to: 'Relief_Valve_1', color: 'red', fromPort: "Right", toPort: "Top", "points": [511, 280] },
+		{ "from": "Motor_small_1", "to": "P1_1", "color": "red", "fromPort": "Left", "toPort": "Right", "key": -1, "points": [822.5, -2.7950000000000017, 812.5, -2.7950000000000017, 762.726127329298, -2.7950000000000017, 762.726127329298, 2.1050000000000004, 734, 2.1050000000000004, 724, 2.1050000000000004] },
+		{ "from": "Relief_Valve_1", "to": "Motor_small_1", "color": "green", "fromPort": "Right", "toPort": "Right", "key": -2, "points": [775.7417040671694, 37.8541479664153, 785.7417040671694, 37.8541479664153, 859.5572240640107, 37.8541479664153, 859.5572240640107, -2.7950000000000017, 845, -2.7950000000000017, 855, -2.7950000000000017] },
+		{ "from": "P1_2", "to": "Relief_Valve_1", "color": "green", "fromPort": "Right", "toPort": "Right", "key": -3, "points": [724, 55.705, 734, 55.705, 782.6970382104381, 55.705, 782.6970382104381, 37.8541479664153, 763.2417040671694, 37.8541479664153, 773.2417040671694, 37.8541479664153] },
+		{ "from": "P1_1", "to": "Relief_Valve_1", "color": "red", "fromPort": "Right", "toPort": "Top", "points": [724, 2.1050000000000004, 734, 2.1050000000000004, 763.2954378978858, 2.1050000000000004, 763.2954378978858, 25.354147966415297, 750.6167040671694, 25.354147966415297, 760.6167040671694, 25.354147966415297], "key": -4 }
 	];
 	public observedDiagram = null;
 
-	// currently selected node; for inspector
-	public selectedNode: go.Node | null = null;
-	constructor(private cdr: ChangeDetectorRef) { }
-	ngOnInit(): void {
-	}
+	constructor(private cdr: ChangeDetectorRef, private naturalGas: NaturalGasService /* temporary listen to natural gas service to test real time links color changes */) { }
+	ngOnInit(): void { }
 
+	// initiatae gojs diagram 
 	public initDiagram(): go.Diagram {
 
 		const $ = go.GraphObject.make;
@@ -128,45 +130,49 @@ export class SchematicsComponent implements OnInit {
 		this.cdr.detectChanges(); // IMPORTANT: without this, Angular will throw ExpressionChangedAfterItHasBeenCheckedError (dev mode only)
 
 		const appComp: SchematicsComponent = this;
-		// listener for inspector
-		this.myDiagramComponent.diagram.addDiagramListener('ChangedSelection', (e) => {
-			console.log(e.diagram.model.toJson())
-			this.rapidPageValue = e.diagram.model.toJson();
-			console.log(this.rapidPageValue)
 
-			if (e.diagram.selection.count === 0) {
-				appComp.selectedNode = null;
-				console.log('x')
+		// subscribe to socketio response to test if the diagram link changes color in realtime
+		this.telemetrySubscriber = this.naturalGas.onNatural().subscribe((msg: { message: string }) => {
+			// if get a message equal to 6, than change P1 to Relief valve link to yellow		
+			if (parseInt(msg.message) === 6) {
+				console.log('got a msg from server that is 6 ');
+				this.myDiagramComponent.diagram.commit(dia => {
+					const from = dia.findNodeForKey('P1_1');
+					const to = dia.findNodeForKey('Relief_Valve_1');
+					if (from !== null && to !== null) {
+						from.findLinksTo(to).each(l => {
+							dia.model.set(l.data, "color", "yellow");
+						})
+					}
+					else {
+						console.log('Error finding nodes')
+					}
+				});
 			}
-			const node = e.diagram.selection.first();
-			if (node instanceof go.Node) {
-				appComp.selectedNode = node;
-				console.log(node)
-			} else {
-				appComp.selectedNode = null;
-				console.log('x2')
+			// if get a message equal to 1, than change P1 to Relief valve link to blue
+			else if (parseInt(msg.message) === 1) {
+				this.myDiagramComponent.diagram.commit(dia => {
+					const from = dia.findNodeForKey('P1_1');
+					const to = dia.findNodeForKey('Relief_Valve_1');
+					if (from !== null && to !== null) {
+						from.findLinksTo(to).each(l => {
+							dia.model.set(l.data, "color", "blue");
+						})
+					}
+					else {
+						console.log('Error finding nodes')
+					}
+				});
 			}
 		});
 
-	} 
+		// listen to changes from user draging the nodes and links, then append the data to show Json
+		this.myDiagramComponent.diagram.addDiagramListener('ChangedSelection', (e) => {
+			this.diagramJsonData = e.diagram.model.toJson();
+		});
+	}
 
-	public handleInspectorChange(newNodeData) {
-		const key = newNodeData.key;
-		// find the entry in nodeDataArray with this key, replace it with newNodeData
-		let index = null;
-		for (let i = 0; i < this.diagramNodeData.length; i++) {
-			const entry = this.diagramNodeData[i];
-			if (entry.key && entry.key === key) {
-				index = i;
-			}
-		}
-
-		if (index >= 0) {
-			// here, we set skipsDiagramUpdate to false, since GoJS does not yet have this update
-			this.skipsDiagramUpdate = false;
-			this.diagramNodeData[index] = _.cloneDeep(newNodeData);
-			// this.diagramNodeData[index] = _.cloneDeep(newNodeData);
-		}
-
+	ngOnDestroy() {
+		this.telemetrySubscriber.unsubscribe();
 	}
 }
