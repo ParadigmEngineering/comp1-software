@@ -1,5 +1,5 @@
-#include "Dps310.h"
-#include <Wire.h>
+#include "Peripherals/Inc/DPS310.h"
+//#include <Wire.h>
 
 using namespace dps;
 using namespace dps310;
@@ -157,8 +157,8 @@ int16_t Dps310::measureTempOnce(float &result, uint8_t oversamplingRate)
 	}
 
 	//wait until measurement is finished
-	delay(calcBusyTime(0U, m_tempOsr) / DPS__BUSYTIME_SCALING);
-	delay(DPS310__BUSYTIME_FAILSAFE);
+	HAL_Delay(calcBusyTime(0U, m_tempOsr) / DPS__BUSYTIME_SCALING);
+	HAL_Delay(DPS310__BUSYTIME_FAILSAFE);
 
 	ret = getSingleResult(result);
 	if (ret != DPS__SUCCEEDED)
@@ -214,8 +214,8 @@ int16_t Dps310::measurePressureOnce(float &result, uint8_t oversamplingRate)
 	}
 
 	//wait until measurement is finished
-	delay(calcBusyTime(0U, m_prsOsr) / DPS__BUSYTIME_SCALING);
-	delay(DPS310__BUSYTIME_FAILSAFE);
+	HAL_Delay(calcBusyTime(0U, m_prsOsr) / DPS__BUSYTIME_SCALING);
+	HAL_Delay(DPS310__BUSYTIME_FAILSAFE);
 
 	ret = getSingleResult(result);
 	if (ret != DPS__SUCCEEDED)
@@ -476,7 +476,7 @@ int16_t Dps310::disableFIFO()
 uint16_t Dps310::calcBusyTime(uint16_t mr, uint16_t osr)
 {
 	//formula from datasheet (optimized)
-	return ((uint32_t)20U << mr) + ((uint32_t)16U << (osr + mr));
+	return (20U << mr) + (16U << (osr + mr));
 }
 
 int16_t Dps310::getFIFOvalue(int32_t *value)
@@ -486,32 +486,32 @@ int16_t Dps310::getFIFOvalue(int32_t *value)
 	//abort on invalid argument or failed block reading
 	if (value == NULL || readBlock(registerBlocks[PRS], buffer) != DPS__RESULT_BLOCK_LENGTH)
 		return DPS__FAIL_UNKNOWN;
-	*value = (uint32_t)buffer[0] << 16 | (uint32_t)buffer[1] << 8 | (uint32_t)buffer[2];
+	*value = (buffer[0] << 16 | buffer[1] << 8 | buffer[2]);
 	getTwosComplement(value, 24);
 	return buffer[2] & 0x01;
 }
 
 int16_t Dps310::readByte(uint8_t regAddress)
 {
-	m_i2cbus->beginTransmission(m_slaveAddress);
-	m_i2cbus->write(regAddress);
-	m_i2cbus->endTransmission(false);
+	m_i2cbus->masterTransmit(m_slaveAddress, );
+	m_i2cbus->memWrite(regAddress);
+	//m_i2cbus->endTransmission(false);
 	//request 1 byte from slave
-	if (m_i2cbus->requestFrom(m_slaveAddress, 1U, 1U) > 0)
+	if (m_i2cbus->masterReceive(m_slaveAddress, 1U) > 0)
 	{
-		return m_i2cbus->read(); //return this byte on success
+		return m_i2cbus->memRead(); //return this byte on success
 	}
 	else
 	{
 		return DPS__FAIL_UNKNOWN; //if 0 bytes were read successfully
 	}
 }
-void Dps310::begin(TwoWire &bus)
+void Dps310::begin(I2CInterface &bus)
 {
 	begin(bus, DPS__STD_SLAVE_ADDRESS);
 }
 
-void Dps310::begin(TwoWire &bus, uint8_t slaveAddress)
+void Dps310::begin(I2CInterface &bus, uint8_t slaveAddress)
 {
 	//this flag will show if the initialization was successful
 	m_initFail = 0U;
@@ -524,7 +524,7 @@ void Dps310::begin(TwoWire &bus, uint8_t slaveAddress)
 	// Init bus
 	m_i2cbus->begin();
 
-	delay(50); //startup time of Dps310
+	HAL_Delay(50); //startup time of Dps310
 
 	init();
 }
@@ -600,29 +600,29 @@ int16_t Dps310::readcoeffs(void)
 	int16_t ret = readBlock(coeffBlock, buffer);
 
 	//compose coefficients from buffer content
-	m_c0Half = ((uint32_t)buffer[0] << 4) | (((uint32_t)buffer[1] >> 4) & 0x0F);
+	m_c0Half = (buffer[0] << 4) | ((buffer[1] >> 4) & 0x0F);
 	getTwosComplement(&m_c0Half, 12);
 	//c0 is only used as c0*0.5, so c0_half is calculated immediately
 	m_c0Half = m_c0Half / 2U;
 
 	//now do the same thing for all other coefficients
-	m_c1 = (((uint32_t)buffer[1] & 0x0F) << 8) | (uint32_t)buffer[2];
+	m_c1 = ((buffer[1] & 0x0F) << 8) | buffer[2];
 	getTwosComplement(&m_c1, 12);
-	m_c00 = ((uint32_t)buffer[3] << 12) | ((uint32_t)buffer[4] << 4) | (((uint32_t)buffer[5] >> 4) & 0x0F);
+	m_c00 = (buffer[3] << 12) | (buffer[4] << 4) | ((buffer[5] >> 4) & 0x0F);
 	getTwosComplement(&m_c00, 20);
-	m_c10 = (((uint32_t)buffer[5] & 0x0F) << 16) | ((uint32_t)buffer[6] << 8) | (uint32_t)buffer[7];
+	m_c10 = ((buffer[5] & 0x0F) << 16) | (buffer[6] << 8) | buffer[7];
 	getTwosComplement(&m_c10, 20);
 
-	m_c01 = ((uint32_t)buffer[8] << 8) | (uint32_t)buffer[9];
+	m_c01 = (buffer[8] << 8) | buffer[9];
 	getTwosComplement(&m_c01, 16);
 
-	m_c11 = ((uint32_t)buffer[10] << 8) | (uint32_t)buffer[11];
+	m_c11 = (buffer[10] << 8) | buffer[11];
 	getTwosComplement(&m_c11, 16);
-	m_c20 = ((uint32_t)buffer[12] << 8) | (uint32_t)buffer[13];
+	m_c20 = (buffer[12] << 8) | buffer[13];
 	getTwosComplement(&m_c20, 16);
-	m_c21 = ((uint32_t)buffer[14] << 8) | (uint32_t)buffer[15];
+	m_c21 = (buffer[14] << 8) | buffer[15];
 	getTwosComplement(&m_c21, 16);
-	m_c30 = ((uint32_t)buffer[16] << 8) | (uint32_t)buffer[17];
+	m_c30 = (buffer[16] << 8) | buffer[17];
 	getTwosComplement(&m_c30, 16);
 	return DPS__SUCCEEDED;
 }
@@ -634,10 +634,10 @@ int16_t Dps310::writeByte(uint8_t regAddress, uint8_t data)
 
 int16_t Dps310::writeByte(uint8_t regAddress, uint8_t data, uint8_t check)
 {
-	m_i2cbus->beginTransmission(m_slaveAddress);
-	m_i2cbus->write(regAddress);		  //Write Register number to buffer
-	m_i2cbus->write(data);				  //Write data to buffer
-	if (m_i2cbus->endTransmission() != 0) //Send buffer content to slave
+	m_i2cbus->masterTransmit(m_slaveAddress);
+	m_i2cbus->memWrite(regAddress);		  //Write Register number to buffer
+	//m_i2cbus->write(data);				  //Write data to buffer
+	if (m_i2cbus->getError() != 0) //Send buffer content to slave
 	{
 		return DPS__FAIL_UNKNOWN;
 	}
@@ -730,24 +730,24 @@ int16_t Dps310::readBlock(RegBlock_t regBlock, uint8_t *buffer)
 		return 0; //0 bytes read successfully
 	}
 
-	m_i2cbus->beginTransmission(m_slaveAddress);
-	m_i2cbus->write(regBlock.regAddress);
-	m_i2cbus->endTransmission(false);
+	m_i2cbus->masterTransmit(m_slaveAddress);
+	m_i2cbus->memWrite(regBlock.regAddress);
+	//m_i2cbus->endTransmission(false);
 	//request length bytes from slave
-	int16_t ret = m_i2cbus->requestFrom(m_slaveAddress, regBlock.length, 1U);
+	int16_t ret = m_i2cbus->masterReceive(m_slaveAddress, regBlock.length, 1U);
 	//read all received bytes to buffer
 	for (int16_t count = 0; count < ret; count++)
 	{
-		buffer[count] = m_i2cbus->read();
+		buffer[count] = m_i2cbus->memRead();
 	}
 	return ret;
 }
 
 void Dps310::getTwosComplement(int32_t *raw, uint8_t length)
 {
-	if (*raw & ((uint32_t)1 << (length - 1)))
+	if (*raw & (1 << (length - 1)))
 	{
-		*raw -= (uint32_t)1 << length;
+		*raw -= 1 << length;
 	}
 }
 
@@ -757,7 +757,7 @@ int16_t Dps310::getRawResult(int32_t *raw, RegBlock_t reg)
 	if (readBlock(reg, buffer) != DPS__RESULT_BLOCK_LENGTH)
 		return DPS__FAIL_UNKNOWN;
 
-	*raw = (uint32_t)buffer[0] << 16 | (uint32_t)buffer[1] << 8 | (uint32_t)buffer[2];
+	*raw = buffer[0] << 16 | buffer[1] << 8 | buffer[2];
 	getTwosComplement(raw, 24);
 	return DPS__SUCCEEDED;
 }

@@ -4,9 +4,9 @@
 #include "dps_config.h"
 #include "dps310_config.h"
 #include <cstdint>
+#include "stm32f3xx_hal.h"
 #include "Peripherals/inc/I2CInterface.h"
 
-class TwoWire;
 
 class Dps310
 {
@@ -17,7 +17,7 @@ public:
 	/**
 	 * I2C begin function with standard address
 	 */
-	void begin(TwoWire &bus);
+	void begin(I2CInterface &bus);
 
 	/**
 	 * Standard I2C begin function
@@ -25,7 +25,7 @@ public:
 	 * @param &bus: 			I2CBus which connects MC to the sensor
 	 * @param slaveAddress: 	I2C address of the sensor (0x77 or 0x76)
 	 */
-	void begin(TwoWire &bus, uint8_t slaveAddress);
+	void begin(I2CInterface &bus, uint8_t slaveAddress);
 
 	/**
 	 * End function for Dps310
@@ -224,7 +224,7 @@ private:
 	uint8_t m_SpiI2c; //0=SPI, 1=I2C
 
 	//used for I2C
-	TwoWire *m_i2cbus;
+	I2CInterface *m_i2cbus;
 	uint8_t m_slaveAddress;
 
 	uint8_t m_tempSensor;
