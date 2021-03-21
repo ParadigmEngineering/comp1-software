@@ -22,6 +22,7 @@ s.listen(1)
 conn, addr = s.accept()
 while 1:
     data = conn.recv(1024)
+    print("Data received: " + data.decode('utf-8'))
     if not data:
         break
     conn.sendall(data)

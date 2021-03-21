@@ -24,6 +24,7 @@ while 1:
     if not data:
         break
 
+    print("Data received: " + data.decode('utf-8'))
     reply = 'OK...' + data.decode('utf-8')
     s.sendto(bytes(reply, 'utf-8'), addr)
     print('Message[' + addr[0] + ':' + str(addr[1]) + '] - ' + data.decode('utf-8').strip())
