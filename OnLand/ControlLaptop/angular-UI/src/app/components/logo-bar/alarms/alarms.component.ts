@@ -17,7 +17,7 @@ export class AlarmsComponent implements OnInit {
   constructor(private naturalGas: NaturalGasService) { }
 
   ngOnInit(): void {
-    this.telemetrySubscriber = this.naturalGas.onNatural().subscribe((msg: { message: number }) => {
+    this.telemetrySubscriber = this.naturalGas.onNatural().subscribe((msg: { message: string }) => {
       console.log('got a msg from server: ' + JSON.stringify(msg));
       switch (parseInt(msg.message)) {
         case 1:
