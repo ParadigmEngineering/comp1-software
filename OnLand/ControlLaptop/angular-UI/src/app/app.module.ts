@@ -25,6 +25,7 @@ import { IonicModule } from '@ionic/angular';
 import { NavigationInfoComponent } from './components/navigation-info/navigation-info.component';
 import { MinActualMaxComponent } from './components/min-actual-max/min-actual-max.component';
 import { NaturalGasComponent } from './components/natural-gas/natural-gas.component';
+import { AlarmsComponent } from './components/logo-bar/alarms/alarms.component';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { NaturalGasComponent } from './components/natural-gas/natural-gas.compon
     NavigationInfoComponent,
     MinActualMaxComponent,
     NaturalGasComponent,
+    AlarmsComponent
   ],
   imports: [
     BrowserModule,
