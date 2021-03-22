@@ -5,37 +5,39 @@ import json
 
 
 class Message:
-    def __init__(self, msgID, isExtendedID, data):
-        self.msgID = msgID
-        self.isExtendedID = isExtendedID
+    def __init__(self, msgid, isextendedid, data):
+        self.msgid = msgid
+        self.isextendedid = isextendedid
         self.data = data
-    def toString(self):
-        return "" + str(self.msgID) + "\n" + str(self.isExtendedID) + "\n" + str(self.data)
 
-def createMessages(raw_messages):
+    def to_string(self) -> str:
+        return "" + str(self.msgid) + "\n" + str(self.isextendedid) + "\n" + str(self.data)
+
+
+def create_messages(raw_messages):
     msgs = []
     for message in raw_messages:
-        msgs.append(Message(msgID=message["msgId"],
-                            isExtendedID=message["isExtendedId"],
+        msgs.append(Message(msgid=message["msgId"],
+                            isextendedid=message["isExtendedId"],
                             data=message["data"]
                             ))
     return msgs
 
 
-def sendWithUDP(msg_config, host, port):
+def send_with_udp(msgconfig, host, port):
     try:
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     except socket.error:
         print('Failed to create socket')
         sys.exit()
-    msgs = createMessages(msg_config["config"]["messages"])
-    msg_frequency = msg_config["config"]["messageFrequency"]
+    msgs = create_messages(msgconfig["config"]["messages"])
+    msg_frequency = msgconfig["config"]["messageFrequency"]
     for message in msgs:
         time.sleep(1.0 / msg_frequency)
         try:
             # Set the whole string
-            s.sendto(bytes(message.toString(), 'utf-8'), (host, port))
-            print("message sent:" + message.toString())
+            s.sendto(bytes(message.to_string(), 'utf-8'), (host, port))
+            print("message sent:" + message.to_string())
             # receive data from client (data, addr)
             d = s.recvfrom(1024)
             reply = d[0]
@@ -45,21 +47,22 @@ def sendWithUDP(msg_config, host, port):
             print('Error Code : ' + str(msg[0]) + ' Message ' + msg[1])
             sys.exit()
 
-def sendWithTCP(msg_config, host, port):
+
+def send_with_tcp(msgconfig, host, port):
     try:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.connect((host, port))
     except socket.error:
         print('Failed to create socket')
         sys.exit()
-    msgs = createMessages(msg_config["config"]["messages"])
-    msg_frequency = msg_config["config"]["messageFrequency"]
+    msgs = create_messages(msgconfig["config"]["messages"])
+    msg_frequency = msgconfig["config"]["messageFrequency"]
     for message in msgs:
         time.sleep(1.0 / msg_frequency)
         try:
             # Set the whole string
-            s.sendall(bytes(message.toString(), 'utf-8'))
-            print("message sent:" + message.toString())
+            s.sendall(bytes(message.to_string(), 'utf-8'))
+            print("message sent:" + message.to_string())
             # receive data from client (data, addr)
             d = s.recv(1024)
             print('Server reply : ' + d.decode('utf-8'))
@@ -78,6 +81,6 @@ if __name__ == "__main__":
         useTCP = msg_config["config"]["useTCP"]
         print("Using TCP: " + str(useTCP))
         if useTCP:
-            sendWithTCP(msg_config, host, port)
+            send_with_tcp(msg_config, host, port)
         else:
-            sendWithUDP(msg_config, host, port)
+            send_with_udp(msg_config, host, port)
