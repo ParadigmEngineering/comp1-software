@@ -34,10 +34,10 @@ def send_with_udp(msgconfig, host, port):
             s.sendto(bytes(message.to_string(), 'utf-8'), (host, port))
             print("message sent: %s" % message.to_string())
             # receive data from client (data, addr)
-            d = s.recvfrom(1024)
-            reply = d[0]
-            addr = d[1]
-            print('Server reply : %s' % reply.decode('utf-8'))
+            if msgconfig["config"]["sendContinuous"] is False:
+                d = s.recvfrom(1024)
+                reply = d[0]
+                print('Server reply : %s' % reply.decode('utf-8'))
         except socket.error as msg:
             print('Error Code : %s Message : %s ' % (str(msg[0]), msg[1]))
             sys.exit()
@@ -74,7 +74,9 @@ if __name__ == "__main__":
         host = msg_config["config"]["ip"]
         port = msg_config["config"]["port"]
         useTCP = msg_config["config"]["useTCP"]
+        sendContinuous = msg_config["config"]["sendContinuous"]
         print("Using TCP: %s" % str(useTCP))
+        print("Waiting for response: %s" % str(sendContinuous))
         if useTCP:
             send_with_tcp(msg_config, host, port)
         else:

@@ -3,6 +3,7 @@
     "ip": "localhost",
     "port": 8888,
     "useTCP": false,
+    "sendContinuous": true,
     "messageFrequency": 5,
     "messages": [
       {
