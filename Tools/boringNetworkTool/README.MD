@@ -1,11 +1,11 @@
-Boring Network Tool
+##Boring Network Tool
 
 The file main.py can be used to send either 
 TCP or UDP messages to a given hostname and port, specified via the config json.
 
 This script does not require any external packages, aside from standard python 3.7 or higher.
 
-Usage:
+###Usage
 
 sending_config.json 
 has a similar configuration to the json in Pidaq/Examples/CanSender, and can be used to specify the
