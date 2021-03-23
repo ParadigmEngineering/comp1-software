@@ -6,8 +6,6 @@
     "messageFrequency": 5,
     "messages": [
       {
-        "msgId": 5,
-        "isExtendedId": 0,
         "data": [
           5,
           6,
@@ -18,8 +16,6 @@
         ]
       },
       {
-        "msgId": 100,
-        "isExtendedId": 0,
         "data": [
           72,
           54,
@@ -28,8 +24,6 @@
         ]
       },
       {
-        "msgId": 200,
-        "isExtendedId": 0,
         "data": [
           100,
           253,
@@ -38,15 +32,11 @@
         ]
       },
       {
-        "msgId": 74,
-        "isExtendedId": 0,
         "data": [
           87
         ]
       },
       {
-        "msgId": 29,
-        "isExtendedId": 0,
         "data": [
           98,
           56,
