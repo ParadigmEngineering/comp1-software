@@ -8,13 +8,13 @@ try:
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     print('Socket created')
 except socket.error as msg:
-    print('Failed to create socket. Error Code : ' + str(msg[0]) + ' Message ' + msg[1])
+    print('Failed to create socket. Error Code : %s Message : %s' % (str(msg[0]), msg[1]))
     sys.exit()
 
 try:
     s.bind((HOST, PORT))
 except socket.error as msg:
-    print('Bind failed. Error Code : ' + str(msg[0]) + ' Message ' + msg[1])
+    print('Bind failed. Error Code : %s Message : %s' % (str(msg[0]), msg[1]))
     sys.exit()
 
 while 1:
@@ -24,9 +24,9 @@ while 1:
     if not data:
         break
 
-    print("Data received: " + data.decode('utf-8'))
-    reply = 'OK...' + data.decode('utf-8')
+    print("Data received: %s" % data.decode('utf-8'))
+    reply = 'OK... %s' % data.decode('utf-8')
     s.sendto(bytes(reply, 'utf-8'), addr)
-    print('Message[' + addr[0] + ':' + str(addr[1]) + '] - ' + data.decode('utf-8').strip())
+    print('Message[%s:%s] - %s' % (addr[0], str(addr[1]), data.decode('utf-8').strip()))
 
 s.close()

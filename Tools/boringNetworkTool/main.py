@@ -5,22 +5,17 @@ import json
 
 
 class Message:
-    def __init__(self, msgid, isextendedid, data):
-        self.msgid = msgid
-        self.isextendedid = isextendedid
+    def __init__(self, data):
         self.data = data
 
     def to_string(self) -> str:
-        return "" + str(self.msgid) + "\n" + str(self.isextendedid) + "\n" + str(self.data)
+        return "%s \n" % str(self.data)
 
 
 def create_messages(raw_messages):
     msgs = []
     for message in raw_messages:
-        msgs.append(Message(msgid=message["msgId"],
-                            isextendedid=message["isExtendedId"],
-                            data=message["data"]
-                            ))
+        msgs.append(Message(data=message["data"]))
     return msgs
 
 
@@ -37,14 +32,14 @@ def send_with_udp(msgconfig, host, port):
         try:
             # Set the whole string
             s.sendto(bytes(message.to_string(), 'utf-8'), (host, port))
-            print("message sent:" + message.to_string())
+            print("message sent: %s" % message.to_string())
             # receive data from client (data, addr)
             d = s.recvfrom(1024)
             reply = d[0]
             addr = d[1]
-            print('Server reply : ' + reply.decode('utf-8'))
+            print('Server reply : %s' % reply.decode('utf-8'))
         except socket.error as msg:
-            print('Error Code : ' + str(msg[0]) + ' Message ' + msg[1])
+            print('Error Code : %s Message : %s ' % (str(msg[0]), msg[1]))
             sys.exit()
 
 
@@ -62,12 +57,12 @@ def send_with_tcp(msgconfig, host, port):
         try:
             # Set the whole string
             s.sendall(bytes(message.to_string(), 'utf-8'))
-            print("message sent:" + message.to_string())
+            print("message sent: %s" % message.to_string())
             # receive data from client (data, addr)
             d = s.recv(1024)
-            print('Server reply : ' + d.decode('utf-8'))
+            print('Server reply : %s' % d.decode('utf-8'))
         except socket.error as msg:
-            print('Error Code : ' + str(msg[0]) + ' Message ' + msg[1])
+            print('Error Code : %s Message : %s ' % (str(msg[0]), msg[1]))
             s.close()
             sys.exit()
     s.close()
@@ -79,7 +74,7 @@ if __name__ == "__main__":
         host = msg_config["config"]["ip"]
         port = msg_config["config"]["port"]
         useTCP = msg_config["config"]["useTCP"]
-        print("Using TCP: " + str(useTCP))
+        print("Using TCP: %s" % str(useTCP))
         if useTCP:
             send_with_tcp(msg_config, host, port)
         else:
