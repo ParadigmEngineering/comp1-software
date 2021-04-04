@@ -1,7 +1,9 @@
 #pragma once
 
 #include <cstdint>
+#include <cstring>
 #include <string>
+#include <vector>
 
 // Template parameter must be a protobuf message
 

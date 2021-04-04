@@ -1,9 +1,12 @@
 #pragma once
+#define ASIO_STANDALONE
 #include <asio.hpp>
 
 #include "Message.h"
+#include "Paradigm.pb.h"
 
 #include <deque>
+#include <iostream>
 
 using asio::ip::tcp;
 using asio::ip::udp;
@@ -46,7 +49,7 @@ private:
 	void connect(const tcp::resolver::results_type& endpoints)
 	{
 		asio::async_connect(m_socket, endpoints,
-			[this, &endpoints](std::error_code ec, Protocol::endpoint)
+			[this, &endpoints](std::error_code ec, tcp::endpoint)
 			{
 				if (!ec)
 				{
@@ -128,6 +131,7 @@ private:
 };
 
 
+// TODO change to serialize raw protobuf instead of message abstraction
 template<typename Proto>
 class UdpClient
 {

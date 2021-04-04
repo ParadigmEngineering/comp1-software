@@ -1,7 +1,7 @@
 #include "FlightComputer.h"
 #include "Message.h"
 #include "NetClient.h"
-#include "test.pb.h"
+#include "Paradigm.pb.h"
 
 #include "easylogging++.h"
 #include <iostream>
@@ -27,10 +27,11 @@ int main(int argc, char* argv[])
 		Person person;
 		person.set_name("Daniel Burke");
 		person.set_email("danielseanburke@gmail.com");
+		auto phone = person.add_phones();
 
 		Message<Person> message(person);
 		client.write(message);
-		std::cout << client.getReadMessage().body() << std::endl;
+		LOG(INFO) << client.getReadMessage().body();
 		std::this_thread::sleep_for(std::chrono::duration(std::chrono::milliseconds(1000)));
 	}
 
