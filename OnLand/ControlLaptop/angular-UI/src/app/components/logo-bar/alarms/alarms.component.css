@@ -1,0 +1,36 @@
+.alarms-container{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #C8C8C8;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  
+    display:flex;
+    align-items: center;
+    flex-direction: row;
+  
+    /* size of the entire box/container */
+    width: 300px;
+    height: 35px;
+  }
+  
+  .alarms-button{
+    /* buttons do not inherit properties */
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    color: #C8C8C8;
+    text-shadow:0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    text-shadow: 2px 2px 4px 0px rgba(239, 239, 239, 0.25) inset;
+    box-shadow: 3px 4px 11px -3px #000000 !important;
+    box-shadow: inset 3px 4px 11px -3px rgba(255, 255, 255, 0.25) !important;
+  
+    font-size: 14px;
+    line-height: 16px;
+  
+    height: 27px;
+    width: 218px;
+  
+    border-radius: 5px; }

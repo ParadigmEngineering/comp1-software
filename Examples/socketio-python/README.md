@@ -18,7 +18,8 @@ The primary difference between this implementation and the actual implementation
 
 ### Running the Example
 1. Ensure python environment is activated 
-2. `pip install -r requirements.txt`
-3. `python3 server.py`
-4. `python3 client_telemetry.py`
-5. `python3 client_logger.py`
+2. Open you terminal, and navigate to /OnLand directory, then run `pip install -r requirements.txt`
+3. Navigate back to /Examples/socketio-python directory, and run:
+    `python3 server.py`
+    `python3 client_telemetry.py`
+    `python3 client_logger.py`  
