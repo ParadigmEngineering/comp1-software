@@ -36,7 +36,7 @@ Prerequisites:
 Compiling Protobuf:
  - Unfortunately compiling protobuf and getting it to link properly can be a bit of a pain, so these instructions are a bit more manual for now
  - On Windows:
-   - The easiest way to install is to use the vcpkg package manager for C++ libraries to install protobuf and the protoc compiler. The instructions [here](https://github.com/protocolbuffers/protobuf/blob/master/src/README.md) under the header "C++ Installation - Windows" will show you how to install the packages under vcpkg, and [here](https://github.com/microsoft/vcpkg#quick-start-windows) shows you how to install vcpkg itself.
+   - The easiest way to install is to use the vcpkg package manager for C++ libraries to install protobuf and the protoc compiler. The instructions [here](https://github.com/microsoft/vcpkg#quick-start-windows) shows you how to install vcpkg, and the instructions [here](https://github.com/protocolbuffers/protobuf/blob/master/src/README.md) under the header "C++ Installation - Windows" will show you how to install the packages under vcpkg.
     - Note that when cmake is invoked for the FlightComputer project, the cmake toolchain file will have to be set so that protobuf is found
     - As well, the protoc compiler binary will have to be added to the system PATH, which can be done by adding the path to the folder where vcpkg has installed protoc to the PATH variable, as shown [here](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/)
  - On Linux/MacOS:
