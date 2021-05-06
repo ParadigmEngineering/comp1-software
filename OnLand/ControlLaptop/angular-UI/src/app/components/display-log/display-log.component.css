@@ -1,10 +1,11 @@
 .display-log-container{
   background:grey;
-  overflow: auto;
+  overflow: scroll;
+
   /* overflow --> convert to auto after done, colour of scroller bar is a bit tricky to change */
   
   /* size of the entire box/container */
-  width: 152px;
+  width: 500px;
   height: 233px;
  
 }
