@@ -18,7 +18,7 @@ export class NaturalGasComponent implements OnInit {
     this.data = {
       min: 5, //this will be reassign in the future
       actual: 0,
-     max: 10 //this will be reassign in the future
+      max: 10 //this will be reassign in the future
     }
   }
 
