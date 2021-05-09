@@ -15,9 +15,6 @@ export class DisplayLogComponent implements OnInit {
 
   dollarSpacer: string = "$:\n"
   logOutput: string = "";
-  armStyle = { 'background-color': '#3B824F' };
-  private outputVar = ["Advancing", "Retracting", "Neutral"];
-
   logArchive: logData;
 
   // note: assuming machine initialises with neutral state
