@@ -179,6 +179,7 @@ private:
 				if (!ec)
 				{
 					std::cout << m_readMessage.data() << std::endl;
+					m_readMessage.decodeHeader();
 					Person person;
 					if (m_readMessage.deserialize(person))
 					{

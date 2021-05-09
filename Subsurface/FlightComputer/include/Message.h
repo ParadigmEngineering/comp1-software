@@ -65,7 +65,7 @@ public:
 
 	bool deserialize(Protobuf& message) const
 	{
-		return message.ParseFromString(std::string(body()));
+		return message.ParseFromString(std::string(body(), body() + bodyLength()));
 	}
 
 private:
