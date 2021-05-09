@@ -1,11 +1,63 @@
 .display-log-container{
-  background:grey;
-  overflow: scroll;
+  background: linear-gradient(180deg, #4A4343 0%, rgba(74, 67, 67, 0.1) 100%);
+  overflow: auto;
 
-  /* overflow --> convert to auto after done, colour of scroller bar is a bit tricky to change */
-  
+  /* flex to create a system of two columns, one as a spacer ($:) the other as log entries */
+  display:flex;
+  flex-direction: row;
+
+  /* 
+  FONT CSS --> should be inheriting some CSS from parent box/component
+  THIS PART SHOULD BE DELETED WHEN PARENT BOX WITH UNIVERSAL CSS IS MADE
+  */
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+  color: white;
+
   /* size of the entire box/container */
-  width: 500px;
-  height: 233px;
+  width: 233px;
+  height: 153px;
  
+}
+
+.dollar-spacer{
+  /* size of the $: column */
+  color:#262633;
+  width: 15px;
+  text-align: right;
+}
+
+.log-text{
+  /* how many pixels distances do you want between $: and log info? */
+  position:relative;
+  left: 3px;
+}
+::-webkit-scrollbar {
+  /* width --> vertical; height --> horizontal (which may not be used) */
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #1F1B1B; 
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #C4C4C4;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+/* removing the box that appears in the intersection b/w H and V scrollbar */
+::-webkit-scrollbar-corner{
+  width: 0px;
 }

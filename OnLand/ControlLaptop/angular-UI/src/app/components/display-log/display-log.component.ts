@@ -13,7 +13,8 @@ export class DisplayLogComponent implements OnInit {
 
   private telemetrySubscriber: Subscription;
 
-  logOutput: string = "DUMMY\n";
+  dollarSpacer: string = "$:\n"
+  logOutput: string = "";
   armStyle = { 'background-color': '#3B824F' };
   private outputVar = ["Advancing", "Retracting", "Neutral"];
 
@@ -52,15 +53,16 @@ export class DisplayLogComponent implements OnInit {
         // cases 3-4 are the valves (0-1), math round and random is passing a fake 2-decimal value 
         case 3:
           this.cutterheadValve( Math.round( Math.random() *100 )/100 ) 
-          this.logOutput += "cutterhead valve -> " + this.logArchive.cutterheadValve  + "\n";
+          this.logOutput += "Cutterhead Needle Valve -> " + this.logArchive.cutterheadValve  + "%\n";
           break;
         case 4:
           this.augerValve( Math.round( Math.random() *100 )/100 );
-          this.logOutput += "auger valve -> " + this.logArchive.augerValve  + "\n";
+          this.logOutput += "Auger Needle Valve -> " + this.logArchive.augerValve  + "%\n";
           break;
 
         default:
           //just dummy text
+          this.addDollar();
           this.logOutput += "nothing \n";
       }
     });
@@ -76,10 +78,11 @@ export class DisplayLogComponent implements OnInit {
   // BOOLEAN ONLY STATUSES
   // assuming only one of the three (adv/ret/neu) can be true at a given instance 
   advance() {
+    this.addDollar();
     if (this.logArchive.advancing == true){
       this.logOutput += "already advancing\n"
     }else{
-      this.logOutput += this.getStatus() + "->";
+      this.logOutput += this.getStatus() + " -> ";
       this.reset();
       this.logArchive.advancing = true;
       this.logOutput += this.getStatus() +"\n";
@@ -87,10 +90,11 @@ export class DisplayLogComponent implements OnInit {
   }
 
   retract() {
+    this.addDollar();
     if (this.logArchive.retracting == true){
       this.logOutput += "already retracting\n"
     }else{
-      this.logOutput += this.getStatus() + "->";
+      this.logOutput += this.getStatus() + " -> ";
       this.reset();
       this.logArchive.retracting = true;
       this.logOutput += this.getStatus() +"\n";
@@ -98,10 +102,11 @@ export class DisplayLogComponent implements OnInit {
   }
 
   neutral() {
+    this.addDollar();
     if (this.logArchive.neutral == true){
       this.logOutput += "already neutral\n"
     }else{
-      this.logOutput += this.getStatus() + "->";
+      this.logOutput += this.getStatus() + " -> ";
       this.reset();
       this.logArchive.neutral = true;
       this.logOutput += this.getStatus() +"\n";
@@ -117,11 +122,11 @@ export class DisplayLogComponent implements OnInit {
   // checks status (adv/ret/neu)
   getStatus():string{
     if (this.logArchive.advancing == true){
-      return "advancing"
+      return "Advancing"
     }else if (this.logArchive.retracting == true){
-      return "retracting"
+      return "Retracting"
     }else{
-      return "neutral"
+      return "Neutral"
     }
   }
 
@@ -130,10 +135,18 @@ export class DisplayLogComponent implements OnInit {
   // not sure if there's a better 'type'(?) to restrict values to 0 and 1 
 
   cutterheadValve(input:number){
+    this.addDollar();
     this.logArchive.cutterheadValve = input;
   }
 
   augerValve(input:number){
+    this.addDollar();
     this.logArchive.augerValve = input;
+  }
+
+
+  // SPACER 
+  addDollar(){
+    this.dollarSpacer += "$:\n"
   }
 }
