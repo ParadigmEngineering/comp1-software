@@ -93,6 +93,15 @@ private:
 			{
 				if (!ec)
 				{
+					std::cout << m_readMessage.data() << std::endl;
+					m_readMessage.decodeHeader();
+					Person person;
+					if (m_readMessage.deserialize(person))
+					{
+						std::cout << "Successfully parsed data!" << std::endl;
+						std::cout << "Email: " << person.email() << std::endl;
+						std::cout << "Name: " << person.name() << std::endl;
+					}
 					readHeader();
 				}
 				else
