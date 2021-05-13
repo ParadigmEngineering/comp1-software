@@ -13,9 +13,8 @@ export class DisplayLogComponent implements OnInit {
 
   private telemetrySubscriber: Subscription;
 
-  dollarSpacer: string = "$:\n"
-  logOutput: string = "";
   logArchive: logData;
+  logDummy=[];
 
   // note: assuming machine initialises with neutral state
   constructor(private displayLogService:DisplayLogService) { 
@@ -50,17 +49,16 @@ export class DisplayLogComponent implements OnInit {
         // cases 3-4 are the valves (0-1), math round and random is passing a fake 2-decimal value 
         case 3:
           this.cutterheadValve( Math.round( Math.random() *100 )/100 ) 
-          this.logOutput += "Cutterhead Needle Valve -> " + this.logArchive.cutterheadValve  + "%\n";
+          this.logDummy.push("$: Cutterhead Needle Valve -> " + this.logArchive.cutterheadValve );
           break;
         case 4:
           this.augerValve( Math.round( Math.random() *100 )/100 );
-          this.logOutput += "Auger Needle Valve -> " + this.logArchive.augerValve  + "%\n";
+          this.logDummy.push("$: Auger Needle Valve-> " + this.logArchive.augerValve );
           break;
 
         default:
           //just dummy text
-          this.addDollar();
-          this.logOutput += "nothing\n";
+          this.logDummy.push( "$: nothing" );
       }
     });
   }
@@ -74,39 +72,47 @@ export class DisplayLogComponent implements OnInit {
 
   // BOOLEAN ONLY STATUSES
   // assuming only one of the three (adv/ret/neu) can be true at a given instance 
+
+  // A/R/N are almost duplicates, they print any changes or lack thereof
   advance() {
-    this.addDollar();
     if (this.logArchive.advancing == true){
-      this.logOutput += "already advancing\n"
+      this.logDummy.push( "$: already advancing" );
     }else{
-      this.logOutput += this.getStatus() + " -> ";
+      let txt= "$: " + this.getStatus() + " -> ";
+
       this.reset();
       this.logArchive.advancing = true;
-      this.logOutput += this.getStatus() +"\n";
+
+      txt += this.getStatus() +"\n";
+      this.logDummy.push(txt);
     }    
   }
 
   retract() {
-    this.addDollar();
     if (this.logArchive.retracting == true){
-      this.logOutput += "already retracting\n"
+      this.logDummy.push( "$: already retracting" );
     }else{
-      this.logOutput += this.getStatus() + " -> ";
+      let txt= "$: " + this.getStatus() + " -> ";
+
       this.reset();
       this.logArchive.retracting = true;
-      this.logOutput += this.getStatus() +"\n";
+
+      txt += this.getStatus() +"\n";
+      this.logDummy.push(txt);
     }    
   }
 
   neutral() {
-    this.addDollar();
     if (this.logArchive.neutral == true){
-      this.logOutput += "already neutral\n"
+      this.logDummy.push( "$: already neutral" );
     }else{
-      this.logOutput += this.getStatus() + " -> ";
+      let txt= "$: " + this.getStatus() + " -> ";
+
       this.reset();
       this.logArchive.neutral = true;
-      this.logOutput += this.getStatus() +"\n";
+
+      txt += this.getStatus() +"\n";
+      this.logDummy.push(txt);
     }    
   }
 
@@ -132,18 +138,10 @@ export class DisplayLogComponent implements OnInit {
   // not sure if there's a better 'type'(?) to restrict values to 0 and 1 
 
   cutterheadValve(input:number){
-    this.addDollar();
     this.logArchive.cutterheadValve = input;
   }
 
   augerValve(input:number){
-    this.addDollar();
     this.logArchive.augerValve = input;
-  }
-
-
-  // SPACER 
-  addDollar(){
-    this.dollarSpacer += "$:\n"
   }
 }
