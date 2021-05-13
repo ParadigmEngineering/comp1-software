@@ -60,7 +60,7 @@ export class DisplayLogComponent implements OnInit {
         default:
           //just dummy text
           this.addDollar();
-          this.logOutput += "nothing \n";
+          this.logOutput += "nothing\n";
       }
     });
   }

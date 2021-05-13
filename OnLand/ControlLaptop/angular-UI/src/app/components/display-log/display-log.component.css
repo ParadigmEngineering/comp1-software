@@ -1,10 +1,25 @@
-.display-log-container{
+.padding-top-bottom{
+  /* size of the entire box/container */
+  width: 233px;
+  height: 153px;
+
+  /* EDIT PADDING HERE */
+  padding: 10px 0; 
   background: linear-gradient(180deg, #4A4343 0%, rgba(74, 67, 67, 0.1) 100%);
-  overflow: auto;
+}
+
+.display-log-container{
+  overflow-x: hidden;
+  overflow-y: auto;
 
   /* flex to create a system of two columns, one as a spacer ($:) the other as log entries */
   display:flex;
   flex-direction: row;
+  scroll-margin: 50px;
+
+  width: 233px;
+  /* HEIGHT IS EQUAL TO HEIGHT IN padding-top-bottom - 2 times the padding space */
+  height: 133px;
 
   /* 
   FONT CSS --> should be inheriting some CSS from parent box/component
@@ -16,16 +31,12 @@
   font-size: 11px;
   line-height: 13px;
   color: white;
-
-  /* size of the entire box/container */
-  width: 233px;
-  height: 153px;
- 
+  
 }
+
 
 .dollar-spacer{
   /* size of the $: column */
-  color:#262633;
   width: 15px;
   text-align: right;
 }
@@ -35,6 +46,7 @@
   position:relative;
   left: 3px;
 }
+
 ::-webkit-scrollbar {
   /* width --> vertical; height --> horizontal (which may not be used) */
   width: 10px;
@@ -51,6 +63,7 @@
 ::-webkit-scrollbar-thumb {
   background: #C4C4C4;
   border-radius: 10px;
+
 }
 
 /* Handle on hover */
