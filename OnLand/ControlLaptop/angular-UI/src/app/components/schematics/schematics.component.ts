@@ -34,8 +34,11 @@ export class SchematicsComponent implements OnInit {
 	];
 	public observedDiagram = null;
 
-	constructor(private cdr: ChangeDetectorRef, private naturalGas: NaturalGasService /* temporary listen to natural gas service to test real time links color changes */) {
+	constructor(private cdr: ChangeDetectorRef,
+		/* temporary listen to natural gas service to test real time links color changes */
+		private naturalGas: NaturalGasService) {
 	}
+
 	ngOnInit(): void { }
 
 	// initiatae gojs diagram 
@@ -54,22 +57,29 @@ export class SchematicsComponent implements OnInit {
 				}
 			)
 		});
+		dia.isReadOnly = false; // change to true to disable user to insert or delete or drag or modify parts.
 		dia.commandHandler.archetypeGroupData = { key: 'Group', isGroup: true };
 
 		// define the Node template
 		dia.nodeTemplate =
 			$(go.Node, 'Auto',
 				{
+					/* 
+					 * toLinkable and fromLinkable is false, 
+					 * if turn to true, user will be able to add new link between different node					
+					 */
 					toLinkable: false, fromLinkable: false,
+					/* when click a node, system will print out the location of the node  */
 					click: (e, obj) => {
 						let loc = obj.part.location;
 						var docloc = dia.transformDocToView(loc);
 						console.log("Selected node location,\ndocument coordinates: " + loc.x.toFixed(2) + " " + loc.y.toFixed(2) + "\nview coordinates: " + docloc.x.toFixed(2) + " " + docloc.y.toFixed(2));
 					}
 				},
-				new go.Binding("location", "loc", go.Point.parse),
+				
+				new go.Binding("location", "loc", go.Point.parse), // loc indicate the location (coordinates) of the node, with this properties, you can put your node in specified location
 				new go.Binding('fill', 'color'),
-				new go.Binding('scale', 'scale'),
+				new go.Binding('scale', 'scale'), // scale the size of the node
 				$(go.Panel, "Spot",
 					$(go.Picture, new go.Binding("source", "img"), new go.Binding("desiredSize", "size"),
 					), $(go.Shape,
@@ -107,13 +117,12 @@ export class SchematicsComponent implements OnInit {
 		return dia;
 	}
 
-
 	public diagramDivClassName: string = 'myDiagramDiv';
 	public diagramModelData = { prop: 'value' };
 	public skipsDiagramUpdate = false;
 
 	// When the diagram model changes, update app data to reflect those changes
-	public diagramModelChange(changes: go.IncrementalData) {
+	public diagramModelChange = function (changes: go.IncrementalData) {
 		// when setting state here, be sure to set skipsDiagramUpdate: true since GoJS already has this update
 		// (since this is a GoJS model changed listener event function)
 		// this way, we don't log an unneeded transaction in the Diagram's undoManager history
