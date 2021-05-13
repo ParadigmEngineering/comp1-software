@@ -27,6 +27,7 @@ import { MinActualMaxComponent } from './components/min-actual-max/min-actual-ma
 import { NaturalGasComponent } from './components/natural-gas/natural-gas.component';
 import { AlarmsComponent } from './components/logo-bar/alarms/alarms.component';
 import { DisplayLogComponent } from './components/display-log/display-log.component';
+import { PowerMetricTableComponent } from './components/power-metric-table/power-metric-table.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { DisplayLogComponent } from './components/display-log/display-log.compon
     MinActualMaxComponent,
     NaturalGasComponent,
     AlarmsComponent,
-    DisplayLogComponent
+    DisplayLogComponent,
+    PowerMetricTableComponent
   ],
   imports: [
     BrowserModule,
