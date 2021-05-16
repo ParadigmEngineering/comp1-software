@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { logData } from 'src/app/services/models';
 import { DisplayLogService } from 'src/app/services/display-log/display-log.service';
-import { stringify } from '@angular/compiler/src/util';
 @Component({
   selector: 'app-display-log',
   templateUrl: './display-log.component.html',
@@ -75,7 +74,7 @@ export class DisplayLogComponent implements OnInit {
 
   // A/R/N are almost duplicates, they print any changes or lack thereof
   advance() {
-    if (this.logArchive.advancing == true){
+    if (this.logArchive.advancing === true){
       this.logDummy.push( "$: already advancing" );
     }else{
       let txt= "$: " + this.getStatus() + " -> ";
@@ -89,7 +88,7 @@ export class DisplayLogComponent implements OnInit {
   }
 
   retract() {
-    if (this.logArchive.retracting == true){
+    if (this.logArchive.retracting === true){
       this.logDummy.push( "$: already retracting" );
     }else{
       let txt= "$: " + this.getStatus() + " -> ";
@@ -103,7 +102,7 @@ export class DisplayLogComponent implements OnInit {
   }
 
   neutral() {
-    if (this.logArchive.neutral == true){
+    if (this.logArchive.neutral === true){
       this.logDummy.push( "$: already neutral" );
     }else{
       let txt= "$: " + this.getStatus() + " -> ";
@@ -124,9 +123,9 @@ export class DisplayLogComponent implements OnInit {
 
   // checks status (adv/ret/neu)
   getStatus():string{
-    if (this.logArchive.advancing == true){
+    if (this.logArchive.advancing === true){
       return "Advancing"
-    }else if (this.logArchive.retracting == true){
+    }else if (this.logArchive.retracting === true){
       return "Retracting"
     }else{
       return "Neutral"
