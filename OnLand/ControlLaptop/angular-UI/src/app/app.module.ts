@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
+import { NavigationButtonComponent } from './components/navigation-bar/navigation-button/navigation-button.component';
+import { SchematicIconComponent } from './components/schematic-icon/schematic-icon.component';
+import { SchematicsComponent } from './components/schematics/schematics.component';
+import { GojsAngularModule } from 'gojs-angular';
 import { PowerMetricsBarComponent } from './components/powermetrics-bar/powermetrics-bar.component';
 import { ControlBarComponent } from './components/control-bar/control-bar.component';
 import { LogoBarComponent } from './components/logo-bar/logo-bar.component';
-
-import { NavigationButtonComponent } from './components/navigation-bar/navigation-button/navigation-button.component';
 import { PowerMetricsButtonComponent } from './components/powermetrics-bar/powermetrics-button/powermetrics-button.component';
 import { ControlButtonComponent } from './components/control-bar/control-button/control-button.component';
 
@@ -35,6 +37,8 @@ import { PowerMetricTableComponent } from './components/power-metric-table/power
     AppComponent,
     NavigationBarComponent,
     NavigationButtonComponent,
+    SchematicIconComponent,
+    SchematicsComponent,
     PowerMetricsButtonComponent,
     PowerMetricsBarComponent,
     ControlBarComponent,
@@ -59,6 +63,7 @@ import { PowerMetricTableComponent } from './components/power-metric-table/power
   imports: [
     BrowserModule,
     AppRoutingModule,
+    GojsAngularModule,
     IonicModule.forRoot()
   ],
   providers: [],
