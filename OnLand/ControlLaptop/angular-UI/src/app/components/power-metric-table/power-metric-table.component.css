@@ -1,16 +1,12 @@
 .Power-Metrics-info{
-    border-radius: 0px;
     display: flex;
     flex-direction: column;
-    width: 230px;
     height: fit-content;
     float: right;
-    top: 0px;
     color: white;
     position: relative;
     line-height: 20%;
     padding-left: 15px ;
-    padding-top: 0px;
     padding-bottom: 10px;
     padding-right: 8px;
     background-image: linear-gradient( rgb(70, 67, 67),rgba(0,0,0,0));

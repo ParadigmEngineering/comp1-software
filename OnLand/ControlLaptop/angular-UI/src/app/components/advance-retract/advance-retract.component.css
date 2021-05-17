@@ -1,4 +1,5 @@
 .advance-retract-container{
+  z-index: 1;
   position: relative;
   left: 1%;
   top: 1%;

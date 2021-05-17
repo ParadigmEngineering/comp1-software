@@ -1,5 +1,18 @@
-#right-column{
+.bigfatbox{
+    height: 1080px;
+    display:flex;
+    flex-direction: row;
+}
+
+.schematics{
+    background: blue;
+    width: 100%;
+
+}
+
+.right-panel{    
+    position: right;
+    width: 230px;
     display: flex;
     flex-direction: column;
-    float: right;
 }

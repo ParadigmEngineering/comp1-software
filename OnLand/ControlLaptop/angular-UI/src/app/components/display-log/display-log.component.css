@@ -12,9 +12,6 @@
   overflow-x: hidden;
   overflow-y: auto;
 
-  /* scroll-margin: 50px; */
-
-  width: 223px;
   /* HEIGHT IS EQUAL TO HEIGHT IN padding-top-bottom - 2 times the padding space */
   height: 133px;
 
