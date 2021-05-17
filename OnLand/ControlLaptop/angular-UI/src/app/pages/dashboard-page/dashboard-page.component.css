@@ -1,5 +1,11 @@
-#right-column{
+#right-column {
     display: flex;
     flex-direction: column;
     float: right;
+}
+
+#left-column {
+    display: flex;
+    flex-direction: column;
+    float: left;
 }

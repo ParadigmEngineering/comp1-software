@@ -1,23 +1,18 @@
-.padding-top-bottom{
+.padding-top-bottom {
   /* size of the entire box/container */
-  width: 233px;
+  width: 13vw;
   height: 153px;
-
-  /* EDIT PADDING HERE: top-LR-btm */
-  padding: 10px 5px 10px;
-  background: linear-gradient(180deg, #4A4343 0%, rgba(74, 67, 67, 0.1) 100%);
+  padding: 10px 8px 10px 15px;
+  background: linear-gradient( rgb(70, 67, 67), rgba(0, 0, 0, 0));
 }
 
-.display-log-container{
+.display-log-container {
   overflow-x: hidden;
   overflow-y: auto;
-
   /* scroll-margin: 50px; */
-
-  width: 223px;
+  width: 12.5vw;
   /* HEIGHT IS EQUAL TO HEIGHT IN padding-top-bottom - 2 times the padding space */
   height: 133px;
-
   /* 
   FONT CSS --> should be inheriting some CSS from parent box/component
   THIS PART SHOULD BE DELETED WHEN PARENT BOX WITH UNIVERSAL CSS IS MADE
@@ -28,12 +23,11 @@
   font-size: 11px;
   line-height: 13px;
   color: white;
-  
 }
 
-.log-text{
+.log-text {
   /* how many pixels distances do you want between $: and log info? */
-  position:relative;
+  position: relative;
   left: 3px;
 }
 
@@ -44,23 +38,27 @@
 }
 
 /* Track */
+
 ::-webkit-scrollbar-track {
-  background: #1F1B1B; 
+  background: #1F1B1B;
   border-radius: 10px;
 }
 
 /* Handle */
+
 ::-webkit-scrollbar-thumb {
   background: #C4C4C4;
   border-radius: 10px;
-
 }
 
 /* Handle on hover */
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
+
 /* removing the box that appears in the intersection b/w H and V scrollbar */
-::-webkit-scrollbar-corner{
+
+::-webkit-scrollbar-corner {
   width: 0px;
 }
