@@ -2,7 +2,6 @@
 #include "Peripherals/Inc/convert_hal_status.h"
 
 #include <cstring>
-//#include <Wire.h>
 
 using namespace dps;
 using namespace dps310;
