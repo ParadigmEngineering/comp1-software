@@ -1,9 +1,14 @@
 
-<div id="right-column">
-    <app-navigation-info></app-navigation-info>
-    <app-power-metric-table></app-power-metric-table>
+<div class="container" style="position: relative;"> 
+  
+    <div id="left-column">
+        <app-schematics></app-schematics>
+        <app-advance-retract style="position: absolute; top:0; left:0"></app-advance-retract>
+        <app-natural-gas></app-natural-gas>
+    </div>
+    <div id="right-column">
+        <app-navigation-info></app-navigation-info>
+        <app-power-metric-table></app-power-metric-table>
+        <app-display-log></app-display-log>
+    </div>
 </div>
-<app-advance-retract></app-advance-retract>
-<app-natural-gas></app-natural-gas>
-<app-display-log></app-display-log>
-

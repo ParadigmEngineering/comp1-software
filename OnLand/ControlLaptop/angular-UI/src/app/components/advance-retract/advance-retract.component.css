@@ -1,9 +1,10 @@
 .advance-retract-container{
+  z-index: 1;
   position: relative;
   left: 1%;
   top: 1%;
 
-  background: linear-gradient(180deg, #4A4343 0%, rgba(74, 67, 67, 0.1) 100%);
+  background: linear-gradient(180deg, #4A4343 50%, rgba(54, 49, 49, 0.7) 100%);
   font-family: Antic;
   font-style: normal;
   font-weight: normal;
@@ -19,8 +20,8 @@
   /* size of the entire box/container */
   width: 182px;
   height: 78px;
- 
 }
+
 
 .advance-label{
   /* size of box holding "ADVANCE" and the slide toggle */

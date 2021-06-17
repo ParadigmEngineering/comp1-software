@@ -12,17 +12,15 @@
   justify-content: space-around;
   align-items: center;
   margin: auto;
-  width: 100%;
-  height: 70px;
-  padding: 12px 0 8px 0;
+  width: 100vw;
   
   background-color: #21212F;
 }
 
 .button-unactivated{
     width: 100%;
-    height: 100%;
-    padding: 12px 0 8px 0;
+    height: 1rem;
+    padding: 12px 0 14px 0;
     flex-grow: 1;
     flex-basis: auto;
 
@@ -39,8 +37,8 @@
 
 .button-activated{
     width: 100%;
-    height: 100%;
-    padding: 12px 0 8px 0;
+    height: 1rem;
+    padding: 12px 0 14px 0;
     flex-grow: 1;
     flex-basis: auto;
 

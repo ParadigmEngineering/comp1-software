@@ -13,7 +13,7 @@ export class DisplayLogComponent implements OnInit {
 	private telemetrySubscriber: Subscription;
 
 	logArchive: logData;
-	logDummy = [];
+	logDummy:string[] = [];
 
 	// note: assuming machine initialises with neutral state
 	constructor(private displayLogService: DisplayLogService) {
