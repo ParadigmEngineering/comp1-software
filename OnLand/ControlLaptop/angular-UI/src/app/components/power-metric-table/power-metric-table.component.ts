@@ -34,5 +34,13 @@ export class PowerMetricTableComponent implements OnInit {
   ngOnDestroy() {
     this.telemetrySubscriber.unsubscribe();
   }
+  dataTitle = [
+    "MIN", "ACTUAL", "MAX"
+];
+
+dataName = [
+  "Low Voltage Line Current", "Low Voltage Line Voltage", "Control Laptop Line Current", 
+  "Control Laptop Line Voltage", "Power Supply Current", "Power Supply Voltage", "Total Power Consumption"
+];
 
 }
