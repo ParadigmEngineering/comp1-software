@@ -41,7 +41,7 @@ export class SchematicsComponent implements OnInit {
 
 	ngOnInit(): void { }
 
-	// initiatae gojs diagram 
+	// initiate gojs diagram 
 	public initDiagram(): go.Diagram {
 
 		const $ = go.GraphObject.make;
