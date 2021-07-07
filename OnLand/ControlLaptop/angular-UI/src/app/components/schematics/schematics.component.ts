@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild, ViewEncapsulation, ElementRef } from '@angular/core';
 import * as go from 'gojs';
 import { DataSyncService, DiagramComponent } from 'gojs-angular';
 import { Subscription } from 'rxjs';
@@ -38,10 +38,12 @@ export class SchematicsComponent implements OnInit {
 		/* temporary listen to natural gas service to test real time links color changes */
 		private naturalGas: NaturalGasService) {
 	}
+    ngOnInit(): void {}
 
 	ngOnInit(): void { }
+    private height:Number;
 
-	// initiate gojs diagram 
+    // initiate gojs diagram 
 	public initDiagram(): go.Diagram {
 
 		const $ = go.GraphObject.make;
@@ -77,6 +79,23 @@ export class SchematicsComponent implements OnInit {
             // $(go.Shape, "LineV", { stroke: "pink" }),
             );
         // ---GRID---
+
+        // ---RULER---
+        dia.add(
+            // all Parts are Panels
+            $(go.Part, go.Panel.Graduated,  // or "Graduated"
+            // {
+            //     graduatedMin: 0, graduatedMax: 100,
+            //     graduatedTickBase: 1.2, graduatedTickUnit: 2.5,
+            //     background: "transparent"
+            // },
+
+            //how do I input variables to gojs geometry string? 
+              $(go.Shape, { geometryString: "M0 0 H1000" }),  // move to 0,0; draw horizontal line 400px
+              $(go.Shape, { geometryString: "M0 0 V10" })  // a tick mark, a vertical line
+            ));
+
+        // ---RULER---
 
 		dia.isReadOnly = false; // change to true to disable user to insert or delete or drag or modify parts.
 		dia.commandHandler.archetypeGroupData = { key: 'Group', isGroup: true };
@@ -211,9 +230,20 @@ export class SchematicsComponent implements OnInit {
 		this.myDiagramComponent.diagram.addDiagramListener('ChangedSelection', (e) => {
 			this.diagramJsonData = e.diagram.model.toJson();
 		});
+
+        this.schematics_dimensions() //get h/w of schematics  
 	}
 
 	ngOnDestroy() {
 		this.telemetrySubscriber.unsubscribe();
 	}
+
+    // checks width/height of the schematics
+    private schematics_dimensions() {
+        this.width = this.dummy.nativeElement.offsetWidth;
+        this.height = this.dummy.nativeElement.offsetHeight;
+
+        console.log('Width:' + this.width);
+        console.log('Height: '+ this.height);  
+    }
 }
