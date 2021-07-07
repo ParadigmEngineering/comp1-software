@@ -57,9 +57,29 @@ export class SchematicsComponent implements OnInit {
 				}
 			)
 		});
+
+        // ---GRID---  
+        dia.grid.visible = true; 
+        dia.toolManager.draggingTool.isGridSnapEnabled = true; // snappy snap
+        // dia.toolManager.resizingTool.isGridSnapEnabled = true;
+        dia.grid =
+            $(go.Panel, "Grid",
+            { gridCellSize: new go.Size(10, 10) }, // width x height of the grid system
+
+            // XY lines at specified interval
+            $(go.Shape, "LineH", { stroke: "grey", interval: 10 }), 
+            $(go.Shape, "LineH", { stroke: "lightgrey", interval: 20 }), 
+            $(go.Shape, "LineV", { stroke: "grey", interval: 10 }),
+            $(go.Shape, "LineV", { stroke: "lightgrey", interval: 20 }),
+
+            // XY lines for entire grid 
+            // $(go.Shape, "LineH", { stroke: "pink" }),
+            // $(go.Shape, "LineV", { stroke: "pink" }),
+            );
+        // ---GRID---
+
 		dia.isReadOnly = false; // change to true to disable user to insert or delete or drag or modify parts.
 		dia.commandHandler.archetypeGroupData = { key: 'Group', isGroup: true };
-
 		// define the Node template
 		dia.nodeTemplate =
 			$(go.Node, 'Auto',
