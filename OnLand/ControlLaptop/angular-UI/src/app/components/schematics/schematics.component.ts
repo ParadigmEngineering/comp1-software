@@ -38,9 +38,13 @@ export class SchematicsComponent implements OnInit {
 		/* temporary listen to natural gas service to test real time links color changes */
 		private naturalGas: NaturalGasService) {
 	}
+    
     ngOnInit(): void {}
 
-	ngOnInit(): void { }
+    // getting width/height of schematics 
+    @ViewChild('dummy') 
+    dummy: ElementRef; 
+    private width:Number;
     private height:Number;
 
     // initiate gojs diagram 
@@ -50,6 +54,8 @@ export class SchematicsComponent implements OnInit {
 		const dia = $(go.Diagram, {
 			'undoManager.isEnabled': true, // must be set to allow for model change listening
 			// 'undoManager.maxHistoryLength': 0,  // uncomment disable undo/redo functionality
+            padding:0,
+            scrollMode: go.Diagram.InfiniteScroll,
 			initialContentAlignment: go.Spot.None,
 			model: $(go.GraphLinksModel,
 				{
@@ -60,44 +66,7 @@ export class SchematicsComponent implements OnInit {
 			)
 		});
 
-        // ---GRID---  
-        dia.grid.visible = true; 
-        dia.toolManager.draggingTool.isGridSnapEnabled = true; // snappy snap
-        // dia.toolManager.resizingTool.isGridSnapEnabled = true;
-        dia.grid =
-            $(go.Panel, "Grid",
-            { gridCellSize: new go.Size(10, 10) }, // width x height of the grid system
-
-            // XY lines at specified interval
-            $(go.Shape, "LineH", { stroke: "grey", interval: 10 }), 
-            $(go.Shape, "LineH", { stroke: "lightgrey", interval: 20 }), 
-            $(go.Shape, "LineV", { stroke: "grey", interval: 10 }),
-            $(go.Shape, "LineV", { stroke: "lightgrey", interval: 20 }),
-
-            // XY lines for entire grid 
-            // $(go.Shape, "LineH", { stroke: "pink" }),
-            // $(go.Shape, "LineV", { stroke: "pink" }),
-            );
-        // ---GRID---
-
-        // ---RULER---
-        dia.add(
-            // all Parts are Panels
-            $(go.Part, go.Panel.Graduated,  // or "Graduated"
-            // {
-            //     graduatedMin: 0, graduatedMax: 100,
-            //     graduatedTickBase: 1.2, graduatedTickUnit: 2.5,
-            //     background: "transparent"
-            // },
-
-            //how do I input variables to gojs geometry string? 
-              $(go.Shape, { geometryString: "M0 0 H1000" }),  // move to 0,0; draw horizontal line 400px
-              $(go.Shape, { geometryString: "M0 0 V10" })  // a tick mark, a vertical line
-            ));
-
-        // ---RULER---
-
-		dia.isReadOnly = false; // change to true to disable user to insert or delete or drag or modify parts.
+    	dia.isReadOnly = false; // change to true to disable user to insert or delete or drag or modify parts.
 		dia.commandHandler.archetypeGroupData = { key: 'Group', isGroup: true };
 		// define the Node template
 		dia.nodeTemplate =
@@ -152,8 +121,92 @@ export class SchematicsComponent implements OnInit {
 				$(go.Shape,
 					new go.Binding("stroke", "color"),  // shape.stroke = data.color
 					new go.Binding("strokeWidth", "thick")));
+        
+        
+        // ---GRID START---  
+        dia.grid.visible = true; 
+        dia.toolManager.draggingTool.isGridSnapEnabled = true; // snappy snap
+        // dia.toolManager.resizingTool.isGridSnapEnabled = true;
+        dia.grid =
+            $(go.Panel, "Grid",
+            { gridCellSize: new go.Size(10, 10) }, // width x height of the grid system
 
-		return dia;
+            // XY lines at specified interval
+            $(go.Shape, "LineH", { stroke: "grey", interval: 10 }), 
+            $(go.Shape, "LineH", { stroke: "lightgrey", interval: 20 }), 
+            $(go.Shape, "LineV", { stroke: "grey", interval: 10 }),
+            $(go.Shape, "LineV", { stroke: "lightgrey", interval: 20 }),
+
+            // XY lines for entire grid 
+            // $(go.Shape, "LineH", { stroke: "pink" }),
+            // $(go.Shape, "LineV", { stroke: "pink" }),
+            );
+        // ---GRID END---
+        
+        // ---RULER START---
+        var gradScaleHoriz = 
+            $(go.Part, "Graduated", { graduatedTickUnit: 10, layerName: "Foreground"  },
+            $(go.Shape, { geometryString: "M0 0 H500" }),
+            $(go.Shape, { geometryString: "M0 0 V3", interval: 1 }),
+            $(go.Shape, { geometryString: "M0 0 V15", interval: 5 }),
+            $(go.TextBlock,
+            {
+              font: "10px sans-serif",
+              interval: 5,
+              alignmentFocus: go.Spot.TopLeft,
+              segmentOffset: new go.Point(0, 7)
+            }
+          )
+        );
+
+        var gradScaleVert =
+            $(go.Part, "Graduated", { graduatedTickUnit: 10, pickable: false, layerName: "Foreground" },
+            $(go.Shape, { geometryString: "M0 0 V400" }),
+            $(go.Shape, { geometryString: "M0 0 V3", interval: 1, alignmentFocus: go.Spot.Bottom }),
+            $(go.Shape, { geometryString: "M0 0 V15", interval: 5, alignmentFocus: go.Spot.Bottom }),
+            $(go.TextBlock,
+                {
+                font: "10px sans-serif",
+                segmentOrientation: go.Link.OrientOpposite,
+                interval: 5,
+                alignmentFocus: go.Spot.BottomLeft,
+                segmentOffset: new go.Point(0, -7)
+                }
+            )
+        );
+
+        function updateScales() {
+            var vb = dia.viewportBounds;
+            if (!vb.isReal()) return;
+            dia.commit(function(diag) {
+              // Update properties of horizontal scale to reflect viewport
+              gradScaleHoriz.elt(0).width = diag.viewportBounds.width * diag.scale;
+              gradScaleHoriz.location = new go.Point(vb.x, vb.y);
+              console.log("VIEWPORT X IS " + vb.x+ " and " + vb.right);
+              console.log("VIEWPORT Y IS " + vb.y +" and "+ vb.bottom); //why the hell are you not zero
+
+              gradScaleHoriz.graduatedMin = vb.x;
+              gradScaleHoriz.graduatedMax = vb.right;
+              gradScaleHoriz.scale = 1 / diag.scale;
+              // Update properties of vertical scale to reflect viewport
+              gradScaleVert.elt(0).height = diag.viewportBounds.height * diag.scale;
+              gradScaleVert.location = new go.Point(vb.x, vb.y);
+              gradScaleVert.graduatedMin = vb.y;
+              gradScaleVert.graduatedMax = vb.bottom;
+              gradScaleVert.scale = 1 / diag.scale;
+            }, null);
+          }
+
+        // ---RULER END ---
+        
+        dia.commit(function(d){
+            d.add(gradScaleHoriz);
+            d.add(gradScaleVert);
+        });
+
+        dia.addDiagramListener("InitialLayoutCompleted",updateScales);
+        
+        return dia;
 	}
 
 	public diagramDivClassName: string = 'myDiagramDiv';
@@ -232,6 +285,7 @@ export class SchematicsComponent implements OnInit {
 		});
 
         this.schematics_dimensions() //get h/w of schematics  
+
 	}
 
 	ngOnDestroy() {
@@ -239,7 +293,7 @@ export class SchematicsComponent implements OnInit {
 	}
 
     // checks width/height of the schematics
-    private schematics_dimensions() {
+    schematics_dimensions() {
         this.width = this.dummy.nativeElement.offsetWidth;
         this.height = this.dummy.nativeElement.offsetHeight;
 
