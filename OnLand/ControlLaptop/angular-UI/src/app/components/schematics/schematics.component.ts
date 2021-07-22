@@ -151,7 +151,7 @@ export class SchematicsComponent implements OnInit {
         
         // ---RULER & INDICATORS START---
         var gradScaleHoriz = 
-            $(go.Part, "Graduated", { graduatedTickUnit: 10, layerName: "Foreground"  },
+            $(go.Part, "Graduated", { graduatedTickUnit: 10, pickable:false, layerName: "Foreground"  },
             $(go.Shape, { geometryString: "M0 0 H500" }),
             $(go.Shape, { geometryString: "M0 0 V3", interval: 1 }),
             $(go.Shape, { geometryString: "M0 0 V15", interval: 5 }),
