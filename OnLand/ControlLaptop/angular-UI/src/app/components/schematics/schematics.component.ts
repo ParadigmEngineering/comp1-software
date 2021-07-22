@@ -17,20 +17,28 @@ export class SchematicsComponent implements OnInit {
 	diagramJsonData: string; // json data for modified diagram
 	showText: boolean = false;
 	public diagramNodeData: Array<go.ObjectData> = [
-		{ "key": "auger", "group": "auger_group", "scale": 2.5, "img": "../../../assets/schematic-icon/Auger.svg", "color": "red", "loc": "643.50 -54.17" },
-		{ "key": "P1_1", "group": "auger_group", "scale": 2.5, "img": "../../../assets/schematic-icon/P1.svg", "loc": "696.50 -11.77" },
-		{ "key": "P1_2", "group": "auger_group", "scale": 2.5, "img": "../../../assets/schematic-icon/P1.svg", "loc": "696.50 41.83" },
-		{ "key": "Relief_Valve_1", "group": "auger_group", "scale": 2.5, "img": "../../../assets/schematic-icon/Relief_Valve_Straight.svg", "loc": "748.54 22.83" },
-		{ "key": "Motor_small_1", "group": "auger_group", "scale": 2.5, "img": "../../../assets/schematic-icon/Motor_small.svg", "loc": "822.50 -19.17" },
-		{ "key": "auger_group", "isGroup": true },
-		{ "key": "Delta" }
+		// { "key": "auger", "group": "auger_group", "scale": 2.5, "img": "../../../assets/schematic-icon/Auger.svg", "color": "red", "loc": "643.50 -54.17" },
+		// { "key": "P1_1", "group": "auger_group", "scale": 2.5, "img": "../../../assets/schematic-icon/P1.svg", "loc": "696.50 -11.77" },
+		// { "key": "P1_2", "group": "auger_group", "scale": 2.5, "img": "../../../assets/schematic-icon/P1.svg", "loc": "696.50 41.83" },
+		// { "key": "Relief_Valve_1", "group": "auger_group", "scale": 2.5, "img": "../../../assets/schematic-icon/Relief_Valve_Straight.svg", "loc": "748.54 22.83" },
+		// { "key": "Motor_small_1", "group": "auger_group", "scale": 2.5, "img": "../../../assets/schematic-icon/Motor_small.svg", "loc": "822.50 -19.17" },
+		// { "key": "auger_group", "isGroup": true },
+		// { "key": "Delta" }
+
+        // templating
+        // { "key": "auger", 
+        // "group": "auger_group", 
+        // "scale": 2.5, 
+        // "img": "../../../assets/schematic-icon/Auger.svg", 
+        // "color": "red", 
+        // "loc": "643.50 -54.17" },
 	];
 
 	public diagramLinkData: Array<go.ObjectData> = [
-		{ "from": "Motor_small_1", "to": "P1_1", "color": "red", "fromPort": "Left", "toPort": "Right", "key": -1, "points": [822.5, -2.7950000000000017, 812.5, -2.7950000000000017, 762.726127329298, -2.7950000000000017, 762.726127329298, 2.1050000000000004, 734, 2.1050000000000004, 724, 2.1050000000000004] },
-		{ "from": "Relief_Valve_1", "to": "Motor_small_1", "color": "green", "fromPort": "Right", "toPort": "Right", "key": -2, "points": [775.7417040671694, 37.8541479664153, 785.7417040671694, 37.8541479664153, 859.5572240640107, 37.8541479664153, 859.5572240640107, -2.7950000000000017, 845, -2.7950000000000017, 855, -2.7950000000000017] },
-		{ "from": "P1_2", "to": "Relief_Valve_1", "color": "green", "fromPort": "Right", "toPort": "Right", "key": -3, "points": [724, 55.705, 734, 55.705, 782.6970382104381, 55.705, 782.6970382104381, 37.8541479664153, 763.2417040671694, 37.8541479664153, 773.2417040671694, 37.8541479664153] },
-		{ "from": "P1_1", "to": "Relief_Valve_1", "color": "red", "fromPort": "Right", "toPort": "Top", "points": [724, 2.1050000000000004, 734, 2.1050000000000004, 763.2954378978858, 2.1050000000000004, 763.2954378978858, 25.354147966415297, 750.6167040671694, 25.354147966415297, 760.6167040671694, 25.354147966415297], "key": -4 }
+		// { "from": "Motor_small_1", "to": "P1_1", "color": "red", "fromPort": "Left", "toPort": "Right", "key": -1, "points": [822.5, -2.7950000000000017, 812.5, -2.7950000000000017, 762.726127329298, -2.7950000000000017, 762.726127329298, 2.1050000000000004, 734, 2.1050000000000004, 724, 2.1050000000000004] },
+		// { "from": "Relief_Valve_1", "to": "Motor_small_1", "color": "green", "fromPort": "Right", "toPort": "Right", "key": -2, "points": [775.7417040671694, 37.8541479664153, 785.7417040671694, 37.8541479664153, 859.5572240640107, 37.8541479664153, 859.5572240640107, -2.7950000000000017, 845, -2.7950000000000017, 855, -2.7950000000000017] },
+		// { "from": "P1_2", "to": "Relief_Valve_1", "color": "green", "fromPort": "Right", "toPort": "Right", "key": -3, "points": [724, 55.705, 734, 55.705, 782.6970382104381, 55.705, 782.6970382104381, 37.8541479664153, 763.2417040671694, 37.8541479664153, 773.2417040671694, 37.8541479664153] },
+		// { "from": "P1_1", "to": "Relief_Valve_1", "color": "red", "fromPort": "Right", "toPort": "Top", "points": [724, 2.1050000000000004, 734, 2.1050000000000004, 763.2954378978858, 2.1050000000000004, 763.2954378978858, 25.354147966415297, 750.6167040671694, 25.354147966415297, 760.6167040671694, 25.354147966415297], "key": -4 }
 	];
 	public observedDiagram = null;
 
@@ -65,7 +73,6 @@ export class SchematicsComponent implements OnInit {
 				}
 			)
 		});
-
     	dia.isReadOnly = false; // change to true to disable user to insert or delete or drag or modify parts.
 		dia.commandHandler.archetypeGroupData = { key: 'Group', isGroup: true };
 		// define the Node template
@@ -151,14 +158,15 @@ export class SchematicsComponent implements OnInit {
             $(go.Shape, { geometryString: "M0 0 V15", interval: 5 }),
             $(go.TextBlock,
             {
-              font: "10px sans-serif",
+              font: "12px verdana",
               interval: 5,
               alignmentFocus: go.Spot.TopLeft,
-              segmentOffset: new go.Point(0, 7)
+              segmentOffset: new go.Point(-5, 20)
             }
           )
         );
-
+        
+        
         var gradScaleVert =
             $(go.Part, "Graduated", { graduatedTickUnit: 10, pickable: false, layerName: "Foreground" },
             $(go.Shape, { geometryString: "M0 0 V400" }),
@@ -166,11 +174,13 @@ export class SchematicsComponent implements OnInit {
             $(go.Shape, { geometryString: "M0 0 V15", interval: 5, alignmentFocus: go.Spot.Bottom }),
             $(go.TextBlock,
                 {
-                font: "10px sans-serif",
+                font: "12px verdana",
+                // note: I have no idea how to rotate the font 90d ccw, flip is not the answer 
+                //flip: go.GraphObject.FlipHorizontal,
                 segmentOrientation: go.Link.OrientOpposite,
                 interval: 5,
                 alignmentFocus: go.Spot.BottomLeft,
-                segmentOffset: new go.Point(0, -7)
+                segmentOffset: new go.Point(-5, -20)
                 }
             )
         );
@@ -180,22 +190,36 @@ export class SchematicsComponent implements OnInit {
             if (!vb.isReal()) return;
             dia.commit(function(diag) {
               // Update properties of horizontal scale to reflect viewport
-              gradScaleHoriz.elt(0).width = diag.viewportBounds.width * diag.scale;
-              gradScaleHoriz.location = new go.Point(vb.x, vb.y);
-              console.log("VIEWPORT X IS " + vb.x+ " and " + vb.right);
-              console.log("VIEWPORT Y IS " + vb.y +" and "+ vb.bottom); //why the hell are you not zero
+                gradScaleHoriz.elt(0).width = diag.viewportBounds.width * diag.scale;
+                gradScaleHoriz.location = new go.Point(vb.x, vb.y);
 
-              gradScaleHoriz.graduatedMin = vb.x;
-              gradScaleHoriz.graduatedMax = vb.right;
-              gradScaleHoriz.scale = 1 / diag.scale;
-              // Update properties of vertical scale to reflect viewport
-              gradScaleVert.elt(0).height = diag.viewportBounds.height * diag.scale;
-              gradScaleVert.location = new go.Point(vb.x, vb.y);
-              gradScaleVert.graduatedMin = vb.y;
-              gradScaleVert.graduatedMax = vb.bottom;
-              gradScaleVert.scale = 1 / diag.scale;
+                console.log("VIEWPORT X IS " + vb.x+ " and " + vb.right);
+                console.log("VIEWPORT Y IS " + vb.y +" and "+ vb.bottom); //why the hell are you not zero
+                console.log(dia.position);
+                gradScaleHoriz.graduatedMin = vb.x;
+                gradScaleHoriz.graduatedMax = vb.right;
+                gradScaleHoriz.scale = 1 / diag.scale;
+                // Update properties of vertical scale to reflect viewport
+                gradScaleVert.elt(0).height = diag.viewportBounds.height * diag.scale;
+                gradScaleVert.location = new go.Point(vb.x, vb.y);
+                gradScaleVert.graduatedMin = vb.y;
+                gradScaleVert.graduatedMax = vb.bottom;
+                gradScaleVert.scale = 1 / diag.scale;
             }, null);
           }
+
+        //   function updateIndicators() {
+        //     var vb = dia.viewportBounds;
+        //     if (!vb.isReal()) return;
+        //     dia.commit(function(diag) {
+        //       var mouseCoords = diag.lastInput.documentPoint;
+        //       // Keep the indicators in line with the mouse as viewport changes or mouse moves
+        //       gradIndicatorHoriz.location = new go.Point(Math.max(mouseCoords.x, vb.x), vb.y);
+        //       gradIndicatorHoriz.scale = 1 / diag.scale;
+        //       gradIndicatorVert.location = new go.Point(vb.x, Math.max(mouseCoords.y, vb.y));
+        //       gradIndicatorVert.scale = 1 / diag.scale;
+        //     }, null);
+        //   }
 
         // ---RULER END ---
         
@@ -205,6 +229,7 @@ export class SchematicsComponent implements OnInit {
         });
 
         dia.addDiagramListener("InitialLayoutCompleted",updateScales);
+        dia.addDiagramListener("ViewportBoundsChanged", updateScales);
         
         return dia;
 	}
