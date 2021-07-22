@@ -57,7 +57,6 @@ export class SchematicsComponent implements OnInit {
 
     // initiate gojs diagram 
 	public initDiagram(): go.Diagram {
-
 		const $ = go.GraphObject.make;
 		const dia = $(go.Diagram, {
 			'undoManager.isEnabled': true, // must be set to allow for model change listening
@@ -150,7 +149,7 @@ export class SchematicsComponent implements OnInit {
             );
         // ---GRID END---
         
-        // ---RULER START---
+        // ---RULER & INDICATORS START---
         var gradScaleHoriz = 
             $(go.Part, "Graduated", { graduatedTickUnit: 10, layerName: "Foreground"  },
             $(go.Shape, { geometryString: "M0 0 H500" }),
@@ -161,9 +160,8 @@ export class SchematicsComponent implements OnInit {
               font: "12px verdana",
               interval: 5,
               alignmentFocus: go.Spot.TopLeft,
-              segmentOffset: new go.Point(-5, 20)
-            }
-          )
+              segmentOffset: new go.Point(0, 20)
+            })
         );
         
         
@@ -175,15 +173,42 @@ export class SchematicsComponent implements OnInit {
             $(go.TextBlock,
                 {
                 font: "12px verdana",
-                // note: I have no idea how to rotate the font 90d ccw, flip is not the answer 
+                // note: I have no idea how to rotate the text 90d ccw, flip is not the answer 
                 //flip: go.GraphObject.FlipHorizontal,
                 segmentOrientation: go.Link.OrientOpposite,
                 interval: 5,
                 alignmentFocus: go.Spot.BottomLeft,
-                segmentOffset: new go.Point(-5, -20)
-                }
-            )
-        );
+                segmentOffset: new go.Point(0, -20)
+                })
+            );
+
+        // var posiIndicator = 
+        //     $(go.Part,
+        //         {   pickable: false, layerName:"Foreground", visible: true, alignment: new go.Spot(1,1)  },
+        //     $(go.TextBlock,
+        //         {
+        //             font: "12px verdana",
+        //             text: "monkey",
+        //         })
+        //     );
+
+        var gradIndicatorHoriz =
+            $(go.Part,
+            {
+                pickable: false, layerName: "Grid", visible: false,
+                isAnimated: false, locationSpot: go.Spot.Top
+            },
+            $(go.Shape, { geometryString: "M0 0 V15", strokeWidth: 2, stroke: "red" })
+            );
+
+        var gradIndicatorVert =
+            $(go.Part,
+                {
+                pickable: false, layerName: "Grid", visible: false,
+                isAnimated: false, locationSpot: go.Spot.Left
+                },
+                $(go.Shape, { geometryString: "M0 0 H15", strokeWidth: 2, stroke: "red" })
+            );
 
         function updateScales() {
             var vb = dia.viewportBounds;
@@ -208,29 +233,69 @@ export class SchematicsComponent implements OnInit {
             }, null);
           }
 
-        //   function updateIndicators() {
-        //     var vb = dia.viewportBounds;
-        //     if (!vb.isReal()) return;
-        //     dia.commit(function(diag) {
-        //       var mouseCoords = diag.lastInput.documentPoint;
-        //       // Keep the indicators in line with the mouse as viewport changes or mouse moves
-        //       gradIndicatorHoriz.location = new go.Point(Math.max(mouseCoords.x, vb.x), vb.y);
-        //       gradIndicatorHoriz.scale = 1 / diag.scale;
-        //       gradIndicatorVert.location = new go.Point(vb.x, Math.max(mouseCoords.y, vb.y));
-        //       gradIndicatorVert.scale = 1 / diag.scale;
-        //     }, null);
-        //   }
+          function updateIndicators() {
+            var vb = dia.viewportBounds;
+            if (!vb.isReal()) return;
+            dia.commit(function(diag) {
+              var mouseCoords = diag.lastInput.documentPoint;
+              console.log(diag.lastInput.documentPoint);
+              console.log(diag.scale);
 
-        // ---RULER END ---
+              // Keep the indicators in line with the mouse as viewport changes or mouse moves
+              gradIndicatorHoriz.location = new go.Point(Math.max(mouseCoords.x, vb.x), vb.y);
+              gradIndicatorHoriz.scale = 1 / diag.scale;
+              gradIndicatorVert.location = new go.Point(vb.x, Math.max(mouseCoords.y, vb.y));
+              gradIndicatorVert.scale = 1 / diag.scale;
+            }, null);
+          }
+          function showIndicators(show) {
+            dia.commit(function(diag) {
+              gradIndicatorHoriz.visible = show;
+              gradIndicatorVert.visible = show;
+            }, null);
+          }
+
+        // Override mousemove Tools such that doMouseMove will keep indicators in sync
+        dia.toolManager.doMouseMove = function() {
+            go.ToolManager.prototype.doMouseMove.call(this);
+            updateIndicators();
+        }
+        dia.toolManager.linkingTool.doMouseMove = function() {
+            go.LinkingTool.prototype.doMouseMove.call(this);
+            updateIndicators();
+        }
+        dia.toolManager.draggingTool.doMouseMove = function() {
+            go.DraggingTool.prototype.doMouseMove.call(this);
+            updateIndicators();
+        }
+        dia.toolManager.dragSelectingTool.doMouseMove = function() {
+            go.DragSelectingTool.prototype.doMouseMove.call(this);
+            updateIndicators();
+        }
+
+        // ---RULER & INDICATORS END ---
+        function setupScalesAndIndicators(){
+            dia.commit(function(d){
+                d.add(gradScaleHoriz);
+                d.add(gradScaleVert);
+                d.add(gradIndicatorHoriz);
+                d.add(gradIndicatorVert);
+                // d.add(posiIndicator);
+                
+                // initialising 
+                updateScales();
+                updateIndicators();
+            }, null);  // null says to skip UndoManager recording of changes
+        }
         
-        dia.commit(function(d){
-            d.add(gradScaleHoriz);
-            d.add(gradScaleVert);
-        });
 
-        dia.addDiagramListener("InitialLayoutCompleted",updateScales);
+        dia.addDiagramListener("InitialLayoutCompleted",setupScalesAndIndicators);
+        dia.addDiagramListener("InitialLayoutCompleted", updateScales);
+        dia.addDiagramListener("InitialLayoutCompleted", updateIndicators);
         dia.addDiagramListener("ViewportBoundsChanged", updateScales);
-        
+        dia.addDiagramListener("ViewportBoundsChanged", updateIndicators);
+        dia.mouseEnter= function(){showIndicators(true);};
+        dia.mouseLeave= function(){showIndicators(false);};
         return dia;
 	}
 
@@ -308,21 +373,9 @@ export class SchematicsComponent implements OnInit {
 		this.myDiagramComponent.diagram.addDiagramListener('ChangedSelection', (e) => {
 			this.diagramJsonData = e.diagram.model.toJson();
 		});
-
-        this.schematics_dimensions() //get h/w of schematics  
-
 	}
 
 	ngOnDestroy() {
 		this.telemetrySubscriber.unsubscribe();
 	}
-
-    // checks width/height of the schematics
-    schematics_dimensions() {
-        this.width = this.dummy.nativeElement.offsetWidth;
-        this.height = this.dummy.nativeElement.offsetHeight;
-
-        console.log('Width:' + this.width);
-        console.log('Height: '+ this.height);  
-    }
 }
