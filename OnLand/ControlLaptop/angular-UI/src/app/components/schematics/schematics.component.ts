@@ -56,7 +56,7 @@ export class SchematicsComponent implements OnInit {
 			'undoManager.isEnabled': true, // must be set to allow for model change listening
 			// 'undoManager.maxHistoryLength': 0,  // uncomment disable undo/redo functionality
             padding:0,
-            scrollMode: go.Diagram.InfiniteScroll,
+            // scrollMode: go.Diagram.InfiniteScroll,
 			initialContentAlignment: go.Spot.None,
 			model: $(go.GraphLinksModel,
 				{
@@ -176,16 +176,6 @@ export class SchematicsComponent implements OnInit {
                 })
             );
 
-        // var posiIndicator = 
-        //     $(go.Part,
-        //         {   pickable: false, layerName:"Foreground", visible: true, alignment: new go.Spot(1,1)  },
-        //     $(go.TextBlock,
-        //         {
-        //             font: "12px verdana",
-        //             text: "monkey",
-        //         })
-        //     );
-
         var gradIndicatorHoriz =
             $(go.Part,
             {
@@ -213,7 +203,7 @@ export class SchematicsComponent implements OnInit {
                 gradScaleHoriz.location = new go.Point(vb.x, vb.y);
 
                 console.log("VIEWPORT X IS " + vb.x+ " and " + vb.right);
-                console.log("VIEWPORT Y IS " + vb.y +" and "+ vb.bottom); //why the hell are you not zero
+                console.log("VIEWPORT Y IS " + vb.y +" and "+ vb.bottom); 
                 console.log(dia.position);
                 gradScaleHoriz.graduatedMin = vb.x;
                 gradScaleHoriz.graduatedMax = vb.right;
@@ -274,7 +264,6 @@ export class SchematicsComponent implements OnInit {
                 d.add(gradScaleVert);
                 d.add(gradIndicatorHoriz);
                 d.add(gradIndicatorVert);
-                // d.add(posiIndicator);
                 
                 // initialising 
                 updateScales();
