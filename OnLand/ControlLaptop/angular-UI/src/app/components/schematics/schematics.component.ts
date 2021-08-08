@@ -49,12 +49,6 @@ export class SchematicsComponent implements OnInit {
     
     ngOnInit(): void {}
 
-    // getting width/height of schematics 
-    @ViewChild('dummy') 
-    dummy: ElementRef; 
-    private width:Number;
-    private height:Number;
-
     // initiate gojs diagram 
 	public initDiagram(): go.Diagram {
 		const $ = go.GraphObject.make;
