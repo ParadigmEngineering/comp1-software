@@ -17,13 +17,13 @@ export class SchematicsComponent implements OnInit {
 	diagramJsonData: string; // json data for modified diagram
 	showText: boolean = false;
 	public diagramNodeData: Array<go.ObjectData> = [
-		// { "key": "auger", "group": "auger_group", "scale": 2.5, "img": "../../../assets/schematic-icon/Auger.svg", "color": "red", "loc": "643.50 -54.17" },
-		// { "key": "P1_1", "group": "auger_group", "scale": 2.5, "img": "../../../assets/schematic-icon/P1.svg", "loc": "696.50 -11.77" },
-		// { "key": "P1_2", "group": "auger_group", "scale": 2.5, "img": "../../../assets/schematic-icon/P1.svg", "loc": "696.50 41.83" },
-		// { "key": "Relief_Valve_1", "group": "auger_group", "scale": 2.5, "img": "../../../assets/schematic-icon/Relief_Valve_Straight.svg", "loc": "748.54 22.83" },
-		// { "key": "Motor_small_1", "group": "auger_group", "scale": 2.5, "img": "../../../assets/schematic-icon/Motor_small.svg", "loc": "822.50 -19.17" },
-		// { "key": "auger_group", "isGroup": true },
-		// { "key": "Delta" }
+		{ "key": "auger", "group": "auger_group", "scale": 2.5, "img": "../../../assets/schematic-icon/Auger.svg", "color": "red", "loc": "700.50 90.50" },
+		{ "key": "P1_11", "group": "auger_group", "scale": 2.5, "img": "../../../assets/schematic-icon/P1.svg", "loc": "765.50 140.50" },
+		{ "key": "P1_12", "group": "auger_group", "scale": 2.5, "img": "../../../assets/schematic-icon/P1.svg", "loc": "750.50 190.50" },
+		{ "key": "Relief_Valve_9", "group": "auger_group", "scale": 2.0, "img": "../../../assets/schematic-icon/Relief_Valve_Straight.svg", "loc": "800.50 175.50" },
+		{ "key": "Motor_small_1", "group": "auger_group", "scale": 2.0, "img": "../../../assets/schematic-icon/Motor_small.svg", "loc": "880.50 130.17" },
+		{ "key": "auger_group", "isGroup": true },
+		{ "key": "Delta" }
 
         // templating
         // { "key": "auger", 
@@ -35,11 +35,11 @@ export class SchematicsComponent implements OnInit {
 	];
 
 	public diagramLinkData: Array<go.ObjectData> = [
-		// { "from": "Motor_small_1", "to": "P1_1", "color": "red", "fromPort": "Left", "toPort": "Right", "key": -1, "points": [822.5, -2.7950000000000017, 812.5, -2.7950000000000017, 762.726127329298, -2.7950000000000017, 762.726127329298, 2.1050000000000004, 734, 2.1050000000000004, 724, 2.1050000000000004] },
-		// { "from": "Relief_Valve_1", "to": "Motor_small_1", "color": "green", "fromPort": "Right", "toPort": "Right", "key": -2, "points": [775.7417040671694, 37.8541479664153, 785.7417040671694, 37.8541479664153, 859.5572240640107, 37.8541479664153, 859.5572240640107, -2.7950000000000017, 845, -2.7950000000000017, 855, -2.7950000000000017] },
-		// { "from": "P1_2", "to": "Relief_Valve_1", "color": "green", "fromPort": "Right", "toPort": "Right", "key": -3, "points": [724, 55.705, 734, 55.705, 782.6970382104381, 55.705, 782.6970382104381, 37.8541479664153, 763.2417040671694, 37.8541479664153, 773.2417040671694, 37.8541479664153] },
-		// { "from": "P1_1", "to": "Relief_Valve_1", "color": "red", "fromPort": "Right", "toPort": "Top", "points": [724, 2.1050000000000004, 734, 2.1050000000000004, 763.2954378978858, 2.1050000000000004, 763.2954378978858, 25.354147966415297, 750.6167040671694, 25.354147966415297, 760.6167040671694, 25.354147966415297], "key": -4 }
-	];
+        {"from":"Motor_small_1","to":"P1_11","color":"red","fromPort":"Left","toPort":"Right","key":-1,"points":[880.5,143.26999999999998,870.5,143.26999999999998,811.6511811679179,143.26999999999998,811.6511811679179,153.875,807.5,153.875,797.5,153.875]},
+        {"from":"Relief_Valve_9","to":"Motor_small_1","color":"green","fromPort":"Right","toPort":"Right","key":-2,"points":[822.5,186.6,832.5,186.6,838.220608719719,186.6,838.220608719719,204.32770194879322,917.8716286829019,204.32770194879322,917.8716286829019,143.26999999999998,896.5,143.26999999999998,906.5,143.26999999999998]},
+        {"from":"P1_12","to":"Relief_Valve_1","color":"green","fromPort":"Right","toPort":"Right","key":-3,"points":[778,204.375,788,204.375,788,204.375,788,204.32770194879322,838.5624585908057,204.32770194879322,838.5624585908057,186.6,810.5,186.6,820.5,186.6]},
+        {"from":"P1_11","to":"Relief_Valve_1","color":"red","fromPort":"Right","toPort":"Top","key":-4,"points":[796.25,155.125,796.25,165.125,796.25,154.46135778366812,811.5,154.46135778366812,811.5,165.5,811.5,175.5]}
+    ];
 	public observedDiagram = null;
 
 	constructor(private cdr: ChangeDetectorRef,
@@ -240,7 +240,7 @@ export class SchematicsComponent implements OnInit {
               var mouseCoords = diag.lastInput.documentPoint;
               console.log(diag.lastInput.documentPoint);
               console.log(diag.scale);
-
+                console.log(gradIndicatorHoriz.text)
               // Keep the indicators in line with the mouse as viewport changes or mouse moves
               gradIndicatorHoriz.location = new go.Point(Math.max(mouseCoords.x, vb.x), vb.y);
               gradIndicatorHoriz.scale = 1 / diag.scale;
