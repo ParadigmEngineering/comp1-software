@@ -37,8 +37,8 @@ export class SchematicsComponent implements OnInit {
 	public diagramLinkData: Array<go.ObjectData> = [
         {"from":"Motor_small_1","to":"P1_11","color":"red","fromPort":"Left","toPort":"Right","key":-1,"points":[880.5,143.26999999999998,870.5,143.26999999999998,811.6511811679179,143.26999999999998,811.6511811679179,153.875,807.5,153.875,797.5,153.875]},
         {"from":"Relief_Valve_9","to":"Motor_small_1","color":"green","fromPort":"Right","toPort":"Right","key":-2,"points":[822.5,186.6,832.5,186.6,838.220608719719,186.6,838.220608719719,204.32770194879322,917.8716286829019,204.32770194879322,917.8716286829019,143.26999999999998,896.5,143.26999999999998,906.5,143.26999999999998]},
-        {"from":"P1_12","to":"Relief_Valve_1","color":"green","fromPort":"Right","toPort":"Right","key":-3,"points":[778,204.375,788,204.375,788,204.375,788,204.32770194879322,838.5624585908057,204.32770194879322,838.5624585908057,186.6,810.5,186.6,820.5,186.6]},
-        {"from":"P1_11","to":"Relief_Valve_1","color":"red","fromPort":"Right","toPort":"Top","key":-4,"points":[796.25,155.125,796.25,165.125,796.25,154.46135778366812,811.5,154.46135778366812,811.5,165.5,811.5,175.5]}
+        {"from":"P1_12","to":"Relief_Valve_9","color":"green","fromPort":"Right","toPort":"Right","key":-3,"points":[778,204.375,788,204.375,788,204.375,788,204.32770194879322,838.5624585908057,204.32770194879322,838.5624585908057,186.6,810.5,186.6,820.5,186.6]},
+        {"from":"P1_11","to":"Relief_Valve_9","color":"red","fromPort":"Right","toPort":"Top","key":-4,"points":[796.25,155.125,796.25,165.125,796.25,154.46135778366812,811.5,154.46135778366812,811.5,165.5,811.5,175.5]}
     ];
 	public observedDiagram = null;
 
@@ -308,12 +308,12 @@ export class SchematicsComponent implements OnInit {
 
 		// subscribe to socketio response to test if the diagram link changes color in realtime
 		this.telemetrySubscriber = this.naturalGas.onNatural().subscribe((msg: { message: string }) => {
-			// if get a message equal to 6, than change P1 to Relief valve link to yellow		
-			if (parseInt(msg.message) === 6) {
+			// if get a message equal to 6, than change P11 to Relief valve link to yellow		
+			if (parseInt(msg.message) > 7) {
 				console.log('got a msg from server that is 6 ');
 				this.myDiagramComponent.diagram.commit(dia => {
-					const from = dia.findNodeForKey('P1_1');
-					const to = dia.findNodeForKey('Relief_Valve_1');
+					const from = dia.findNodeForKey('P1_11');
+					const to = dia.findNodeForKey('Relief_Valve_9');
 					if (from !== null && to !== null) {
 						from.findLinksTo(to).each(l => {
 							dia.model.set(l.data, "color", "yellow");
@@ -324,11 +324,11 @@ export class SchematicsComponent implements OnInit {
 					}
 				});
 			}
-			// if get a message equal to 1, than change P1 to Relief valve link to blue
-			else if (parseInt(msg.message) === 1) {
+			// if get a message equal to 1, than change P11 to Relief valve link to blue
+			else if (parseInt(msg.message) > 3) {
 				this.myDiagramComponent.diagram.commit(dia => {
-					const from = dia.findNodeForKey('P1_1');
-					const to = dia.findNodeForKey('Relief_Valve_1');
+					const from = dia.findNodeForKey('P1_11');
+					const to = dia.findNodeForKey('Relief_Valve_9');
 					if (from !== null && to !== null) {
 						from.findLinksTo(to).each(l => {
 							dia.model.set(l.data, "color", "blue");
@@ -341,8 +341,8 @@ export class SchematicsComponent implements OnInit {
 			}
 			else {
 				this.myDiagramComponent.diagram.commit(dia => {
-					const from = dia.findNodeForKey('P1_1');
-					const to = dia.findNodeForKey('Relief_Valve_1');
+					const from = dia.findNodeForKey('P1_11');
+					const to = dia.findNodeForKey('Relief_Valve_9');
 					if (from !== null && to !== null) {
 						from.findLinksTo(to).each(l => {
 							dia.model.set(l.data, "color", "red");
