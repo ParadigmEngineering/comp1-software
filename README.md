@@ -13,14 +13,21 @@ Linux
 Prerequisite: [Node.js(LTS version will be fine) and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm#using-a-node-version-manager-to-install-node-js-and-npm)
 
 1. First, open your terminal. Navigate to `/comp1-software` directory.
-2. Run `npm install -g @angular/cli`
-3. Navigate to `/OnLand/ControlLaptop/angular-UI`. 
-    If you are in the root of the 'comp1-software' folder, then just run:
-        Windows: `cd OnLand\ControlLaptop\angular-UI`
-        Linux/Mac: `cd OnLand/ControlLaptop/angular-UI`
-4. When you in the angular-UI folder, run `npm install`
-5. To build and serves the app locally, run `ng serve`. If it's build successfully, there should be a link that look like this: http://localhost:4200/. 
-6. Navigate to the link in your browser, and your should be able to see the app.
+2. Navigate to `/OnLand/ControlLaptop/angular-UI`. 
+  > If you are in the root of the 'comp1-software' folder, then just run:
+  >> Windows: `cd OnLand\ControlLaptop\angular-UI`
+  >> Linux/Mac: `cd OnLand/ControlLaptop/angular-UI`
+3. When you in the angular-UI folder. Run `npm install -g @angular/cli` then run `npm install`
+4. To build and serves the app locally, run `ng serve`. 
+  > If it's build successfully, there should be a link that look like this: http://localhost:4200/. 
+5. Navigate to the link in your browser, and your should be able to see the app.
+
+### Run Server side socketio
+1. Open a NEW terminal (<em>don't close the front-end terminal if already running</em>).  Navigate to `/comp1-software` directory.
+2. Ensure python environment is activated 
+3. First, navigate to `/OnLand` directory, then run `pip install -r requirements.txt`
+3. Then, navigate to `/Examples/socketio-python` directory, and run:
+   > `python3 server.py` (<em>or `python server.py`</em>)
 
 ## Flight Computer setup Guide
 Prerequisites:
