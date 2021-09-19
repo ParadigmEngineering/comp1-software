@@ -66,6 +66,8 @@ export class SchematicsComponent implements OnInit {
 			'undoManager.isEnabled': true, // must be set to allow for model change listening
 			// 'undoManager.maxHistoryLength': 0,  // uncomment disable undo/redo functionality
             padding:0,
+            allowHorizontalScroll: false,
+            allowVerticalScroll: false,
             // scrollMode: go.Diagram.InfiniteScroll,
 			initialContentAlignment: go.Spot.None,
 			model: $(go.GraphLinksModel,
