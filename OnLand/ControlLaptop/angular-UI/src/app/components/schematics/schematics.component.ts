@@ -16,14 +16,19 @@ export class SchematicsComponent implements OnInit {
 	@ViewChild('myDiagram', { static: true }) public myDiagramComponent: DiagramComponent;
 	diagramJsonData: string; // json data for modified diagram
 	showText: boolean = false;
+	// diagramNodeData is used to stored the nodes needed for the schematic asset
 	public diagramNodeData: Array<go.ObjectData> = [
 		{ "key": "auger", "group": "auger_group", "scale": 2.5, "img": "../../../assets/schematic-icon/Auger.svg", "color": "red", "loc": "700.50 90.50" },
+
 		{ "key": "P1_11", "group": "auger_group", "scale": 2.5, "img": "../../../assets/schematic-icon/P1.svg", "loc": "765.50 140.50" },
 		{ "key": "P1_12", "group": "auger_group", "scale": 2.5, "img": "../../../assets/schematic-icon/P1.svg", "loc": "750.50 190.50" },
+
 		{ "key": "Relief_Valve_9", "group": "auger_group", "scale": 2.0, "img": "../../../assets/schematic-icon/Relief_Valve_Straight.svg", "loc": "800.50 175.50" },
+		{ "key": "Relief_Valve_10", "group": "auger_group", "scale": 2.0,  "flip": go.GraphObject.FlipBoth, "img": "../../../assets/schematic-icon/Relief_Valve_Straight.svg", "loc": "825.50 155.50" },
+
 		{ "key": "Motor_small_1", "group": "auger_group", "scale": 2.0, "img": "../../../assets/schematic-icon/Motor_small.svg", "loc": "880.50 130.17" },
-		{ "key": "auger_group", "isGroup": true },
-		{ "key": "Delta" }
+
+		{ "key": "auger_group", "isGroup": true }
 
         // templating
         // { "key": "auger", 
@@ -34,12 +39,17 @@ export class SchematicsComponent implements OnInit {
         // "loc": "643.50 -54.17" },
 	];
 
+	// diagramLinkData is used to stored the links needed for the schematic asset
 	public diagramLinkData: Array<go.ObjectData> = [
-        {"from":"Motor_small_1","to":"P1_11","color":"red","fromPort":"Left","toPort":"Right","key":-1,"points":[880.5,143.26999999999998,870.5,143.26999999999998,811.6511811679179,143.26999999999998,811.6511811679179,153.875,807.5,153.875,797.5,153.875]},
-        {"from":"Relief_Valve_9","to":"Motor_small_1","color":"green","fromPort":"Right","toPort":"Right","key":-2,"points":[822.5,186.6,832.5,186.6,838.220608719719,186.6,838.220608719719,204.32770194879322,917.8716286829019,204.32770194879322,917.8716286829019,143.26999999999998,896.5,143.26999999999998,906.5,143.26999999999998]},
-        {"from":"P1_12","to":"Relief_Valve_9","color":"green","fromPort":"Right","toPort":"Right","key":-3,"points":[778,204.375,788,204.375,788,204.375,788,204.32770194879322,838.5624585908057,204.32770194879322,838.5624585908057,186.6,810.5,186.6,820.5,186.6]},
-        {"from":"P1_11","to":"Relief_Valve_9","color":"red","fromPort":"Right","toPort":"Top","key":-4,"points":[796.25,155.125,796.25,165.125,796.25,154.46135778366812,811.5,154.46135778366812,811.5,165.5,811.5,175.5]}
-    ];
+		{"from":"Motor_small_1","to":"P1_11","color":"red","fromPort":"Left","toPort":"Right","key":-1,"points":[880.5,143.26999999999998,870.5,143.26999999999998,811.6511811679179,143.26999999999998,811.6511811679179,153.875,807.5,153.875,797.5,153.875]},
+		{"from":"Relief_Valve_9","to":"Motor_small_1","color":"green","fromPort":"Right","toPort":"Right","key":-2,"points":[822.5,186.6,832.5,186.6,829.0138213166726,186.6,829.0138213166726,204.82292316819925,917.8716286829019,204.82292316819925,917.8716286829019,143.26999999999998,896.5,143.26999999999998,906.5,143.26999999999998]},
+		
+		{"from":"P1_12","to":"Relief_Valve_9","color":"green","fromPort":"Right","toPort":"Right","key":-3,"points":[778,204.375,788,204.375,788,204.375,788,204.82292316819925,829.0138213166726,204.82292316819925,829.0138213166726,186.6,810.5,186.6,820.5,186.6]},
+		{"from":"P1_11","to":"Relief_Valve_9","color":"red","fromPort":"Right","toPort":"Top","key":-4,"points":[796.25,155.125,796.25,165.125,796.25,154.46135778366812,811.5,154.46135778366812,811.5,165.5,811.5,175.5]},
+		
+		{"from":"P1_11","to":"Relief_Valve_10","color":"red","fromPort":"Right","toPort":"Left","key":-5,"points":[793,154.375,803,154.375,812.0138213166726,154.375,812.0138213166726,166.6,815.5,166.6,825.5,166.6]},
+		{"from":"P1_12","to":"Relief_Valve_10","color":"green","fromPort":"Right","toPort":"Bottom","key":-6,"points":[778,204.375,788,204.375,788,204.375,788,204.82292316819925,837.0138213166726,204.82292316819925,837.0138213166726,176.6,825.5,176.6,835.5,176.6]}
+	];
 	public observedDiagram = null;
 
 	constructor(private cdr: ChangeDetectorRef,
@@ -89,7 +99,7 @@ export class SchematicsComponent implements OnInit {
 				new go.Binding('fill', 'color'),
 				new go.Binding('scale', 'scale'), // scale the size of the node
 				$(go.Panel, "Spot",
-					$(go.Picture, new go.Binding("source", "img"), new go.Binding("desiredSize", "size"),
+					$(go.Picture, new go.Binding("source", "img"), new go.Binding("desiredSize", "size"), new go.Binding("flip", "flip")
 					), $(go.Shape,
 						{
 							width: 0.1, height: 0.1, portId: "Top",
